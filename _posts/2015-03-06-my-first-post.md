@@ -12,3 +12,5 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 ## Let’s get into more detail
 
 This is another paragraph.
+
+![Fancy toast.](/uploads/versions/o---x----1000-806x---.jpg)
