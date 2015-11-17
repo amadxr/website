@@ -8,16 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
 
-    <title>
-      {% if page.title %}
-        {{ page.title }}
-      {% else %}
-        Default Page Title
-      {% endif %}
+    <title>{% if page.title %}{{ page.title }}{% else %}Default Page Title{% endif %}
     </title>
 
-    {% if page.description %}
-      <meta name="description" content="{{ page.description}}" />
+    {% if page.seo_description %}
+      <meta name="description" content="{{ page.seo_description}}" />
     {% endif %}
 
     <!-- Bootstrap Core CSS -->
