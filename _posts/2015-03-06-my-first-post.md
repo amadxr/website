@@ -13,4 +13,4 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 This is another paragraph.
 
-![Fancy toast.](http://resolvedigital.imgix.net/6e79625bea46d0df226d209cdc66885a.jpg?sat=-100&fit=max&w=500&h=300)
+![Fancy toast.](http://resolvedigital.imgix.net/6e79625bea46d0df226d209cdc66885a.jpg?sat=-100&fit=max&w=500&h=500)
