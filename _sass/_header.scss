@@ -1,0 +1,16 @@
+body > header {
+  background: rgba(255, 255, 255, 0.9);
+
+  .wrapper {
+    @include outer-container;
+  }
+  .logo {
+    background-color: $blue;
+    color: white;
+    padding: 10px;
+
+    &:hover {
+      background-color: $blue;
+    }
+  }
+}

@@ -1,2 +1,18 @@
-_site
+_site/
+
+# sass
 .sass-cache
+.sass-cache/*
+
+#rvm
+.rvmrc
+.rvmrc.*
+
+# Backup
+*~
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
