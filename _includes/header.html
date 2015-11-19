@@ -1,15 +1,16 @@
 <header>
   <div class="wrapper">
     <a class="logo" href="{{ site.baseurl }}/">
-      {{ site.title }}
+      <img src="/images/resolve-digital-logo.png" alt="Resolve Digital Logo" width="289" height="30" />
     </a>
 
     <nav>
       {% for page in site.pages %}
         {% if page.title %}
-        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
         {% endif %}
       {% endfor %}
+      <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
     </nav>
   </div>
 </header>

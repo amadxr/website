@@ -2,22 +2,29 @@
 layout: default
 ---
 
-<div class="home">
+<div class="full-screen title-slide">
+  <div class="vertical-center">
+    <!--<h1>Let's build a great online store together.</h1>-->
+    <h1>Behind the best online stores</h1>
+    <p>We specialise in building out custom ecommerce stores using Spree Commerce, Solidus &amp; Ruby on Rails applications.</p>
+  </div>
+</div>
 
-  <h1 class="page-heading">Posts</h1>
+<div class="content">
+  <h2>Our Development and Consulting Services Help You</h2>
 
-  <ul class="post-list">
+  <h1>From Our Blog</h1>
+
+  <ul>
     {% for post in site.posts %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+        <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </li>
     {% endfor %}
   </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+  <p>
+    Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>
+  </p>
 </div>

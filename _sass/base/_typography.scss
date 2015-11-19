@@ -18,19 +18,22 @@ h6 {
   margin: 0 0 $small-spacing;
 }
 
+h1 {
+  font-size: 3em;
+}
+
 p {
   margin: 0 0 $small-spacing;
 }
 
 a {
   color: $action-color;
-  text-decoration: none;
   transition: color $base-duration $base-timing;
 
   &:active,
   &:focus,
   &:hover {
-    color: shade($action-color, 25%);
+    color: shade($action-color, 50%);
   }
 }
 

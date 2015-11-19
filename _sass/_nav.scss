@@ -1,0 +1,11 @@
+header nav {
+  float: right;
+
+  a {
+    padding: $small-spacing;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

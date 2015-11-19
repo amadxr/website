@@ -1,0 +1,16 @@
+.full-screen {
+  height: 100vh;
+  @include outer-container;
+}
+
+.title-slide {
+  @include fill-parent();
+  background: white;
+  text-align: center;
+}
+
+.vertical-center {
+  position: relative;
+  top: 45%;
+  transform: translateY(-50%);
+}
