@@ -1,16 +1,37 @@
 .full-screen {
-  height: 100vh;
+  height: 80vh;
   @include outer-container;
 }
 
 .title-slide {
-  @include fill-parent();
   background: white;
   text-align: center;
+  width: 75%;
+
+  p {
+    color: $medium-gray;
+    font-size: 1.4em;
+    width: 75%;
+    margin: 0px auto;
+  }
+}
+
+.tm {
+  font-size: 0.5em;
+  text-decoration: none;
+  vertical-align: super;
 }
 
 .vertical-center {
   position: relative;
   top: 45%;
   transform: translateY(-50%);
+}
+
+.arrow-down {
+  font-size: 4em;
+  color: $green;
+  display: block;
+  text-align: center;
+  @include transform(rotate(90deg));
 }

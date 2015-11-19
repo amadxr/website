@@ -1,5 +1,9 @@
-body {
+.content-wrapper.green  {
+  text-align: center;
+  background-color: $green;
+
   .content {
     @include outer-container;
+    color: white;
   }
 }
