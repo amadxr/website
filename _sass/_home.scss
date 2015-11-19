@@ -35,3 +35,11 @@
   text-align: center;
   @include transform(rotate(90deg));
 }
+
+.screenshot {
+  @include span-columns(8);
+}
+
+aside {
+  @include span-columns(4);
+}

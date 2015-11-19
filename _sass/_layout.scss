@@ -1,9 +1,21 @@
-.content-wrapper.green  {
+.content-wrapper  {
   text-align: center;
-  background-color: $green;
 
   .content {
+    text-align: left;
+
     @include outer-container;
-    color: white;
+
+    section {
+      @include row();
+      @include pad();
+    }
   }
+}
+
+
+.caption {
+  text-align: center;
+  font-size: 0.9em;
+  color: $medium-gray;
 }
