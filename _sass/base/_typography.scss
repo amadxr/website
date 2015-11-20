@@ -23,8 +23,21 @@ h1 {
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: normal;
+  color: tint($base-font-color, 5%);
+}
+
+h3 {
+  font-size: 1.3em; // make a method for calculating these sizes?
+  font-weight: normal;
+  color: tint($base-font-color, 20%);
+}
+
+h4 {
+  font-size: 1.1em; // make a method for calculating these sizes?
+  font-weight: normal; 
+  color: tint($base-font-color, 30%);
 }
 
 p {
@@ -54,4 +67,10 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+
+blockquote {
+  color: $green;
+  font-size: 1.3em; // sync with h3 font size
+  font-style: italic;
 }

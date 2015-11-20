@@ -2,19 +2,15 @@
   text-align: center;
 
   .content {
-    text-align: left;
-
     @include outer-container;
+  }
 
-    section {
-      @include row();
-      @include pad();
-    }
+  section.content {
+    @include row();
+    @include pad();
   }
 }
 
-.caption {
-  text-align: center;
-  font-size: 0.9em;
-  color: $medium-gray;
+footer {
+  margin-bottom: 50px;
 }

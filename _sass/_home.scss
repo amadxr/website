@@ -43,3 +43,46 @@
 aside {
   @include span-columns(4);
 }
+
+.two-wide {
+  @include outer-container;
+
+  li {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+}
+
+.caption {
+  text-align: center;
+  font-size: 0.9em;
+  color: $medium-gray;
+}
+
+
+.caption {
+  text-align: center;
+  font-size: 0.9em;
+  color: $medium-gray;
+}
+
+.center-aligned {
+  text-align: center;
+}
+
+.left-aligned {
+  text-align: left;
+}
+
+.call-to-action {
+  font-weight: bold;
+  font-size: 1.5em; // sync up with h3?
+}
+
+hr {
+  width: 10%;
+  height: 1px;
+  border: none;
+  background: $green;
+  margin: 0px auto;
+}
