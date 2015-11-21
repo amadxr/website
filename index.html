@@ -105,15 +105,13 @@ layout: default
   <p>
     <hr />
   </p>
-      
-
+  
   <section class="content center-aligned">
-    <h2 class="editable">From Our blog</h2>
+    <h2 class="editable">From Our Blog</h2>
     <ul>
       {% for post in site.posts %}
         <li>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><br />
-          {{ post.date | date: "%b %-d, %Y" }}
+          <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
         </li>
       {% endfor %}
     </ul>
@@ -122,13 +120,3 @@ layout: default
     </p>
   </section>
 </div>
-
-
-
-
-
-
-
-
-
-
