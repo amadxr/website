@@ -1,5 +1,5 @@
 .full-screen {
-  height: 80vh;
+  height: 77vh;
   @include outer-container;
 }
 
@@ -40,6 +40,20 @@
   @include span-columns(8);
 }
 
+.narrow {
+  @include span-columns(8);
+  @include shift(2);
+
+  p {
+    text-align: left;
+  }
+}
+
+section {
+  @include outer-container;
+}
+
+
 aside {
   @include span-columns(4);
 }
@@ -53,7 +67,7 @@ aside {
   }
 }
 
-.caption {
+p.caption {
   text-align: center;
   font-size: 0.9em;
   color: $medium-gray;
