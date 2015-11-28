@@ -1,5 +1,5 @@
 .full-screen {
-  height: 77vh;
+  height: 90vh;
   @include outer-container;
 }
 
@@ -7,6 +7,7 @@
   background: white;
   text-align: center;
   width: 75%;
+  padding-top: $base-spacing;
 
   p {
     color: $medium-gray;
@@ -78,6 +79,10 @@ p.caption {
   text-align: center;
   font-size: 0.9em;
   color: $medium-gray;
+}
+
+.upcase {
+  text-transform: uppercase;
 }
 
 .center-aligned {

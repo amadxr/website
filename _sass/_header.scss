@@ -1,7 +1,13 @@
 body > header {
-  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
 
-  padding: $base-spacing;
+  background: rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid #eee;
+
+  padding: $base-spacing $base-spacing ($base-spacing / 2) $base-spacing;
 
   .wrapper {
     @include outer-container;
