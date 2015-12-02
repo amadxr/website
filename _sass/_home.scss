@@ -9,6 +9,11 @@
   width: 75%;
   padding-top: $base-spacing;
 
+  h1 {
+    margin-top: 10%;
+    height: 50%;
+
+  }
   p {
     color: $medium-gray;
     font-size: 1.4em;
@@ -41,14 +46,7 @@
   @include span-columns(8);
 }
 
-.narrow {
-  @include span-columns(8);
-  @include shift(2);
 
-  p {
-    text-align: left;
-  }
-}
 
 section {
   @include outer-container;
@@ -100,7 +98,7 @@ p.caption {
 
 hr {
   width: 10%;
-  height: 1px;
+  height: 2px;
   border: none;
   background: $green;
   margin: 0px auto;
