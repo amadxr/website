@@ -1,0 +1,36 @@
+p.caption {
+  text-align: center;
+  font-size: 0.9em;
+  color: $medium-gray;
+}
+
+.caption {
+  text-align: center;
+  font-size: 0.9em;
+  color: $medium-gray;
+}
+
+.call-to-action {
+  font-weight: bold;
+  font-size: 1.5em; // sync up with h3?
+}
+
+.upcase {
+  text-transform: uppercase;
+}
+
+.center-aligned {
+  text-align: center;
+}
+
+.left-aligned {
+  text-align: left;
+}
+
+hr {
+  width: 10%;
+  height: $base-border-height;
+  border: none;
+  background: $green;
+  margin: 0px auto;
+}

@@ -1,45 +1,33 @@
 body > header {
-  position: fixed;
-  height: ($base-spacing * 2.4);
-
-  z-index: 100;
-  width: 100%;
+  @include clearfix;
   
-  padding: ($base-spacing / 1.5);
-
-  background: rgba(255, 255, 255, 0.75);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: $base-border;
-
-  @include media($tablet) {
-    text-align: center;
-    border-bottom: none;
-    padding: ($base-spacing / 1.5) 0px 0px 0px;
-    position: relative;
-    height: auto;
-  }
+  padding: $small-spacing $small-spacing ($small-spacing / 2) $small-spacing;
 
   .logo {
     float: left;
-
-    @include media($tablet) {
-      float: none;
-    }
   }
 
   nav {
     float: right;
-    
-    @include media($tablet) {
-      float: none;
-    }
 
     a {
       padding: $small-spacing;
+    }
+  }
+}
 
-      @include media($tablet) {
-        padding: $small-spacing / 3;
-      }
+@include media($tablet) {
+  body > header nav a {
+    padding: $tiny-spacing;
+  }
+}
+
+@include media($mobile-landscape) {
+  body > header  {
+    text-align: center;
+
+    .logo, nav {
+      float: none;
     }
   }
 }

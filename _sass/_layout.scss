@@ -1,18 +1,10 @@
-.content-wrapper  {
-  text-align: center;
-
-  .content {
-    @include outer-container;
-  }
-
-  section.content {
-    @include row();
-    @include pad();
-  }
+// Keeps content to a max width
+.content {
+  @include outer-container;
 }
 
 footer {
-  margin-bottom: 50px;
+  margin-bottom: $base-spacing;
 
   img {
     vertical-align: text-bottom;

@@ -1,0 +1,29 @@
+.full-screen {
+  height: 80vh;
+}
+
+.title-slide {
+  //background: $light-gray;
+  text-align: center;
+  padding: $base-spacing;
+
+  @include media($mobile) {
+    padding: $small-spacing;
+  }
+
+  p {
+    color: $medium-gray;
+    margin: 0px auto;
+  }
+
+  .vertical-center {
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%);
+
+    // @include media($mobile) {
+    //   top: auto;
+    //   transform: translateY(0%);
+    // }
+  }
+}

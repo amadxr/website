@@ -7,5 +7,10 @@
 // $max-width: 1200px;
 
 // Neat Breakpoints
+
 $tablet: new-breakpoint(max-width 768px 8);
+
+// covers iPhone Plus landscape.
+$mobile-landscape: new-breakpoint(max-width 730px 8);
+
 $mobile: new-breakpoint(max-width 480px 4);
