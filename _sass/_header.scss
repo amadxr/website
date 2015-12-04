@@ -1,18 +1,45 @@
 body > header {
   position: fixed;
-  width: 100%;
-  z-index: 100;
   height: ($base-spacing * 2.4);
+
+  z-index: 100;
+  width: 100%;
+  
+  padding: ($base-spacing / 1.5);
 
   background: rgba(255, 255, 255, 0.75);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 2px solid #eee;
+  border-bottom: $base-border;
 
-  padding: ($base-spacing / 1.5);
-
-  .wrapper {
-    @include outer-container;
+  @include media($tablet) {
+    text-align: center;
+    border-bottom: none;
+    padding: ($base-spacing / 1.5) 0px 0px 0px;
+    position: relative;
+    height: auto;
   }
 
-  
+  .logo {
+    float: left;
+
+    @include media($tablet) {
+      float: none;
+    }
+  }
+
+  nav {
+    float: right;
+    
+    @include media($tablet) {
+      float: none;
+    }
+
+    a {
+      padding: $small-spacing;
+
+      @include media($tablet) {
+        padding: $small-spacing / 3;
+      }
+    }
+  }
 }
