@@ -1,8 +1,31 @@
-.two-wide {
+.four-wide {
   @include outer-container;
 
   li {
-    @include span-columns(6);
-    @include omega(2n);
+    @include span-columns(3);
+    @include omega(4n);
+  }
+}
+
+section {
+  @include row();
+  text-align: center;
+}
+
+.narrow {
+  @include span-columns(8);
+  @include shift(2);
+
+  p {
+    text-align: left;
+  }
+}
+
+
+@include media($mobile) {
+  .narrow {
+    @include span-columns(12);
+    @include shift(0);
+    @include pad();
   }
 }

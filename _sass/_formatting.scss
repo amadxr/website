@@ -5,12 +5,12 @@ p.caption {
 }
 
 .caption {
-  text-align: center;
-  font-size: 0.9em;
-  color: $medium-gray;
+  @include span-columns(8);
+  @include shift(2);
 }
 
 .call-to-action {
+  text-align: center;
   font-weight: bold;
   font-size: 1.5em; // sync up with h3?
 }
@@ -19,12 +19,12 @@ p.caption {
   text-transform: uppercase;
 }
 
-.center-aligned {
-  text-align: center;
-}
-
 .left-aligned {
   text-align: left;
+}
+
+.center-aligned, .narrow .center-aligned {
+  text-align: center;
 }
 
 hr {
@@ -32,5 +32,16 @@ hr {
   height: $base-border-height;
   border: none;
   background: $green;
-  margin: 0px auto;
+  margin: $base-spacing auto;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+blockquote {
+  @include span-columns(8);
+  @include shift(2);
 }

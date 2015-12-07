@@ -3,7 +3,6 @@
 }
 
 .title-slide {
-  //background: $light-gray;
   text-align: center;
   padding: $base-spacing;
 
@@ -18,12 +17,7 @@
 
   .vertical-center {
     position: relative;
-    top: 45%;
+    top: 50%;
     transform: translateY(-50%);
-
-    // @include media($mobile) {
-    //   top: auto;
-    //   transform: translateY(0%);
-    // }
   }
 }

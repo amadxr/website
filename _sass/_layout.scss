@@ -1,7 +1,12 @@
-// Keeps content to a max width
-.content {
-  @include outer-container;
+.two-split-section {
+  @include shift(2);
 }
+
+.two-split {
+  @include span-columns(5);
+  @include omega(2n);
+}
+
 
 footer {
   margin-bottom: $base-spacing;
