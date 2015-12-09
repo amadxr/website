@@ -1,10 +1,33 @@
 .two-split-section {
   @include shift(2);
+  @include pad();
 }
 
 .two-split {
   @include span-columns(5);
-  @include omega(2n);
+}
+
+@include media($mobile) {
+  .two-split-section {
+    @include shift(0);
+  }
+
+  .two-split {
+    @include span-columns(12 of 12);
+    @include omega(0);
+  }
+}
+
+.full-width {
+  margin-left: -200px;
+  margin-right: -200px;
+  padding-left: -200px;
+  padding-right: -200px;
+}
+
+.page {
+  @include outer-container;
+  @include span-columns(12);
 }
 
 

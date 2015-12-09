@@ -4,11 +4,6 @@ p.caption {
   color: $medium-gray;
 }
 
-.caption {
-  @include span-columns(8);
-  @include shift(2);
-}
-
 .call-to-action {
   text-align: center;
   font-weight: bold;
@@ -42,6 +37,6 @@ picture {
 }
 
 blockquote {
-  @include span-columns(8);
-  @include shift(2);
+  margin: 0px;
 }
+

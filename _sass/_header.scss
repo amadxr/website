@@ -28,6 +28,11 @@ body > header {
 
     .logo, nav {
       float: none;
+
+      a {
+        display: none;
+        padding: $small-spacing / 2;
+      }
     }
   }
 }
