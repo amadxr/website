@@ -1,11 +1,10 @@
-$visual-grid: true;
-
 // Typography
 $base-font-family: "Crimson Text", serif;
 $heading-font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 
 // Font Sizes
 $base-font-size: 1.4em;
+$base-heading-size: 1.6em;
 
 // Line height
 $base-line-height: 1.5;
@@ -50,3 +49,6 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+
+

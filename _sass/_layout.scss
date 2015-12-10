@@ -18,23 +18,12 @@
   }
 }
 
-.full-width {
-  margin-left: -200px;
-  margin-right: -200px;
-  padding-left: -200px;
-  padding-right: -200px;
+img.full-width {
+  max-width: 150%;
+  width: auto;
+  margin-left: -25%;
 }
 
 .page {
   @include outer-container;
-  @include span-columns(12);
-}
-
-
-footer {
-  margin-bottom: $base-spacing;
-
-  img {
-    vertical-align: text-bottom;
-  }
 }

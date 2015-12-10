@@ -19,23 +19,23 @@ h6 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: golden-ratio($base-heading-size,  1);
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: golden-ratio($base-heading-size,  0);
   font-weight: normal;
   color: tint($base-font-color, 5%);
 }
 
 h3 {
-  font-size: 1.3em; // make a method for calculating these sizes?
+  font-size: golden-ratio($base-heading-size, -1);
   font-weight: normal;
-  color: tint($base-font-color, 20%);
+  color: $orange;
 }
 
 h4 {
-  font-size: 1.1em; // make a method for calculating these sizes?
+  font-size: golden-ratio($base-heading-size,  -2);
   font-weight: normal; 
   color: tint($base-font-color, 30%);
 }
@@ -57,12 +57,10 @@ a {
 
 blockquote {
   color: $green;
-  font-size: 1.5em; // sync with h3 font size
-  line-height: 1.4em;
-  font-weight: lighter;
+  font-size: golden-ratio($base-font-size, 0);
 }
 
-.caption {
-  text-align: center;
-  color: $medium-gray;
+.call-to-action {
+  font-weight: bold;
+  font-size: golden-ratio($base-heading-size, 0);
 }

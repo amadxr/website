@@ -2,13 +2,13 @@
 <html>
   {% include head.html %}
   <body>
-    {% include header.html %}
-    
     <div class="page">
+      {% include header.html %}
+
       {{ content }}
+      
+      {% include footer.html %}
+      {% include javascripts.html %}
     </div>
-    
-    {% include footer.html %}
-    {% include javascripts.html %}
   </body>
 </html>

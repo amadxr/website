@@ -1,4 +1,4 @@
-body > header {
+.page > header {
   @include clearfix;
   
   padding: $small-spacing $small-spacing ($small-spacing / 2) $small-spacing;
@@ -17,13 +17,13 @@ body > header {
 }
 
 @include media($tablet) {
-  body > header nav a {
+  .page > header nav a {
     padding: $tiny-spacing;
   }
 }
 
 @include media($mobile-landscape) {
-  body > header  {
+  .page > header  {
     text-align: center;
 
     .logo, nav {

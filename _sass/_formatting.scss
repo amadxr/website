@@ -1,13 +1,13 @@
+// Formatting of inline content elements
+// Not typography though. Put that in _typography.scss
+
 p.caption {
   text-align: center;
-  font-size: 0.9em;
   color: $medium-gray;
 }
 
 .call-to-action {
   text-align: center;
-  font-weight: bold;
-  font-size: 1.5em; // sync up with h3?
 }
 
 .upcase {
@@ -36,7 +36,7 @@ picture {
   max-width: 100%;
 }
 
-blockquote {
-  margin: 0px;
-}
+// blockquote {
+//   margin: 0px;
+// }
 

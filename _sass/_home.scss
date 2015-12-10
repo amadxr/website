@@ -1,12 +1,3 @@
-.four-wide {
-  @include outer-container;
-
-  li {
-    @include span-columns(3);
-    @include omega(4n);
-  }
-}
-
 section {
   @include row();
   text-align: center;
