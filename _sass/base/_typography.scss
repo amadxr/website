@@ -40,6 +40,11 @@ h4 {
   color: tint($base-font-color, 30%);
 }
 
+.page nav {
+  font-family: $heading-font-family;
+  font-size: 0.9em;
+}
+
 p {
   margin: 0 0 $small-spacing;
 }
