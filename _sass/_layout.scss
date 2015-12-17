@@ -1,6 +1,7 @@
 .two-split-section {
+  @include row();
   @include shift(2);
-  @include pad();
+
 }
 
 .two-split {
@@ -10,20 +11,38 @@
 @include media($mobile) {
   .two-split-section {
     @include shift(0);
+    @include pad();
   }
 
   .two-split {
-    @include span-columns(12 of 12);
-    @include omega(0);
+    @include span-columns(12);
   }
 }
 
-img.full-width {
-  max-width: 150%;
-  width: auto;
-  margin-left: -25%;
+img.wide {
+  @include span-columns(10);
+  @include shift(1);
+  margin-bottom: $small-spacing;
+  border: 1px solid $light-gray;
 }
 
 .page {
   @include outer-container;
+  background: white;
+  box-shadow: rgb(240,240,240) 0px 0px 15px;
+  border-left: 1px solid rgb(240,240,240);
+  border-right: 1px solid rgb(240,240,240);
+  @include pad();
+
+}
+
+@include media($tablet) {
+  .page {
+    padding: 0em;
+  }
+}
+
+
+body {
+  background: rgb(245,245,245);
 }

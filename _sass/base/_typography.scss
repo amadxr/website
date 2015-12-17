@@ -28,6 +28,27 @@ h2 {
   color: tint($base-font-color, 5%);
 }
 
+@include media($tablet) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+}
+
+@include media($mobile) {
+  h1 {
+    font-size: 1.4em;
+  }
+
+  h2 {
+    font-size: 1.0em;
+  }
+}
+
+
 h3 {
   font-size: golden-ratio($base-heading-size, -1);
   font-weight: normal;

@@ -5,8 +5,6 @@
 .title-slide {
   text-align: center;
   padding: $base-spacing;
-  background-image: url('http://7428.net/wp-content/uploads/2013/05/Construction-Paper-Cut.jpghttp://previews.123rf.com/images/catchat/catchat1303/catchat130300048/18489800-Plastered-white-wall-texture-Stock-Photo.jpg');
-  background-size: 100%;
 
   @include media($mobile) {
     padding: $small-spacing;

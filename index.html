@@ -11,11 +11,8 @@ layout: default
 
 
 <section>
+  <img data-src="http://resolve.imgix.net/pinrose.png" alt="Pinrose.com home page" class="editable wide imgix-fluid" />
   <div class="narrow">
-    <!--<img src="/images/pinrose-online-store.png" alt="Pinrose.com home page" class="editable full-width" />-->
-
-    <img src="http://placehold.it/3000x1000" alt="Pinrose.com home page" class="editable full-width" />
-    
     <p><strong class="upcase">Featured Client</strong> &mdash; Pinrose is a luxury brand that&#39;s making high quality fragrance a playful and engaging experience for their customers. They&#39;re on a mission to leverage technology to help visitors shop in exciting new ways. That&#39;s where we come in.&nbsp;<a href="/services/">Read the case study.</a></p>
   </div>
 </section>
@@ -45,7 +42,9 @@ layout: default
     </div>
   </section>
 
-  <p><strong class="upcase">New or existing</strong> &mdash; we're dedicated to increasing your revenue.</p>
+  <div class="narrow">
+    <p class="center-aligned"><strong class="upcase">New or existing</strong> &mdash; we're dedicated to increasing your revenue.</p>
+  </div>
 </section>
 
 <p>
@@ -72,7 +71,7 @@ layout: default
     <h2 class="editable">Who We Work With</h2>
     <p class="editable">We've been engaged by tech giants, fledgling start-ups, and bricks-and-mortar stores struggling with the complexities of moving online. What's the common thread? Solving tough business challenges keeps us at the top of our game.</p>
     <p>
-      <img src="/images/ecommerce-client-logos.png" class="editable" />
+      <img src="http://resolve.imgix.net/ecommerce-client-logos.png" class="editable imgix-fluid" />
     </p>
   </div>
 </section>
@@ -125,8 +124,14 @@ layout: default
         </li>
       {% endfor %}
     </ul>
+    <p class="editable center-aligned">
+      Get every blog post in your inbox
+    </p>
     <p>
-      Subscribe to our blog <input type="text" /> <input type="submit" value="subscribe" placeholder="your email" />
+    <form>
+      <input type="text" placeholder="Your email" /> <input type="submit" value="Subscribe" />
+    </form>
     </p>
   </div>
 </section>
+

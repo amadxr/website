@@ -6,6 +6,8 @@
 // $grid-columns: 12;
 // $max-width: 1200px;
 
+$visual-grid: false;
+
 // Neat Breakpoints
 
 $tablet: new-breakpoint(max-width 768px 8);
