@@ -1,5 +1,7 @@
 .full-screen {
-  height: 80vh;
+  height: 85vh;
+  background: $blue;
+  margin-bottom: -8vh;
 }
 
 .title-slide {
@@ -33,16 +35,12 @@
     transform: translateY(-50%);
   }
 
-  h2 {
-    font-weight: normal;
-    color: tint($base-font-color, 50%);
-    
-    a {
-      color: tint($blue, 30%);
+  h1, h2 a:hover {
+    color: darken($blue, 35%);
+  }
 
-      &:hover {
-        color: $blue;
-      }
-    }
+  h2, a {
+    font-weight: normal;
+    color: lighten($blue, 90%);
   }
 }

@@ -1,5 +1,8 @@
 footer {
-  margin-bottom: $base-spacing;
+  margin-top: $base-spacing;
+  background: $blue;
+  @include pad();
+  color: white;
 
   img {
     vertical-align: text-bottom;

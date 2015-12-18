@@ -28,10 +28,11 @@ img.wide {
 
 .page {
   @include outer-container;
+
   background: white;
-  box-shadow: rgb(240,240,240) 0px 0px 15px;
+  /*box-shadow: rgb(240,240,240) 0px 0px 15px;
   border-left: 1px solid rgb(240,240,240);
-  border-right: 1px solid rgb(240,240,240);
+  border-right: 1px solid rgb(240,240,240);*/
   @include pad();
 
 }
@@ -42,7 +43,37 @@ img.wide {
   }
 }
 
+section.colored {
+  @include pad();
+  margin: $base-spacing 0px;
+
+  blockquote {
+    color: rgba(255,255,255, 0.95);
+  }
+
+  h3 {
+    color: rgba(255,255,255, 0.95);
+  }
+}
+
+section.green {
+  background: $green;
+}
+
+section.gray {
+  background: $light-gray;
+
+  h3 {
+    color: rgba(42, 56, 67, 0.9);
+  }
+}
+
+section.orange {
+  background: $orange;
+  color: rgba(42, 56, 67, 0.9);
+}
 
 body {
-  background: rgb(245,245,245);
+  /*background: rgb(245,245,245);*/
+  background: white;
 }
