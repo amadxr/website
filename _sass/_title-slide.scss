@@ -1,12 +1,95 @@
 .full-screen {
   height: 85vh;
+
   background: $blue;
   margin-bottom: -8vh;
 }
 
+$circle-size: 35px;
+
 .title-slide {
+  .circles {
+    text-align: left;
+    font-size: 0px;
+    width: 100%;
+
+    position: absolute;
+  }
+
+  @keyframes dave {
+    0% {
+      background: rgba(255, 255, 255, 0.0);
+    }
+    10% {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    // 45% {
+    //   background: rgba(255, 255, 255, 0.1);
+    // }
+    50% {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    // 55% {
+    //   background: rgba(255, 255, 255, 0.1);
+    // }
+    95% {
+      background: rgba(255, 255, 255, 0.05);
+    }    
+    100% {
+      background: rgba(255, 255, 255, 0.0);
+    }
+  }
+
+  .circle:nth-child(3n) {
+    animation-duration: 7.5s;
+  }
+
+  .circle:nth-child(4n) {
+    animation-duration: 4s;
+  }
+
+  .circle:nth-child(5n) {
+    animation-duration: 4.5s;
+  }
+
+  .circle:nth-child(6n) {
+    animation-duration: 4.1s;
+  }
+
+  .circle:nth-child(7n) {
+    animation-duration: 3.9s;
+  }
+
+  .circle:nth-child(8n) {
+    animation-duration: 6.0s;
+  }
+
+  .circle:nth-child(9n) {
+    animation-duration: 4.5s;
+  }
+
+  .circle:nth-child(10n) {
+    animation-duration: 5.5s;
+  }
+
+
+  .circle {
+    //transition-timing-function: ease;
+    animation-name: dave;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    display: inline-block;
+    margin: 0px;
+
+    border-radius: 100px;
+    width: 50px;
+    padding-bottom: 50px;
+  }
+
+
   text-align: center;
-  padding: $base-spacing;
+  /*padding: $base-spacing;*/
 
   @include media($mobile) {
     padding: $small-spacing;
@@ -33,6 +116,7 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    //background: $blue;
   }
 
   h1, h2 a:hover {
