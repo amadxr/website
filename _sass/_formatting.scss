@@ -22,12 +22,27 @@ p.caption {
   text-align: center;
 }
 
+.feature-number {
+  font-weight: bold;
+  font-size: $base-heading-size;
+  font-family: $heading-font-family;
+  vertical-align: middle;
+  color: $orange;
+
+  span {
+    color: $medium-gray;
+    font-size: 50%;
+    vertical-align: super;
+  }
+}
+
 hr {
   width: 10%;
-  height: $base-border-height * 2;
+  height: $base-border-height;
   border: none;
-  background: $green;
+  background: $light-gray;
   margin: $base-spacing auto;
+
 }
 
 img,

@@ -10,7 +10,7 @@ label,
 select {
   //display: block;
   font-family: $base-font-family;
-  font-size: $base-font-size;
+  font-size: 1em;
 }
 
 label {
@@ -34,7 +34,7 @@ select[multiple=multiple] {
   box-shadow: $form-box-shadow;
   box-sizing: border-box;
   font-family: $base-font-family;
-  font-size: $base-font-size;
+  font-size: 1em;
   //margin-bottom: $small-spacing;
   vertical-align: middle;
   padding: $tiny-spacing;

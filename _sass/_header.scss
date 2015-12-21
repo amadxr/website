@@ -9,8 +9,12 @@
 
   nav {
     float: right;
+    margin-top: $tiny-spacing;
+    font-size: 0.75em;
 
     a {
+      vertical-align: text-bottom;
+      text-transform: uppercase;
       padding: $small-spacing / 1.5;
     }
   }

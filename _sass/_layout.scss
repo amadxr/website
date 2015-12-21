@@ -3,11 +3,10 @@
   @include shift(0);
   @include pad();
 
-
   .split {
     @include span-columns(4);
     @include pad();
-    border-right: 1px solid $light-gray;
+    border-right: $base-border-height solid $light-gray;
   }
 
   .split:last-child {
@@ -30,7 +29,7 @@ img.wide {
   @include span-columns(10);
   @include shift(1);
   margin-bottom: $small-spacing;
-  border: 1px solid $light-gray;
+  border: $base-border-height solid $light-gray;
 }
 
 .page {
