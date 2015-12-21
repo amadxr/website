@@ -1,21 +1,28 @@
-.two-split-section {
-  @include row();
-  @include shift(2);
 
-}
+.three-split-section {
+  @include shift(0);
+  @include pad();
 
-.two-split {
-  @include span-columns(5);
-}
 
-@include media($mobile) {
-  .two-split-section {
-    @include shift(0);
+  .split {
+    @include span-columns(4);
     @include pad();
+    border-right: 1px solid $light-gray;
   }
 
-  .two-split {
-    @include span-columns(12);
+  .split:last-child {
+    border-right: none;
+  }
+}
+
+@include media($tablet) {
+  .three-split-section {
+    @include shift(0);
+    @include pad();
+
+    .split {
+      @include span-columns(12);
+    }
   }
 }
 
@@ -43,7 +50,7 @@ img.wide {
   }
 }
 
-section.colored {
+.colored {
   @include pad();
   margin: $base-spacing 0px;
 
@@ -54,23 +61,38 @@ section.colored {
   h3 {
     color: rgba(255,255,255, 0.95);
   }
+
+  a {
+    color: rgba(255,255,255, 0.95);
+  }
 }
 
-section.green {
+.green {
   background: $green;
+
+
+  color: rgba(42, 56, 67, 0.90);
+
+  h3, h2 {
+    color: rgba(255,255,255, 0.95);
+  }
 }
 
-section.gray {
+.gray {
   background: $light-gray;
 
   h3 {
     color: rgba(42, 56, 67, 0.9);
   }
+
+  a {
+    color: rgba(42, 56, 67, 0.9);
+  }
 }
 
-section.orange {
+.orange {
   background: $orange;
-  color: rgba(42, 56, 67, 0.9);
+  color: rgba(42, 56, 67, 0.90);
 }
 
 body {
