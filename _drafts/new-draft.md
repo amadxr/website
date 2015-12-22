@@ -1,8 +1,18 @@
 ---
 layout: post
-title: New Draft
-date: 2015-11-17T20:22:30.000Z
-categories: jekyll update
+title: devmob 2015
+date: 2015-11-17T20:22:00.000Z
+categories: community
 ---
 
-Hello from a draft.
+Over the weekend, Mark Haylock and I had the pleasure of attending the annual devmob mobile development conference in Auckland. The conference is run as a self-organising BarCamp format. Each morning, attendees post session topics on a board. The types of sessions range from prepared talks to open discussions. The idea is that everyone who attends has some knowledge that's worth sharing and it's not just down to a few well-paid "experts" to dictate the session topics.
+
+This year there was a great deal of buzz about Apple open-sourcing the Swift programming language. I attended some excellent sessions on App Store rejection horror stories, Swift tips and tricks and Auto Layout using SnapKit. Mark and I ran a session on working with legacy code and how to avoid writing it, which we plan on turning into a couple of blog posts.
+
+The world of mobile development has changed considerably since the first devmob conference was held in 2010 (then called NZiDev). Back then the iPhone was the main mobile platform and most attendees were pursuing iPhone development as a hobby, or hoping to make a fortune with a top-selling app. The success of the App Store had opened our eyes to the exciting opportunities in the world of mobile development. Many of the sessions at the early conferences focused on app marketing strategies, indie game development and learning the iOS SDK.
+
+In 2015, mobile devices are ubiquitous and a core part of online business. The sessions at devmob are now more focused on team-based development practices, writing apps for business and discussing the latest changes to the major platforms. There have been recurring topics over the years, such as dealing with the challenges of cross-platform development. It was interesting to note that this year there were no sessions on mobile game development, which could be a testament to the difficulty of making money selling indie games on the App Store these days.
+
+It's been exciting to see mobile development mature over the years. Going from a purely hobbyist pursuit to revolutionising the way people communicate and conduct business. You don't get many chances in a lifetime to witness this kind of transformation and we're still only a few years in. I can't wait to see what further exciting changes there are in store over the next few years at devmob.
+
+Thanks to Nat Torkington, Jenine Abarbanel and the entire devmob team for organising another fantastic weekend. This is New Zealand's only conference devoted to mobile development and the great local developer community that's come out of it simply wouldn't exist without their hard work.
