@@ -32,6 +32,10 @@ img.wide {
   border: $base-border-height solid $light-gray;
 }
 
+.top-spacing {
+  margin-top: $base-spacing;
+}
+
 .page {
   @include outer-container;
 
