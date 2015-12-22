@@ -22,7 +22,7 @@ layout: default
 </section>
 <section>
   <p class="call-to-action">
-    <a href="/work.html" class="editable">More work</a>
+    <a href="/work.html" class="editable">See more work</a>
   </p>
 </section>
 <hr />
@@ -34,9 +34,11 @@ layout: default
   </div>
 
   <section class="three-split-section">
-    <div class="left-aligned split editable"><h3>Build</h3><p>Setting up your online store <em>correctly</em> can be a challenge, especially if you're running a bricks-and-mortar business or have complex fulfillment or localization requirements. We customize your store to match your unique business practices.</p><p>&nbsp;</p></div>
-    <div class="left-aligned split editable"><h3>Maintain</h3><p>Even the most successful eCommerce sites experience technical issues. Our job is to minimize costly disruptions by rigorous monitoring and security updates. We also perform upgrades to the Ruby, Rails, and Spree or Solidus backend.</p></div>
-    <div class="left-aligned split editable"><h3>Optimize</h3><p>We work to incrementally boost your site's performance. Using analytics and <a href="/services/">Machine Learning</a>, we strategically improve the customer experience for web and mobile. This raises key performance indicators like average order size and conversion rate</p></div>
+
+    <div class="left-aligned split editable"><h3>Build</h3><p>Setting up your online store <em>correctly</em> can be a challenge, especially if you're running a bricks-and-mortar business or have complex fulfillment or localization requirements. We customize your store to match your unique business practices and workflow.</p></div>
+    <div class="left-aligned split editable"><h3>Maintain</h3><p>Even the most successful eCommerce sites experience technical issues. Our job is to minimize costly disruptions by rigorous monitoring and security updates. We also perform upgrades to the <a href="">Ruby, Rails</a>, and <a href="">Spree</a> or <a href="">Solidus</a> backend.</p></div>
+    <div class="left-aligned split editable"><h3>Optimize</h3><p>We work to incrementally boost your site's performance. Using analytics and <a href="/services/">Machine Learning</a>, we strategically improve the customer experience for web and mobile. This raises key performance indicators like average order size and conversion rate.</p></div>
+
   </section>
 
 </section>
@@ -46,9 +48,9 @@ layout: default
   <div class="narrow">
     <h2 class="editable">Measurable Results&nbsp;</h2>
     <ul class="left-aligned">
-      <li class="editable"><strong><span class="feature-number">71<span>%</span></span> increase in revenue</strong> when using machine learning to recommend wine on United Cellars.</li>
-      <li class="editable"><strong><span class="feature-number">60<span>%</span></span> reduction in hosting costs</strong> with Pinrose when auditing hosting infrastructure.</li>
-      <li class="editable"><strong><span class="feature-number">34<span>%</span></span> increase of mobile traffic</strong> after converting Wardrobe Supplies to use responsive design.</li>
+      <li class="editable"><strong><span class="feature-number">71<span>%</span></span> increase in revenue</strong> when using machine learning to recommend wine on <a href="#">United Cellars</a>.</li>
+      <li class="editable"><strong><span class="feature-number">60<span>%</span></span> reduction in hosting costs</strong> with <a href="">Pinrose</a> when auditing hosting infrastructure.</li>
+      <li class="editable"><strong><span class="feature-number">34<span>%</span></span> increase of mobile traffic</strong> after converting <a href="">Wardrobe Supplies</a> to use responsive design.</li>
     </ul>
   </div>
 </section>
@@ -70,7 +72,7 @@ layout: default
 <section>
   <div class="narrow">
     <h2 class="editable">What Our Clients Say</h2>
-    <blockquote class="editable">"Just wanted to thank you once more for your help with our new site. It was a pleasure to work with you all. I appreciate the expertise, knowledge and feedback you provided during this process, and I'm happy you built a site we can grow with."</blockquote>
+    <blockquote>"Just wanted to thank you once more for your help with our new site. It was a pleasure to work with you all. I appreciate the expertise, knowledge and feedback you provided during this process, and I'm happy you built a site we can grow with."</blockquote>
     <p class="caption editable">
       &mdash; Greg Hall, Marketing &amp; Communications Manager, CSDC
     </p>
@@ -83,10 +85,11 @@ layout: default
     <ul>
       {% for post in site.posts %}
         <li>
-          <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </li>
       {% endfor %}
     </ul>
+    <hr/>
     <p class="editable center-aligned">
       Get every blog post in your inbox
     </p>
