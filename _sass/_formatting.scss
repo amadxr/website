@@ -42,7 +42,6 @@ hr {
   border: none;
   background: $light-gray;
   margin: $base-spacing auto;
-
 }
 
 img,
@@ -53,4 +52,13 @@ picture {
 
 blockquote {
   margin: 0em;
+}
+
+.screenshot {
+  border-radius: 5px 5px 0px 0px; 
+  padding-top: $base-spacing;
+  background: $light-gray;
+  background-repeat: no-repeat;
+  background-image: url(/images/browser-chrome-buttons.svg);
+  background-position: $base-spacing / 3.8 $base-spacing / 3.8;
 }
