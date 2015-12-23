@@ -2,20 +2,3 @@ section {
   @include row();
   text-align: center;
 }
-
-.narrow {
-  @include span-columns(8 of 12);
-  @include shift(2);
-  
-  p {
-    text-align: left;
-  }
-}
-
-@include media($mobile) {
-  .narrow {
-    @include span-columns(12 of 12);
-    @include shift(0);
-    @include pad($small-spacing);
-  }
-}
