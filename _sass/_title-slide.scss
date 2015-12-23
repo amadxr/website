@@ -8,6 +8,7 @@
 $circle-size: 35px;
 
 .title-slide {
+  @include pad();
   .circles {
     text-align: left;
     font-size: 0px;
@@ -124,7 +125,6 @@ $circle-size: 35px;
   }
 
   h2, a {
-    font-weight: normal;
     color: lighten($blue, 90%);
   }
 }
