@@ -1,4 +1,23 @@
 
+.narrow {
+  @include span-columns(8 of 12);
+  @include shift(2);
+  
+  p {
+    text-align: left;
+  }
+}
+
+@include media($mobile) {
+  .narrow {
+    @include span-columns(12 of 12);
+    @include shift(0);
+    @include pad($small-spacing);
+  }
+}
+
+
+
 .three-split-section {
   @include shift(0);
   @include pad();
@@ -20,10 +39,13 @@
     @include pad();
 
     .split {
-      @include span-columns(12);
+      border-right: none;
+      @include span-columns(8);
     }
   }
 }
+
+
 
 img.wide {
   @include span-columns(10);
@@ -38,11 +60,6 @@ img.wide {
 
 .page {
   @include outer-container;
-
-  background: white;
-  /*box-shadow: rgb(240,240,240) 0px 0px 15px;
-  border-left: 1px solid rgb(240,240,240);
-  border-right: 1px solid rgb(240,240,240);*/
   @include pad();
 
 }
@@ -96,9 +113,4 @@ img.wide {
 .orange {
   background: $orange;
   color: rgba(42, 56, 67, 0.90);
-}
-
-body {
-  /*background: rgb(245,245,245);*/
-  background: white;
 }

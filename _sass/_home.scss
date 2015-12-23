@@ -16,6 +16,6 @@ section {
   .narrow {
     @include span-columns(12 of 12);
     @include shift(0);
-    @include pad();
+    @include pad($small-spacing);
   }
 }
