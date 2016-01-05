@@ -11,6 +11,7 @@ select {
   //display: block;
   font-family: $base-font-family;
   font-size: 1em;
+  margin-bottom: $small-spacing;
 }
 
 label {
@@ -35,7 +36,7 @@ select[multiple=multiple] {
   box-sizing: border-box;
   font-family: $base-font-family;
   font-size: 1em;
-  //margin-bottom: $small-spacing;
+  
   vertical-align: middle;
   padding: $tiny-spacing;
   transition: border-color $base-duration $base-timing;
