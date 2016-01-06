@@ -2,6 +2,10 @@
 
 <script type="text/javascript" async>
   $(document).ready(function() {
+    $.getScript("https://use.typekit.net/plv3wfy.js", function( data, textStatus, jqxhr ) {
+      try{Typekit.load({ async: true });}catch(e){}
+    });
+
     $.getScript("/js/imgix.js", function( data, textStatus, jqxhr ) {
       $.getScript("/js/imgix.jquery.js", function( data, textStatus, jqxhr ) {
         imgix.onready(function() {

@@ -6,9 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="{{ site.description }}">
 
-    <script src="https://use.typekit.net/plv3wfy.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    {% include javascripts.html %}
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 </head>
