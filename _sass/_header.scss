@@ -17,6 +17,11 @@
       vertical-align: text-bottom;
       text-transform: uppercase;
       padding: $small-spacing / 1.5;
+
+      &.active {
+        color: $base-font-color;
+        text-decoration: none;
+      }
     }
   }
 }
