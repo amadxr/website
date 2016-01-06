@@ -1,4 +1,4 @@
-<script src="/js/jquery.js"></script>
+<script src="/js/jquery.min.js"></script>
 
 <script type="text/javascript" async>
   $(document).ready(function() {
@@ -6,8 +6,8 @@
       try{Typekit.load({ async: true });}catch(e){}
     });
 
-    $.getScript("/js/imgix.js", function(_, _, _) {
-      $.getScript("/js/imgix.jquery.js", function(_, _, _) {
+    $.getScript("/js/imgix.min.js", function(_, _, _) {
+      $.getScript("/js/imgix.jquery.min.js", function(_, _, _) {
         imgix.onready(function() {
           // https://github.com/imgix/imgix.js/blob/master/docs/api.md
           imgix.fluid({
