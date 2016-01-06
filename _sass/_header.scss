@@ -5,6 +5,11 @@
 
   .logo {
     float: left;
+
+    svg {
+      width: 289px;
+      height: 35px;
+    }
   }
 
   nav {
@@ -35,7 +40,7 @@
 @include media($mobile-landscape) {
   .page > header  {
     text-align: center;
-
+    
     .logo, nav {
       float: none;
 

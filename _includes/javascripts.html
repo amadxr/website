@@ -2,12 +2,12 @@
 
 <script type="text/javascript" async>
   $(document).ready(function() {
-    $.getScript("https://use.typekit.net/plv3wfy.js", function( data, textStatus, jqxhr ) {
+    $.getScript("https://use.typekit.net/plv3wfy.js", function(_, _, _) {
       try{Typekit.load({ async: true });}catch(e){}
     });
 
-    $.getScript("/js/imgix.js", function( data, textStatus, jqxhr ) {
-      $.getScript("/js/imgix.jquery.js", function( data, textStatus, jqxhr ) {
+    $.getScript("/js/imgix.js", function(_, _, _) {
+      $.getScript("/js/imgix.jquery.js", function(_, _, _) {
         imgix.onready(function() {
           // https://github.com/imgix/imgix.js/blob/master/docs/api.md
           imgix.fluid({

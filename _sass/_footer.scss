@@ -2,7 +2,9 @@ footer {
   margin-top: $base-spacing;
   @include pad();
 
-  img {
+  svg {
+    width: 180px;
+    height: 25px;
     vertical-align: text-bottom;
   }
 }
