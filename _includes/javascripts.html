@@ -1,15 +1,19 @@
 <script src="/js/jquery.js"></script>
-<script src="/js/imgix.js"></script>
-<script src="/js/imgix.jquery.js"></script>
 
-<script type="text/javascript">
-  imgix.onready(function() {
-    // https://github.com/imgix/imgix.js/blob/master/docs/api.md
-    imgix.fluid({
-      pixelStep: 10,
-      updateOnResize: true,
-      updateOnPinchZoom: true,
-      highDPRAutoScaleQuality: true
+<script type="text/javascript" async>
+  $(document).ready(function() {
+    $.getScript("/js/imgix.js", function( data, textStatus, jqxhr ) {
+      $.getScript("/js/imgix.jquery.js", function( data, textStatus, jqxhr ) {
+        imgix.onready(function() {
+          // https://github.com/imgix/imgix.js/blob/master/docs/api.md
+          imgix.fluid({
+            pixelStep: 10,
+            updateOnResize: true,
+            updateOnPinchZoom: true,
+            highDPRAutoScaleQuality: true
+          });
+        });
+      });
     });
   });
 </script>
