@@ -4,8 +4,12 @@
 
 <script type="text/javascript">
   imgix.onready(function() {
+    // https://github.com/imgix/imgix.js/blob/master/docs/api.md
     imgix.fluid({
-      pixelStep: 10
+      pixelStep: 10,
+      updateOnResize: true,
+      updateOnPinchZoom: true,
+      highDPRAutoScaleQuality: true
     });
   });
 </script>
