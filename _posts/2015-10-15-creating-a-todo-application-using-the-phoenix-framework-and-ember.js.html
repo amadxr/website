@@ -1,0 +1,270 @@
+---
+layout: post
+title: Creating a Todo Application using the Phoenix Framework and Ember.js
+---
+
+<p>We’re always on the lookout for relevant technologies for our clients. Today we’re going to look at a web application framework called <a href="http://www.phoenixframework.org" title="http://www.phoenixframework.org" target="_blank">Phoenix</a>. Phoenix is built on Elixir, a blazing fast functional programming language that will feel familiar in some ways if you’ve been writing Ruby.
+</p>
+<p>
+In this tutorial we’re going to create a simple client-server web application using Phoenix and Elixir on the server, with PostgreSQL as our store data. On the client side, the Ember Javascript framework will provide the user interface and communicate changes to the server. This combination of components is coming to be known as the <a href="https://medium.com/@j_mcnally/the-peep-stack-b7ba5afdd055" title="https://medium.com/@j_mcnally/the-peep-stack-b7ba5afdd055" target="_blank">PEEP (Postgres, Elixir, Ember, Phoenix) stack</a>.
+</p>
+
+<p>Here’s what the todo app we’ll be building looks like:</p>
+<p><img src="//dl3u9qgv64mry.cloudfront.net/system/images/W1siZiIsIjIwMTUvMTAvMTMvMjMvNDQvNDYvNDM0L1RvX0RvX2FwcGxpY2F0aW9uX3NjcmVlbnNob3QucG5nIl1d/To%20Do%20application%20screenshot.png" title="To Do Application Screenshot" alt="To Do Application Screenshot" data-rel="225x255" width="977" height="585" /></p>
+
+<h2>Creating the Phoenix App</h2>
+<p>Before you get started, make sure you followed the <a href="http://www.phoenixframework.org/docs/installation" title="http://www.phoenixframework.org/docs/installation" target="_blank">Phoenix Installation Guide</a> so you have all the necessary dependencies installed.</p>
+<h3>1) Create the skeleton application</h3>
+<p>First up, let’s run the following to create a new Phoenix app:</p>
+<pre><code class="ruby terminal hljs">$ mix phoenix.new phoenix_todos_api --no-brunch
+$ cd phoenix_todos_api</code>
+</pre>
+<p>We are excluding <a href="http://brunch.io/" title="http://brunch.io/" target="_blank">Brunch.io</a> because our API-only app will not need asset management.&#160;When you are prompted to "Fetch and install dependencies?" answer <code>Y</code>.</p>
+<h3>2) Create the database</h3>
+<p>Next we’ll create the database. Make sure that the correct credentials for your PostgreSQL server are in both <code>config/dev.exs</code> and <code>config/test.exs</code>. The default credentials are:</p>
+<pre><code class="elixir hljs"># ...
+username: "postgres",
+password: "postgres",
+# ...</code>
+</pre>
+<p class="tip">Tip: if you have installed PostgreSQL using Homebrew you can just remove the username and password lines and it should just work.
+</p>
+<p>With the correct credentials in place, run:</p>
+<pre><code class="ruby terminal hljs">$ mix ecto.create</code>
+</pre>
+<p>You might be prompted to install “rebar”, accept this to continue. After the app has finished compiling you will see:</p>
+<pre><code class="ruby terminal hljs">$ The database for PhoenixTodosApi.Repo has been created.</code>
+</pre>
+<h3>3) Boot the server</h3>
+<p>Next let’s start the Phoenix web server:
+</p>
+<pre><code class="ruby terminal hljs">$ mix phoenix.server</code>
+</pre>
+<p>The app should now be accessible at <a href="http://localhost:4000/" rel="nofollow" target="_blank">http://localhost:4000</a> and will display Phoenix's default landing page.</p>
+<p>Exit the server by hitting <code>Ctrl + C</code> twice.</p>
+<h3>4) Generate a Todo resource</h3>
+<p>The single resource in our API is the Todo item. Each Todo item stores a <code>title</code> string and an <code>is_completed</code> boolean. Phoenix provides a generator for creating all the files necessary for a JSON resource and we can invoke that using:</p>
+<pre><code class="ruby terminal hljs">$ mix phoenix.gen.json Todo todos title:string is_completed:boolean</code>
+</pre>
+<p>The output from the generator will list the files it's created:</p>
+<pre><code class="ruby terminal hljs">* creating web/controllers/todo_controller.ex
+* creating web/views/todo_view.ex
+* creating test/controllers/todo_controller_test.exs
+* creating web/views/changeset_view.ex
+* creating priv/repo/migrations/20150929044516_create_todo.exs
+* creating web/models/todo.ex
+* creating test/models/todo_test.exs</code>
+</pre>
+<p>As you can see, we have the controller, model and their corresponding test files created for us. We also get a migration to update the database, and finally we also have two views created: one <code>TodoView</code> for the new controller and another more generic <code>ChangesetView</code> that will be used by all JSON controllers to render any validation errors on our models.</p>
+
+<h3>5) Add the route</h3>
+<p>Next we need to setup a route to tell Phoenix how to connect incoming requests to the newly generated <code>TodoController.</code>
+</p>
+<p>Open up <code>web/router.ex.</code> Add a new scope at the bottom:
+
+</p>
+<pre><code class="hljs elixir">defmodule PhoenixTodosApi.Router do
+  # ...
+  scope "/", PhoenixTodosApi do
+    pipe_through :api
+    resources "/todos", TodoController, except: [:new, :edit]
+  end
+end
+</code>
+</pre>
+
+Note we're using the <code>api</code> pipeline. More on <a href="http://www.phoenixframework.org/docs/routing#section-pipelines" target="_blank">Phoenix pipelines here</a>.
+
+<h3>6) Migrate the database</h3>
+<p>Next we need to migrate the database to create the table where <code>Todos</code> will be stored. </p>
+<pre><code class="ruby terminal hljs">$ mix ecto.migrate
+…
+17:55:14.586 [info]  == Running PhoenixTodosApi.Repo.Migrations.CreateTodo.change/0 forward
+17:55:14.586 [info]  create table todos
+17:55:14.617 [info]  == Migrated in 0.2s</code>
+</pre>
+
+<h3>7) Seed the database</h3>
+<p>Start the server up again:</p>
+<pre><code class="ruby terminal hljs">$ mix phoenix.server</code>
+</pre>
+<p>Now we can visit <a href="http://localhost:4000/todos" rel="nofollow" target="_blank">http://localhost:4000/todos</a> to access our todos but you’ll notice that we don’t have any yet.</p>
+<p>Let’s fix this by seeding the database with some initial data. Add the following lines to <code>priv/repo/seeds.exs:</code>
+</p>
+<pre><code class="elixir hljs">alias PhoenixTodosApi.Repo
+alias PhoenixTodosApi.Todo
+
+Repo.insert!(%Todo{title: "Create the Phoenix App", is_completed: true})
+Repo.insert!(%Todo{title: "Prepare the Ember App", is_completed: false})
+Repo.insert!(%Todo{title: "Ensure the Apps Work Together", is_completed: false})
+</code>
+</pre>
+<p>To load in the seeds run:</p>
+<pre><code class="ruby terminal hljs">$ mix run priv/repo/seeds.exs</code>
+</pre>
+<p>Now when we visit <a href="http://localhost:4000/todos" rel="nofollow" target="_blank">http://localhost:4000/todos</a> we see some todos!</p>
+<pre><code class="json hljs">{
+  "data": [{
+    "title": "Create the Phoenix App",
+    "is_completed": true,
+    "id": 1
+  }, {
+    "title": "Prepare the Ember App",
+    "is_completed": false,
+    "id": 2
+  }, {
+    "title": "Ensure the Apps Work Together",
+    "is_completed": false,
+    "id": 3
+  }]
+}</code>
+</pre>
+<p>We now have a basic API up and running. It’s time to start working on the client side of the application.</p>
+<h2>Preparing the Ember App</h2>
+<p>For the client side we’ll be using an <a href="http://www.ember-cli.com" title="http://www.ember-cli.com" target="_blank">Ember CLI</a> implementation of <a href="http://todomvc.com/" title="http://todomvc.com/" target="_blank">TodoMVC.com</a>.</p>
+<p>Before completing the following steps, make sure you have followed the installation part of Ember CLI's <a href="http://www.ember-cli.com/user-guide/#getting-started" title="http://www.ember-cli.com/user-guide/#getting-started" target="_blank">Getting Started</a>.</p>
+<h3>1) Clone and install dependencies</h3>
+<p>Clone the repo for the Ember App and change into the project’s directory</p>
+<pre><code class="ruby terminal hljs">$ git clone https://github.com/ember-cli/ember-cli-todos.git<br />$ cd ember-cli-todos</code>
+</pre>
+<p>Install the npm dependencies with:</p>
+<pre><code class="ruby terminal hljs">$ npm install</code>
+</pre>
+<p>And the bower dependencies with:</p>
+<pre><code class="ruby terminal hljs">$ bower install</code>
+</pre>
+<h3>2) Start Ember’s server</h3>
+<p>To confirm that everything is installed as it should be, boot the app with:</p>
+<pre><code class="ruby terminal hljs">$ ember server</code>
+</pre>
+<p>Visit <a href="http://localhost:4200" rel="nofollow" target="_blank">http://localhost:4200</a> in your browser. At this point you can add todos, but it is only using in-memory storage and todos are not persisted when you refresh the page.</p>
+<h3>Connecting Ember to Phoenix</h3>
+<p>So far we have a working server-side API app written with Phoenix, and a working client-side app written with Ember. But the two apps aren't talking to each other. Next we’ll look at connecting the two apps together and have our todos persisted.&#160;</p>
+<h3>Changes to the Ember App</h3>
+<h4>1) Configuring Ember Data to use Phoenix</h4>
+<p>Instead of using in-memory storage, we need to configure <a href="https://github.com/emberjs/data" title="https://github.com/emberjs/data" target="_blank">Ember Data</a> to use our Phoenix API as a backend instead. To do this, replace the contents of <code>app/adapters/application.js</code> with:
+</p>
+<pre><code class="javascript hljs">import config from '../config/environment';
+import FixtureAdapter from 'ember-data-fixture-adapter';
+import DS from 'ember-data';
+
+var adapter;
+if (config.environment === 'test') {
+  adapter = FixtureAdapter.extend({});
+} else {
+  adapter = DS.RESTAdapter.extend({
+    host: 'http://localhost:4000'
+  });
+}
+
+export default adapter;</code>
+</pre>
+<p><a href="http://jsonapi.org/" title="http://jsonapi.org/" target="_blank"></a>Note that if the app is booted under the test environment then we are going to continue to use the original <code>FixtureAdapter</code>, but for all other environments we are now using the <code>RESTAdapter</code> and instructing it to look for our Phoenix API at <a href="http://localhost:4000/" rel="nofollow" target="_blank">http://localhost:4000</a>.
+</p>
+<p class="tip"><strong>Tip:</strong> The default adapter for Ember Data is actually the <code>JSONAPIAdapter</code> which expects an API that is modeled after the <a href="http://jsonapi.org/" title="http://jsonapi.org/" target="_blank">JSON API Spec</a>. If you are planning to build a serious API, it would be a good strategy to explore following this specification (perhaps by using the <a href="https://github.com/AgilionApps/ja_serializer" title="https://github.com/AgilionApps/ja_serializer" target="_blank">ja_serializer</a> or <a href="https://github.com/jeregrine/jsonapi " title="https://github.com/jeregrine/jsonapi " target="_blank">jsonapi</a> packages). However for the purposes for this tutorial we using the <code>RESTAdapter</code> in order to keep our example simple.
+</p>
+<h4>2) Configuring the serializer</h4>
+<p>By default Ember Data expects our JSON to use camelCasing for key names, but our Phoenix API is using snake_case. To work around this we must also customise the serializer that Ember uses.</p>
+<p>First create a <code>serializers</code> directory:</p>
+<pre><code class="ruby terminal hljs">$ mkdir -p app/serializers/</code>
+</pre>
+<p>and then create a file at <code>app/serializers/application.js</code> and copy in this code:</p>
+<pre><code class="javascript hljs">import config from '../config/environment';
+import DS from 'ember-data';
+import Ember from 'ember';
+
+var serializer;
+if (config.environment === 'test') {
+  serializer = DS.JSONSerializer.extend({});
+} else {
+  serializer = DS.RESTSerializer.extend({
+    keyForAttribute(attr) {
+      return Ember.String.decamelize(attr);
+    }
+  });
+}
+
+export default serializer;</code>
+</pre>
+<p>Again we’re using a different serializer in the test environment, but otherwise we provide a custom <code>RESTSerializer</code> that uses Ember's builtin in <code>decamelize</code> adapter to translate all Ember Data model attributes into snake_case. This is a fairly simplistic approach, but will work for the our purposes today.</p>
+<h4>3) Setting up CORS</h4>
+
+<p>Because our client and server are going to be hosted from different ports we’ll need to put in place security policies that allow them to communicate. First we’ll update the <a href="https://en.wikipedia.org/wiki/Content_Security_Policy" title="https://en.wikipedia.org/wiki/Content_Security_Policy" target="_blank">CSP headers</a> that the Ember server is providing. Modify the contents of <code>ENV.contentSecurityPolicy</code> for the development environment, inside of <code>config/environment.js:</code>
+</p>
+<pre><code class="javascript hljs">ENV.contentSecurityPolicy = {
+  // ...
+  'connect-src': "'self' http://localhost:*",
+  // ...
+}</code>
+</pre>
+<p>The change we have made here is to append <code>http://localhost:*</code> to the <code>connect-src</code> rule, permitting connections to any port on localhost.
+</p>
+<p>We will also need to add <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" title="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">CORS headers</a> to the Phoenix App, and to do so we need to know what port the Ember App will be running from. Let's set the port to 9000 inside of the project’s <code>.ember-cli</code> config file (found in the root directory of the Ember App):</p>
+<pre><code class="javascript hljs">{
+  // ...
+  "port": 9000
+}</code>
+</pre>
+<h3>Changes to the Phoenix App</h3>
+<p>We need to add <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" title="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">CORS headers</a> to the app so the browser will permit Ember to make requests to it.</p>
+<h4>1) Setting up cors_plug</h4>
+<p>We can do this by employing an open source <a href="http://www.phoenixframework.org/docs/understanding-plug" title="http://www.phoenixframework.org/docs/understanding-plug" target="_blank">plug</a> called <a href="https://github.com/mschae/cors_plug" title="https://github.com/mschae/cors_plug" target="_blank">cors_plug</a>. To use it we need to add it to our dependencies in <code>mix.exs</code>:
+</p>
+<pre><code class="elixir hljs">def deps do
+  # ...
+  {:cors_plug, "~&gt; 0.1.3"},
+  # ...
+end</code>
+</pre>
+<p>And then install it with:</p>
+<pre><code class="ruby terminal hljs">$ mix deps.get</code>
+</pre>
+<p>Once installed we can add it to the app’s endpoint, found in <code>lib/phoenix_todos_api/endpoint.ex</code>:</p>
+<pre><code class="elixir hljs">defmodule PhoenixTodosApi.Endpoint do
+  # ...
+  plug CORSPlug, [origin: "http://localhost:9000"] # add this line
+  plug PhoenixTodosApi.Router
+end</code>
+</pre>
+<p>We’ve placed it above&#160;<code>PhoenixTodosApi.Router</code> in the pipeline, and we are also passing it <code>http://localhost:9000</code> as the origin, which is using the port we configured the Ember App to run on.</p>
+<h4>2) Configuring the JSON root keys</h4>
+<p>The <code>RESTAdapter</code> in Ember expects the root key of our JSON responses to map to the Ember Data model it should be deserialized into. For the Todo model this will mean <code>todos</code> for a collection of todos, and <code>todo</code> for a single todo. But when we ran <code>mix phoenix.gen.json Todo</code> it set up the TodoView to always respond with <code>data</code> as the root key.</p>
+<p>Let's change the JSON output to use <code>todos</code> as the root key for a collection of todos, and <code>todo</code> as the root key for a single todo. First we will update the controller test to expect this change. Open up <code>test/controllers/todo_controller_test.exs</code> and replace all instances of <code>["data"]</code> with <code>["todo"]</code> (there should be 4 replacements). Then find the test for the <code>:index</code> action and change the expected root from <code>["todo"]</code> to <code>["todos"]</code>:</p>
+<pre><code class="elixir hljs">test "lists all entries on index", %{conn: conn} do
+  conn = get conn, todo_path(conn, :index)
+  assert json_response(conn, 200)["todos"] == []
+end</code>
+</pre>
+<p>Now run the controller test and you should see 4 failures:</p>
+<pre><code class="ruby terminal hljs">$ mix test test/controllers/todo_controller_test.exs
+...
+Finished in 0.4 seconds (0.3s on load, 0.1s on tests)
+8 tests, 4 failures</code>
+</pre>
+<p><br />To get the tests passing we can modify the root key specified for the <code>index.json</code> and <code>show.json</code> views. We can find these in <code>web/views/todo_view.ex</code>:</p>
+<pre><code class="elixir hljs">def render("index.json", %{todos: todos}) do
+  # '%{data:' replaced with '%{todos:':
+  %{todos: render_many(todos, PhoenixTodosApi.TodoView, "todo.json")}
+end
+
+def render("show.json", %{todo: todo}) do
+  # '%{data:' replaced with '%{todo:':
+  %{todo: render_one(todo, PhoenixTodosApi.TodoView, "todo.json")}
+end</code>
+</pre>
+<p>Let’s run the tests again to ensure everything is now passing:</p>
+<pre><code class="ruby terminal hljs">$ mix test test/controllers/todo_controller_test.exs
+...
+Finished in 0.4 seconds (0.3s on load, 0.1s on tests)
+8 tests, 0 failures</code>
+</pre>
+<p>Our Phoenix App is now ready to accept requests from the Ember App.</p>
+<h2>Testing the Apps Together</h2>
+<p>We can verify that our apps work together by booting each one, starting with Phoenix:</p>
+<pre><code class="ruby terminal hljs">$ mix phoenix.server</code>
+</pre>
+<p>Followed by Ember:</p>
+<pre><code class="ruby terminal hljs">$ ember server</code>
+</pre>
+<p>And then visiting <a href="http://localhost:9000/" rel="nofollow" target="_blank">http://localhost:9000</a> in our browser.</p>
+<p>We should see the Ember App populated with the data we seeded into the Phoenix App previously. Any changes we make in the Ember App are persisted to the Phoenix App. You can watch the log output from <code>mix phoenix.server</code> to see this in action. If we refresh the page, your changes have been persisted.</p>

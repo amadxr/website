@@ -1,0 +1,40 @@
+---
+layout: post
+title: Creativity in Coding
+---
+
+<p>While working on a project recently, I stumbled across this snippet of code:</p>
+<pre style="color:#000020;background:#f6f8ff;">Spree::Product<span style="color:#308080; ">.</span>class_eval <strong>do</strong>
+  <span style="color:#308080; ">...</span>
+  <strong>def</strong> get_gift_bgcolor
+    <span style="color:#1060b6; ">'#fff0f5'</span>
+  <strong>end</strong>
+  <span style="color:#308080; ">...</span>
+<strong>end</strong>
+</pre>
+<p>It immediately struck me as being rather strange so I shared it with the team. This is their feedback:</p>
+<ul><li><span style="background-color: transparent;">“should be in CSS”</span>
+</li>
+<li><span style="background-color: transparent;">“awesome on so many levels” (<em>sarcasm</em>)</span>
+</li>
+<li><span style="background-color: transparent;">“coded string which should be a constant somewhere”</span>
+</li>
+<li><span style="background-color: transparent;">“indentation looks good”</span>
+</li>
+<li><span style="background-color: transparent;">“prefixing with get_ is redundant”</span>
+</li>
+<li><span style="background-color: transparent;">“a sure sign the author isn’t a Ruby-native”</span>
+</li>
+<li><span style="background-color: transparent;">“the ‘bgcolor’ contraction should be avoided”</span>
+</li>
+<li><span style="background-color: transparent;">“HEX values read better in uppercase”</span>
+</li>
+<li><span style="background-color: transparent;">“HEX values would gzip better if they were lowercase”</span>
+</li>
+</ul>
+<p>It’s amazing that, even with this 5 line example of completely valid code, we have various points of view and start offering improvements.</p>
+<p>Consider an application that’s not 5 lines but 5,000. The range of possible solutions is tremendous. This demonstrates a good deal about the creative/artistic aspect of programming and how it impacts the quality of the solution.</p>
+<p>It takes time to develop a solid programmer’s eye. This only comes with experience; writing code and reading code written by others as much as possible. Code written by inexperienced programmers is usually obvious to those with more experience.</p>
+<p>I’m reminded of a famous quote by <a href="http://www.imdb.com/title/tt2104994/" title="http://www.imdb.com/title/tt2104994/" target="_blank">Steve Jobs from Jobs: The Lost Interview</a>:</p>
+<blockquote>Most things in life, the dynamic range between “average” and the “best” is, at most, two-to-one. If you get into a cab in New York City with the best cab driver, as opposed to the average cab driver, you’re probably going to get to your destination with the best cab driver maybe thirty percent faster… Or a CD player, the difference between the best CD player and the average CD player is what? Twenty percent? So two-to-one is a big dynamic range in most of life. In software … the difference between the average and the best is 50 to one. Maybe 100 to one. Very few things in life are like this....</blockquote>
+<p>In my opinion, it’s the creative aspect of programming that accounts for such a large dynamic range. Next time you’re planning to hire a development firm to work on your project, consider for a moment where in the 1 to 100 range the firm might be. Is that where you want to be?</p>

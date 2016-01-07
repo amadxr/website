@@ -1,0 +1,10 @@
+---
+layout: post
+title: Crafting APIs
+---
+
+<p>For this week's learning lunch we took a look at the <a href="http://vimeo.com/61342270" target="_blank">RubyConf AU 2013 Lightning Talks</a> and <a href="http://railscasts.com/episodes/409-active-model-serializers">Active Model Serializers (RailsCasts)</a>. The two presentations tied together nicely as one of the lightning talks was on APIs and the RailsCast was on a way to craft them.</p>
+<!--more-->
+<p>An API (Application Programming Interface) is a set of commands, functions, and protocols which programmers can use when building software for a specific system. Crafting your API correctly is the ticket to happiness, success, and general Good Times. Rails is exceptionally good at exposing an API and there are some great gems available to help in this process.</p>
+<p>For the recent <a href="http://www.resolvedigital.com/work/gap-filler">Gap Filler</a> app we <a href="http://gapfiller.herokuapp.com/" target="_blank">created and documented an API</a> so that anyone could write their own program to use the data. This means anyone interested could easily create, say, an Android app using the same interface our iPhone app does. For Gap Filler we used the <a href="https://github.com/nesquena/rabl" target="_blank">RABL gem </a>which uses a view based approach rather than the more object oriented approach of Active Model Serializers. There are strengths and weaknesses to both approaches, but, as always, it's great to have the choice.</p>
+<p>Finally, the last thing to think about and one which was highlighted in the lightning talk, is versioning your API. The reason for this is that once you have an API people tend to use them. If you go changing things then you will likely break all the systems which are depending on your API. For Gap Filler itself we did not include versioning from the start, however, were we to extend the API we would certainly add versioning. For a larger project and one which was likely to have an evolving API we would certainly include versioning from the start and yes, there's the <a href="https://github.com/bploetz/versionist">versionist gem</a> for that!</p>

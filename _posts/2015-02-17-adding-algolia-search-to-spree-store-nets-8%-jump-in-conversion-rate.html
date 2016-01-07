@@ -1,0 +1,66 @@
+---
+layout: post
+title: Adding Algolia Search to Spree Store Nets 8% Jump in Conversion Rate
+---
+
+<p>Google search is an incredibly advanced product that we're all accustomed to. When visitors use search on your store, they expect to be able to make typos and spelling mistakes and still get relevant results at near instantaneous speed.&#160;</p>
+<p><a href="https://spreecommerce.com" title="https://spreecommerce.com" target="_blank">Spree Commerce</a> offers built-in search which does a decent job, but with nearly 4,000 products and 12,000 variants it wasn't optimal for our client, <a href="http://www.wardrobesupplies.com" title="http://www.wardrobesupplies.com" target="_blank">Manhattan Wardrobe Supply</a> (MWS). Our journey to a better search option for MWS led us to try a new service, <a href="http://www.algolia.com" title="http://www.algolia.com" target="_blank">Algolia</a>.</p>
+<p><img src="//dl3u9qgv64mry.cloudfront.net/system/images/W1siZiIsIjIwMTUvMDIvMTYvMTgvMzgvMjQvMTAvQWxnb2xpYV9Mb2dvX0xpZ2h0X0JhY2tncm91bmQucG5nIl1d/Algolia-Logo-Light-Background.png" title="Algolia Logo Light Background" alt="Algolia Logo Light Background" data-rel="225x255" width="300" height="103" class="img-thumbnail image-align-center" /></p>
+<p>
+When I first picked up Algolia, I got excited. It offers many advanced search features right out of the box, including the ability to customize how ranking actually works. </p>
+<p>Rather than displaying results based on how many query terms they contain, <a href="http://blog.algolia.com/search-ranking-algorithm-unveiled/ " title="http://blog.algolia.com/search-ranking-algorithm-unveiled/ " target="_blank">Algolia’s ranking algorithm</a> rates each matching record on several criteria. You can even assign custom criteria to consider additional factors that are most relevant to your customers (SKUs, variants, options, etc).</p>
+<h3>The downside of external services</h3>
+<p>But what about the problem of response time? A common challenge with outsourcing search is latency. When a user searches for something, the request goes off to an external server, waits for a response and displays the results. The latency introduced can be noticeable and hurts the user experience.</p>
+<p>Using external services forces you to trade off this delay with new capabilities. In practice Algolia crushed any worries I had because two key areas have been addressed:</p>
+<p><strong>Connection Time</strong>
+</p>
+<p><span style="background-color: transparent;">Algolia currently has twelve server locations around the world. They call it a <a href="https://www.algolia.com/dsn" title="https://www.algolia.com/dsn" target="_blank">"distributed search network"</a>. When setting up, they guide you to store your search index at a location close to your customers. This keeps latency to a minimum.</span>
+</p>
+<p><strong>Response Time</strong>&#160;</p>
+<p>Now that the connection has been made, we have to wait for the search result response. The search engine itself is <a href="http://stackshare.io/posts/how-algolia-built-their-realtime-search-as-a-service-product" title="http://stackshare.io/posts/how-algolia-built-their-realtime-search-as-a-service-product" target="_blank">implemented as an nginx module</a> which makes their stack unbelievably shallow. This is a brave, creative and frankly a brilliant solution that works like a charm in practice. With over 12,000 records to search, 99% of our response times are below 7ms. Your results will differ based on how many records you have indexed and how you've configured Algolia.</p>
+<p class="text-align-center"><strong>Algolia: Response Time From 99% of Queries</strong>
+</p>
+<p><img src="//dl3u9qgv64mry.cloudfront.net/system/images/W1siZiIsIjIwMTUvMDIvMTIvMjAvMTUvMTQvOTE1L2FsZ29saWFfc2VhcmNoX3Jlc3BvbnNlX3RpbWUucG5nIl1d/algolia-search-response-time.png" title="Algolia Search Response Time" alt="Algolia Search Response Time" data-rel="225x255" width="1009" height="150" class="image-align-center img-thumbnail" /></p>
+<blockquote>Algolia is so fast they should really measure their response times in microseconds not milliseconds.</blockquote>
+<p>To give you some context, a typical request to a website might take 150ms to respond. Search taking ~7ms to respond is so small it doesn’t matter. In fact it may actually be faster than the built in search we're replacing.</p>
+<h3>Putting it to the test</h3>
+<p><span style="background-color: transparent;">I went about integrating Algolia. I decided to go with their <a href="https://www.algolia.com/doc/javascript" title="https://www.algolia.com/doc/javascript" target="_blank">JavaScript client</a> so that I could make search requests directly from the site to Algolia, without having to touch the server running Spree. This gives you that near "instant" feel. As you type your search, each new letter is triggering off a search to get a result as quickly as possible. I used <a href="http://handlebarsjs.com" title="http://handlebarsjs.com" target="_blank">Handlebars.js</a> to convert the search response into HTML that can be rendered onto the page for the user to see.</span>
+</p>
+<p><span style="background-color: transparent;">Once the implementation was complete, to measure the impact of Algolia I set up an A/B test. 50% of the traffic would see the original search, the other 50% would see Algolia search.</span>
+</p>
+<blockquote>We put it live and the client’s response was: "OMG IN LOVE. ITS SO FAST."
+</blockquote>
+
+<h3>The first A/B test</h3>
+<p>After waiting several weeks the results were in for the A/B test. The c<span style="background-color: transparent;">onversion rate declined from 4.31% to 4.28% when introducing Algolia.&#160;</span>
+<span style="background-color: transparent;">I wondered how could this be? It’s so much faster.</span>
+</p>
+<p><span style="background-color: transparent;">Clearly I’d overlooked something. Thankfully I had a raft of data in Google Analytics to help figure me it out. After much theorising, I realized that the layout of the search had changed too and I must have made it worse. Not Algolia’s fault at all.</span>
+</p>
+<p>The next question was: What was it about the new design that had this negative impact?</p>
+<blockquote>You have to think deeply about end customers: Who they are and  what are they trying to achieve?</blockquote>
+<p>Manhattan Wardrobe Supply’s best and most loyal customers are wardrobe professionals running productions for theater, film and TV. Ordering supplies is a vital part of the job. They don’t typically buy one or two items, they buy for a whole production. </p>
+<p>The old search listed all product options and allowed customers to buy many items directly from the search results. The results page was almost like an order sheet. And there was enough knowledge and trust that customers often didn’t need to visit product detail pages to order.</p>
+<p>The newer interface took away the “buy now” option from search results. We also limited the number of results by not listing all product options. This is how you’d usually see search results on an online store, but this obviously didn’t work as well for MWS customers.</p>
+<h3>Revising the search interface&#160;</h3>
+<p>With these thoughts in mind, I went about changing the Algolia search interface to more closely match the original. Not only that, I could confidently go further in this direction now I had a better understanding of what the customer is trying to achieve.</p>
+<p>I added the ability to buy products from the search results page. I also listed out variations of a product in search results, though it did make the results really tall. Finally, I decided to make every product buyable from search results.</p>
+<p>I was now using advanced Algolia techniques to store custom fields about stock levels and variant information. I also added some neat features like being able to drill down your results by category and highlighting words on the page that exactly match what you’re searching for. This makes the results page very scannable.</p>
+<p><img src="//dl3u9qgv64mry.cloudfront.net/system/images/W1siZiIsIjIwMTUvMDIvMTIvMjAvMDAvNDIvNzMvNzUwOTFhZjdfc211c2hfc2k1cE83SGZyci5naWYiXV0/75091af7-smush-si5pO7Hfrr.gif" title="Algolia with Spree" alt="Algolia search with spree" data-rel="225x255" class="image-align-center img-thumbnail" />
+</p>
+<h3>The final A/B test: Improved UI combined with Algolia</h3>
+<p>We observed a 8.4% improvement on conversion rate with this new test.</p>
+<p class="text-align-center"><strong>Conversion Rate by A/B Segment</strong>
+</p>
+<p><img src="//dl3u9qgv64mry.cloudfront.net/system/images/W1siZiIsIjIwMTUvMDIvMTIvMjIvMzQvNTkvOTEwL0Vjb21tZXJjZV9Db252ZXJzaW9uX1JhdGVfYnlfU2VnbWVudC5wbmciXV0/Ecommerce-Conversion-Rate-by-Segment.png" title="Ecommerce Conversion Rate By Segment" alt="Ecommerce Conversion Rate By Segment" data-rel="225x255" width="613" height="287" class="image-align-center img-thumbnail" /></p>
+<p>To further understand this I segmented this result by new vs returning visitors.</p>
+<p class="text-align-center"><strong>Returning Visitors: Conversion Rate by A/B Segment</strong>
+</p>
+<p><img src="//dl3u9qgv64mry.cloudfront.net/system/images/W1siZiIsIjIwMTUvMDIvMTIvMjIvMzkvMTQvNTgyL0Vjb21tZXJjZV9Db252ZXJzaW9uX1JhdGVfYnlfU2VnbWVudF9SZXR1cm5pbmdfVmlzaXRvcnMucG5nIl1d/Ecommerce-Conversion-Rate-by-Segment-Returning-Visitors.png" title="Ecommerce Conversion Rate By Segment Returning Visitors" alt="Ecommerce Conversion Rate By Segment Returning Visitors" data-rel="225x255" width="612" height="287" class="image-align-center img-thumbnail" /></p>
+
+<p><span style="background-color: transparent;">I found an 11.2% improvement on the conversion rate for returning visitors and a 6.2% improvement for new visitors. This makes sense to me because the layout of the search has been designed to be more useful for existing customers than new ones.</span>
+</p>
+<h3>Conclusion</h3>
+<p>I encourage every store owner to evaluate your site search or (<a href="/contact" title="Contact">contact us for a professional evaluation</a>). Does it offer the Google-like quality users expect? Think carefully about your customers and what they’re trying to achieve. Are you losing potential conversions by not providing a superior search experience? You might find, as we did, better search generates a measurable return on investment.</p>
+<p><small>Note: All conversion rates given have a 95% level of confidence and were derived from a sample size of &gt;1000 transactions.</small>
+</p>
