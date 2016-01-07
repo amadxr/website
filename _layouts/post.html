@@ -8,7 +8,7 @@ layout: default
     <div class="very-narrow left-aligned">
       <header>
         <h1>{{ page.title }}</h1>
-        <p>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+        <p>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} &mdash; {{ page.author }}{% endif %}{% if page.meta %} &mdash; {{ page.meta }}{% endif %} &mdash; {% include word-count.html %}</p>
       </header>
       <article>
       {{ content }}

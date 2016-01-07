@@ -1,3 +1,5 @@
+@import "base/variables";
+
 /**
  * GitHub Gist Theme
  * Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
@@ -71,5 +73,5 @@
 }
 
 code {
-  border: 2px solid #f6f6f6;
+  border: $base-border-height solid $light-gray;
 }
