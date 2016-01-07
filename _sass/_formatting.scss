@@ -50,10 +50,6 @@ picture {
   max-width: 100%;
 }
 
-blockquote {
-  margin: 0em;
-}
-
 .screenshot {
   border-radius: 5px 5px 0px 0px; 
   padding-top: $base-spacing;
@@ -61,4 +57,9 @@ blockquote {
   background-repeat: no-repeat;
   background-image: url(/images/browser-chrome-buttons.svg);
   background-position: $base-spacing / 3.8 $base-spacing / 3.8;
+}
+
+blockquote {
+  margin-left: 0em;
+  margin-right: 0em;
 }
