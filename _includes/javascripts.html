@@ -1,19 +1,17 @@
 <script type="text/javascript">
-  function jQueryLoaded(){
-    $.getScript("https://use.typekit.net/plv3wfy.js", function(_, _, _) {
-      try{Typekit.load({ async: true });}catch(e){}
-    });
+  $.getScript("https://use.typekit.net/plv3wfy.js", function(_, _, _) {
+    try{Typekit.load({ async: true });}catch(e){}
+  });
 
+  function jQueryLoaded(){
     // loads imgix and the imgix jquery extension right after
     $.getScript("/js/imgix.min.js", function(_, _, _) {
-      imgix.onready(function() {
-        // https://github.com/imgix/imgix.js/blob/master/docs/api.md
-        imgix.fluid({
-          pixelStep: 10,
-          updateOnResize: true,
-          updateOnPinchZoom: true,
-          highDPRAutoScaleQuality: true
-        });
+      // https://github.com/imgix/imgix.js/blob/master/docs/api.md#imgixfluidrootnode-config
+      imgix.fluid({
+        pixelStep: 10,
+        updateOnResize: true,
+        updateOnPinchZoom: true,
+        highDPRAutoScaleQuality: true
       });
     });
   }
