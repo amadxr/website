@@ -57,6 +57,8 @@ password: "postgres",
 <p>Open up <code>web/router.ex.</code> Add a new scope at the bottom:
 
 </p>
+<p class="tip">
+<strong>Note</strong> we're using the <code>api</code> pipeline. More on <a href="http://www.phoenixframework.org/docs/routing#section-pipelines" target="_blank">Phoenix pipelines here</a>.</p>
 <pre><code class="hljs elixir">defmodule PhoenixTodosApi.Router do
   # ...
   scope "/", PhoenixTodosApi do
@@ -64,8 +66,7 @@ password: "postgres",
     resources "/todos", TodoController, except: [:new, :edit]
   end
 end</code></pre>
-<p>
-Note we're using the <code>api</code> pipeline. More on <a href="http://www.phoenixframework.org/docs/routing#section-pipelines" target="_blank">Phoenix pipelines here</a>.</p>
+
 
 <h3>6) Migrate the database</h3>
 <p>Next we need to migrate the database to create the table where <code>Todos</code> will be stored. </p>
