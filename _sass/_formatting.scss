@@ -64,6 +64,14 @@ blockquote {
   margin-right: 0em;
 }
 
+code {
+  word-wrap: break-word;
+}
+
+pre code {
+  word-wrap: normal;
+}
+
 .tip {
   @include shift(-4);
   @include span-columns(4);
@@ -72,6 +80,13 @@ blockquote {
 
   strong:first-child {
     font-family: $heading-font-family;
+  }
+}
+
+@include media($mobile) {
+  .tip {
+    @include shift(0);
+    @include span-columns(4);
   }
 }
 
