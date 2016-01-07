@@ -79,7 +79,7 @@ layout: default
   <div class="narrow">
     <h2 class="editable">From Our Blog</h2>
     <ul>
-      {% for post in site.posts %}
+      {% for post in site.posts limit:5 %}
         <li>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </li>
