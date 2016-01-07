@@ -12,6 +12,12 @@
         highDPRAutoScaleQuality: true
       });
     });
+
+    if (typeof hljs !== 'undefined') {
+      $("pre code").each(function(i, block) {
+        return hljs.highlightBlock(block);
+      });
+    }
   }
 
   var script = document.createElement('script');
