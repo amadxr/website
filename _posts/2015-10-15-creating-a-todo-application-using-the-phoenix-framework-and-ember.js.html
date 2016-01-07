@@ -70,8 +70,7 @@ password: "postgres",
     pipe_through :api
     resources "/todos", TodoController, except: [:new, :edit]
   end
-end
-</code>
+end</code>
 </pre>
 <p>
 Note we're using the <code>api</code> pipeline. More on <a href="http://www.phoenixframework.org/docs/routing#section-pipelines" target="_blank">Phoenix pipelines here</a>.</p>
