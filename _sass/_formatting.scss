@@ -63,3 +63,29 @@ blockquote {
   margin-left: 0em;
   margin-right: 0em;
 }
+
+.tip {
+  @include shift(-4);
+  @include span-columns(4);
+  font-size: golden-ratio($base-font-size,  -1);
+  color: $medium-gray;
+
+  strong:first-child {
+    font-family: $heading-font-family;
+  }
+}
+
+.post article::first-letter { 
+    font-size: 3.3em;
+    vertical-align: top;
+
+    float: left;
+    line-height: 0.85em;
+    padding-right: 0.1em;
+    color: $green;
+}
+
+header p {
+  text-align: center !important;
+}
+

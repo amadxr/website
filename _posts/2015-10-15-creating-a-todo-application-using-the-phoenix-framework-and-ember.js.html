@@ -22,13 +22,14 @@ $ cd phoenix_todos_api</code>
 <p>We are excluding <a href="http://brunch.io/" title="http://brunch.io/" target="_blank">Brunch.io</a> because our API-only app will not need asset management.&#160;When you are prompted to "Fetch and install dependencies?" answer <code>Y</code>.</p>
 <h3>2) Create the database</h3>
 <p>Next we’ll create the database. Make sure that the correct credentials for your PostgreSQL server are in both <code>config/dev.exs</code> and <code>config/test.exs</code>. The default credentials are:</p>
+<p class="tip"><strong>Tip</strong> if you have installed PostgreSQL using Homebrew you can just remove the username and password lines and it should just work.
+</p>
 <pre><code class="elixir hljs"># ...
 username: "postgres",
 password: "postgres",
 # ...</code>
 </pre>
-<p class="tip">Tip: if you have installed PostgreSQL using Homebrew you can just remove the username and password lines and it should just work.
-</p>
+
 <p>With the correct credentials in place, run:</p>
 <pre><code class="ruby terminal hljs">$ mix ecto.create</code>
 </pre>
@@ -72,8 +73,8 @@ password: "postgres",
 end
 </code>
 </pre>
-
-Note we're using the <code>api</code> pipeline. More on <a href="http://www.phoenixframework.org/docs/routing#section-pipelines" target="_blank">Phoenix pipelines here</a>.
+<p>
+Note we're using the <code>api</code> pipeline. More on <a href="http://www.phoenixframework.org/docs/routing#section-pipelines" target="_blank">Phoenix pipelines here</a>.</p>
 
 <h3>6) Migrate the database</h3>
 <p>Next we need to migrate the database to create the table where <code>Todos</code> will be stored. </p>
@@ -120,6 +121,7 @@ Repo.insert!(%Todo{title: "Ensure the Apps Work Together", is_completed: false})
 }</code>
 </pre>
 <p>We now have a basic API up and running. It’s time to start working on the client side of the application.</p>
+<hr/>
 <h2>Preparing the Ember App</h2>
 <p>For the client side we’ll be using an <a href="http://www.ember-cli.com" title="http://www.ember-cli.com" target="_blank">Ember CLI</a> implementation of <a href="http://todomvc.com/" title="http://todomvc.com/" target="_blank">TodoMVC.com</a>.</p>
 <p>Before completing the following steps, make sure you have followed the installation part of Ember CLI's <a href="http://www.ember-cli.com/user-guide/#getting-started" title="http://www.ember-cli.com/user-guide/#getting-started" target="_blank">Getting Started</a>.</p>
@@ -138,8 +140,10 @@ Repo.insert!(%Todo{title: "Ensure the Apps Work Together", is_completed: false})
 <pre><code class="ruby terminal hljs">$ ember server</code>
 </pre>
 <p>Visit <a href="http://localhost:4200" rel="nofollow" target="_blank">http://localhost:4200</a> in your browser. At this point you can add todos, but it is only using in-memory storage and todos are not persisted when you refresh the page.</p>
+
 <h3>Connecting Ember to Phoenix</h3>
 <p>So far we have a working server-side API app written with Phoenix, and a working client-side app written with Ember. But the two apps aren't talking to each other. Next we’ll look at connecting the two apps together and have our todos persisted.&#160;</p>
+<hr/>
 <h3>Changes to the Ember App</h3>
 <h4>1) Configuring Ember Data to use Phoenix</h4>
 <p>Instead of using in-memory storage, we need to configure <a href="https://github.com/emberjs/data" title="https://github.com/emberjs/data" target="_blank">Ember Data</a> to use our Phoenix API as a backend instead. To do this, replace the contents of <code>app/adapters/application.js</code> with:
@@ -159,10 +163,11 @@ if (config.environment === 'test') {
 
 export default adapter;</code>
 </pre>
+<p class="tip"><strong>Tip</strong> The default adapter for Ember Data is actually the <code>JSONAPIAdapter</code> which expects an API that is modeled after the <a href="http://jsonapi.org/" title="http://jsonapi.org/" target="_blank">JSON API Spec</a>. If you are planning to build a serious API, it would be a good strategy to explore following this specification (perhaps by using the <a href="https://github.com/AgilionApps/ja_serializer" title="https://github.com/AgilionApps/ja_serializer" target="_blank">ja_serializer</a> or <a href="https://github.com/jeregrine/jsonapi " title="https://github.com/jeregrine/jsonapi " target="_blank">jsonapi</a> packages). However for the purposes for this tutorial we using the <code>RESTAdapter</code> in order to keep our example simple.
+</p>
 <p><a href="http://jsonapi.org/" title="http://jsonapi.org/" target="_blank"></a>Note that if the app is booted under the test environment then we are going to continue to use the original <code>FixtureAdapter</code>, but for all other environments we are now using the <code>RESTAdapter</code> and instructing it to look for our Phoenix API at <a href="http://localhost:4000/" rel="nofollow" target="_blank">http://localhost:4000</a>.
 </p>
-<p class="tip"><strong>Tip:</strong> The default adapter for Ember Data is actually the <code>JSONAPIAdapter</code> which expects an API that is modeled after the <a href="http://jsonapi.org/" title="http://jsonapi.org/" target="_blank">JSON API Spec</a>. If you are planning to build a serious API, it would be a good strategy to explore following this specification (perhaps by using the <a href="https://github.com/AgilionApps/ja_serializer" title="https://github.com/AgilionApps/ja_serializer" target="_blank">ja_serializer</a> or <a href="https://github.com/jeregrine/jsonapi " title="https://github.com/jeregrine/jsonapi " target="_blank">jsonapi</a> packages). However for the purposes for this tutorial we using the <code>RESTAdapter</code> in order to keep our example simple.
-</p>
+
 <h4>2) Configuring the serializer</h4>
 <p>By default Ember Data expects our JSON to use camelCasing for key names, but our Phoenix API is using snake_case. To work around this we must also customise the serializer that Ember uses.</p>
 <p>First create a <code>serializers</code> directory:</p>
@@ -205,6 +210,7 @@ export default serializer;</code>
   "port": 9000
 }</code>
 </pre>
+<hr/>
 <h3>Changes to the Phoenix App</h3>
 <p>We need to add <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" title="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">CORS headers</a> to the app so the browser will permit Ember to make requests to it.</p>
 <h4>1) Setting up cors_plug</h4>
@@ -258,7 +264,9 @@ end</code>
 Finished in 0.4 seconds (0.3s on load, 0.1s on tests)
 8 tests, 0 failures</code>
 </pre>
+<hr/>
 <p>Our Phoenix App is now ready to accept requests from the Ember App.</p>
+
 <h2>Testing the Apps Together</h2>
 <p>We can verify that our apps work together by booting each one, starting with Phoenix:</p>
 <pre><code class="ruby terminal hljs">$ mix phoenix.server</code>
