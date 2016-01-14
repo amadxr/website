@@ -25,7 +25,26 @@
   }
 }
 
+img.left-image {
+  @include span-columns(12 of 12);
+  @include shift(-6);
+}
 
+img.wide-image {
+  @include shift(-6);
+  width: 200%;
+}
+
+@include media($mobile) {
+  img.left-image {
+    @include shift(0);
+  }
+
+  img.wide-image {
+    margin: auto;
+    width: 100%;
+  }
+}
 
 .three-split-section {
   @include shift(0);

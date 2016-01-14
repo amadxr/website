@@ -3,14 +3,20 @@ layout: post
 title: Creating a Todo Application using the Phoenix Framework and Ember.js
 ---
 
-<p>We’re always on the lookout for relevant technologies for our clients. Today we’re going to look at a web application framework called <a href="http://www.phoenixframework.org" title="http://www.phoenixframework.org" target="_blank">Phoenix</a>. Phoenix is built on Elixir, a blazing fast functional programming language that will feel familiar in some ways if you’ve been writing Ruby.
+<p>
+
+
+We’re always on the lookout for relevant technologies for our clients. Today we’re going to look at a web application framework called <a href="http://www.phoenixframework.org" title="http://www.phoenixframework.org" target="_blank">Phoenix</a>. 
+Phoenix is built on Elixir, a blazing fast functional programming language that will feel familiar in some ways if you’ve been writing Ruby.
 </p>
+
 <p>
 In this tutorial we’re going to create a simple client-server web application using Phoenix and Elixir on the server, with PostgreSQL as our store data. On the client side, the Ember Javascript framework will provide the user interface and communicate changes to the server. This combination of components is coming to be known as the <a href="https://medium.com/@j_mcnally/the-peep-stack-b7ba5afdd055" title="https://medium.com/@j_mcnally/the-peep-stack-b7ba5afdd055" target="_blank">PEEP (Postgres, Elixir, Ember, Phoenix) stack</a>.
 </p>
 
-<p>Here’s what the todo app we’ll be building looks like:</p>
-<p><img src="//dl3u9qgv64mry.cloudfront.net/system/images/W1siZiIsIjIwMTUvMTAvMTMvMjMvNDQvNDYvNDM0L1RvX0RvX2FwcGxpY2F0aW9uX3NjcmVlbnNob3QucG5nIl1d/To%20Do%20application%20screenshot.png" title="To Do Application Screenshot" alt="To Do Application Screenshot" data-rel="225x255" width="977" height="585" /></p>
+
+<p>Here’s what the todo app we’ll be building looks like: <img src="//dl3u9qgv64mry.cloudfront.net/system/images/W1siZiIsIjIwMTUvMTAvMTMvMjMvNDQvNDYvNDM0L1RvX0RvX2FwcGxpY2F0aW9uX3NjcmVlbnNob3QucG5nIl1d/To%20Do%20application%20screenshot.png" title="To Do Application Screenshot" alt="To Do Application Screenshot"  class="wide-image"/></p>
+
 
 <h2>Creating the Phoenix App</h2>
 <p>Before you get started, make sure you followed the <a href="http://www.phoenixframework.org/docs/installation" title="http://www.phoenixframework.org/docs/installation" target="_blank">Phoenix Installation Guide</a> so you have all the necessary dependencies installed.</p>
