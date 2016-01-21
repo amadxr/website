@@ -77,13 +77,11 @@ a {
 
   &:active,
   &:focus,
-  &:hover {
+  &:hover,
+  &:visited {
     color: shade($action-color, 50%);
   }
 
-  &:visited {
-    color: $green;
-  }
 }
 
 code {
