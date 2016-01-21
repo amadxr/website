@@ -81,7 +81,10 @@ a {
   &:visited {
     color: shade($action-color, 50%);
   }
+}
 
+.page > header a:visited {
+  color: $action-color
 }
 
 code {
