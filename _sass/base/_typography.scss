@@ -77,9 +77,12 @@ a {
 
   &:active,
   &:focus,
-  &:hover,
-  &:visited {
+  &:hover {
     color: shade($action-color, 50%);
+  }
+
+  &:visited {
+    color: shade($action-color, 25%);
   }
 }
 
