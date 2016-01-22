@@ -40,43 +40,47 @@ layout: default
   canvas.height = parent.offsetHeight;
   canvas.width = parent.offsetWidth;
 
-  totalCircles = Math.round(canvas.height / 50 * canvas.width / 50);
+  var fps = 60;
+  var alphaOffset = 0;
+  var diameter = 30;
+  var halfDiameter = diameter / 2;
+  var twoPi = 2*Math.PI;
+  var circleOpacity = 0.3;
+
+  totalCircles = Math.round(canvas.height / diameter * canvas.width / diameter);
   alphas = new Array(totalCircles);
 
-  for(var i = 0; i < totalCircles; i++) {
-      alphas[i] = Math.random() * (2*Math.PI);
-  }
+  var twoPi = 2*Math.PI;
 
-  var fps = 15;
-  var alphaOffset = 0;
+  // randomise the start value for each circle
+  for(var i = 0; i < totalCircles; i++) {
+      alphas[i] = Math.random() * twoPi;
+  }
 
   function draw() {
       setTimeout(function() {
         requestAnimationFrame(draw);
 
+        // clear the render
         context.clearRect(0, 0, canvas.width, canvas.height);
 
-        for (y = 1; y <= (canvas.height / 50) + 1; y++) { 
-          for (x = 1; x <= (canvas.width / 50) + 1; x++) { 
+        for (y = 1; y <= (canvas.height / diameter) + 1; y++) { 
+          for (x = 1; x <= (canvas.width / diameter) + 1; x++) { 
             context.beginPath();
-            context.arc((x * 50 - 25), (y * 50 - 25), 25, 0, 6.28318530718);
+            context.arc((x * diameter - halfDiameter), (y * diameter - halfDiameter), halfDiameter, 0, twoPi);
 
-            var alpha = ((Math.sin(alphas[y*x] + alphaOffset) + 0.5) / 2.0);
+            var alpha = (Math.sin(alphas[y*x] + alphaOffset) + 0.5) / 2.0;
 
-            context.fillStyle = 'rgba(225,225,225,' + (alpha * 0.25)  + ')';
+            context.fillStyle = 'rgba(225, 225, 225,' + (alpha * circleOpacity)  + ')';
             context.fill();
           }
         }
 
-        alphaOffset += 0.075;
+        alphaOffset += 0.03;
       }, 1000 / fps);
   }
 
   draw();
-
-
-
-
 </script>
 
 <section>
