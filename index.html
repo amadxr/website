@@ -2,13 +2,82 @@
 layout: default
 ---
 
-<div class="full-screen title-slide">
-  <section class="vertical-center">
-    <h1 class="editable">We build, maintain and optimize eCommerce stores.</h1>
-    <h2 class="editable">Specializing in <a href="">Spree</a>, <a href="">Solidus</a> &amp; <a href="">Ruby on Rails</a>.</h2>
-  </section>
+
+<div class="full-screen title-slide" id="slide">
+  
+    <section class="vertical-center" style="z-index: 100;">
+      <h1 class="editable">We build, maintain and optimize eCommerce stores.</h1>
+      <h2 class="editable">Specializing in <a href="">Spree</a>, <a href="">Solidus</a> &amp; <a href="">Ruby on Rails</a>.</h2>
+    </section>
+  <canvas id="animated-dots"></canvas>
 </div>
 
+
+<style type="text/css">
+.full-screen {
+  position: relative;
+  z-index: -1;
+}
+
+#animated-dots {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+}
+</style>
+
+<script type="text/javascript">
+  var parent = document.getElementById("slide");
+  var c = document.getElementById("animated-dots");
+  var context = c.getContext("2d");
+  var canvas = context.canvas;
+
+  // make canvas match final rendered size of element
+  canvas.height = parent.offsetHeight;
+  canvas.width = parent.offsetWidth;
+
+  totalCircles = Math.round(canvas.height / 50 * canvas.width / 50);
+  alphas = new Array(totalCircles);
+
+  for(var i = 0; i < totalCircles; i++) {
+      alphas[i] = Math.random() * (2*Math.PI);
+  }
+
+  var fps = 15;
+  var alphaOffset = 0;
+
+  function draw() {
+      setTimeout(function() {
+        requestAnimationFrame(draw);
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (y = 1; y <= canvas.height / 50; y++) { 
+          for (x = 1; x <= canvas.width / 50; x++) { 
+            context.beginPath();
+            context.arc((x * 50 - 25), (y * 50 - 25), 25, 0, 6.28318530718);
+
+            var alpha = ((Math.sin(alphas[y*x] + alphaOffset) + 0.5) / 2.0);
+
+            context.fillStyle = 'rgba(225,225,225,' + (alpha * 0.25)  + ')';
+            context.fill();
+          }
+        }
+
+        alphaOffset += 0.075;
+      }, 1000 / fps);
+  }
+
+  draw();
+
+
+
+
+</script>
 
 <section>
   <img data-src="http://resolve.imgix.net/pinrose.png?auto=format" alt="Pinrose.com home page" class="editable wide imgix-fluid screenshot" />
