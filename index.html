@@ -2,7 +2,6 @@
 layout: default
 ---
 
-
 <div class="full-screen title-slide" id="slide">
   
     <section class="vertical-center" style="z-index: 100;">
@@ -40,21 +39,27 @@ layout: default
   canvas.height = parent.offsetHeight;
   canvas.width = parent.offsetWidth;
 
-  var fps = 60;
+  var fps = 15;
   var alphaOffset = 0;
-  var diameter = 30;
+  var diameter = 100;
   var halfDiameter = diameter / 2;
   var twoPi = 2*Math.PI;
-  var circleOpacity = 0.3;
+  var circleOpacity = 0.2;
 
   totalCircles = Math.round(canvas.height / diameter * canvas.width / diameter);
   alphas = new Array(totalCircles);
+  maxOpacity = new Array(totalCircles);
 
   var twoPi = 2*Math.PI;
 
   // randomise the start value for each circle
   for(var i = 0; i < totalCircles; i++) {
       alphas[i] = Math.random() * twoPi;
+  }
+
+  // randomise the start value for each circle
+  for(var i = 0; i < totalCircles; i++) {
+      maxOpacity[i] = circleOpacity + ((Math.random() / 3) - 0.165);  // -0.165..0.165
   }
 
   function draw() {
@@ -66,17 +71,18 @@ layout: default
 
         for (y = 1; y <= (canvas.height / diameter) + 1; y++) { 
           for (x = 1; x <= (canvas.width / diameter) + 1; x++) { 
+            var index = y*x;
             context.beginPath();
             context.arc((x * diameter - halfDiameter), (y * diameter - halfDiameter), halfDiameter, 0, twoPi);
 
-            var alpha = (Math.sin(alphas[y*x] + alphaOffset) + 0.5) / 2.0;
+            var alpha = (Math.sin(alphas[index] + alphaOffset) + 0.5) / 2.0;
 
-            context.fillStyle = 'rgba(225, 225, 225,' + (alpha * circleOpacity)  + ')';
+            context.fillStyle = 'rgba(225, 225, 225,' + (alpha * maxOpacity[index])  + ')';
             context.fill();
           }
         }
 
-        alphaOffset += 0.03;
+        alphaOffset += 0.08;
       }, 1000 / fps);
   }
 
@@ -84,7 +90,14 @@ layout: default
 </script>
 
 <section>
-  <img data-src="http://resolve.imgix.net/pinrose.png?auto=format" alt="Pinrose.com home page" class="editable wide imgix-fluid screenshot" />
+  <picture class="wide screenshot">
+    <source srcset="http://resolve.imgix.net/pinrose.png?auto=format&w=3000" media="(min-width: 2000px)">
+    <source srcset="http://resolve.imgix.net/pinrose.png?auto=format&w=2000" media="(min-width: 1000px)">
+    <source srcset="http://resolve.imgix.net/pinrose.png?auto=format&w=1000" media="(min-width: 500px)">
+    <source srcset="http://resolve.imgix.net/pinrose.png?auto=format&w=500" media="(max-width: 500px)">
+    <img srcset="http://resolve.imgix.net/pinrose.png?auto=format">
+  </picture>
+
   <div class="narrow">
     <p class="editable"><strong class="upcase">Featured Client</strong> &mdash; Pinrose is a luxury brand that&#39;s making high quality fragrance a playful and engaging experience for their customers. They&#39;re on a mission to leverage technology to help visitors shop in exciting new ways. That&#39;s where we come in.&nbsp;<a href="/services/">Read the case study.</a></p>
   </div>
@@ -133,7 +146,12 @@ layout: default
     <h2 class="editable">Who We Work With</h2>
     <p class="editable">We've been engaged by tech giants, fledgling start-ups, and bricks-and-mortar stores struggling with the complexities of moving online. What's the common thread? Working in partnership with our clients to solve tough business challenges.</p>
     <p>
-      <img src="http://resolve.imgix.net/ecommerce-client-logos.png?auto=format" class="editable imgix-fluid" />
+      <picture>
+        <source srcset="http://resolve.imgix.net/ecommerce-client-logos.png?auto=format&w=3000" media="(min-width: 2000px)">
+        <source srcset="http://resolve.imgix.net/ecommerce-client-logos.png?auto=format&w=2000" media="(min-width: 1000px)">
+        <source srcset="http://resolve.imgix.net/ecommerce-client-logos.png?auto=format&w=1000" media="(min-width: 500px)">
+        <source srcset="http://resolve.imgix.net/ecommerce-client-logos.png?auto=format&w=500" media="(max-width: 500px)">
+      </picture>
     </p>
   </div>
 </section>

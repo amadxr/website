@@ -73,9 +73,7 @@ img.wide-image {
   }
 }
 
-
-
-img.wide {
+.wide {
   @include span-columns(10);
   @include shift(1);
   margin-bottom: $small-spacing;

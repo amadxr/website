@@ -2,17 +2,6 @@
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
 <script type="text/javascript">
   function jQueryLoaded(){
-    // loads imgix and the imgix jquery extension right after
-    $.getScript("/js/imgix.min.js", function(_, _, _) {
-      // https://github.com/imgix/imgix.js/blob/master/docs/api.md#imgixfluidrootnode-config
-      imgix.fluid({
-        pixelStep: 10,
-        updateOnResize: true,
-        updateOnPinchZoom: true,
-        highDPRAutoScaleQuality: true
-      });
-    });
-
     if (typeof hljs !== 'undefined') {
       $("pre code").each(function(i, block) {
         return hljs.highlightBlock(block);

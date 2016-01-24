@@ -1,6 +1,5 @@
 .full-screen {
   height: 85vh;
-
   background: $blue;
   margin-bottom: -8vh;
 }
@@ -20,29 +19,20 @@ $circle-size: 35px;
     margin: 0px auto;
   }
 
-  span:nth-child(1) {
-    color: $green;
-  }
-
-  span:nth-child(2) {
-    color: $blue;
-  }
-
-  span:nth-child(3) {
-    color: $orange;
-  }
-
   .vertical-center {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
   }
 
-  h1, h2 a:hover {
-    color: darken($blue, 35%);
+  h2, h2 a:hover {
+    color: lighten($blue, 90%);
+
   }
 
-  h2, a {
-    color: lighten($blue, 90%);
+  h1 {
+    font-size: 250%;
   }
+
+ 
 }
