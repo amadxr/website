@@ -13,14 +13,7 @@ markdown: kramdown
 sass:
   style: compressed
 
-authors:
-  - david_jones
-  - mark_haylock
-  - barry_harrison
-  - tim_ross
-  - isaac_freeman
-
-editors:
+[authors, editors, persons]:
   - david_jones
   - mark_haylock
   - barry_harrison
