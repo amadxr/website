@@ -13,9 +13,12 @@ markdown: kramdown
 sass:
   style: compressed
 
-[authors, editors, persons]:
+persons: &default
   - david_jones
   - mark_haylock
   - barry_harrison
   - tim_ross
   - isaac_freeman
+
+authors: *default
+editors: *default
