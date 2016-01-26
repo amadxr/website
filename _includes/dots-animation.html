@@ -1,0 +1,77 @@
+<script type="text/javascript">
+  // Configurable values
+  var fps = 15;
+  var fadeRate = 0.08; // how fast the circles fade in and out
+  var diameter = 100;
+  var circleOpacity = 0.2;
+  var targetCanvasId = "animated-dots";
+
+  // Calculated values
+  var element = document.getElementById(targetCanvasId);
+  var parent = element.parentElement;
+  var context = element.getContext("2d");
+  var canvas = context.canvas;
+  var alphaOffset = 0;
+  var halfDiameter = diameter / 2;
+  var twoPi = 2*Math.PI;
+  var rows = 0;
+  var cols = 0;
+
+  // Figures out the size of the canvas we're drawing on
+  // Sets up number of rows and cols
+  // Values are refreshed on init and window resize
+  function setCanvasSize() {
+    // make canvas match final rendered size of element
+    canvas.height = parent.offsetHeight;
+    canvas.width = parent.offsetWidth;
+
+    rows = (canvas.height / diameter) + 1;
+    cols = (canvas.width / diameter) + 1;
+
+    totalCircles = rows * cols;
+    alphas = [];
+    maxOpacity = [];
+
+    // randomise the start value for each circle
+    for(var i = 0; i < totalCircles; i++) {
+        alphas[i] = Math.random() * twoPi;
+    }
+
+    // randomise the max opacity for each circle
+    for(var i = 0; i < totalCircles; i++) {
+        maxOpacity[i] = circleOpacity + ((Math.random() / 3) - 0.165);  // -0.165..0.165
+    }
+  }
+
+  // We need to resetup our canvas when it changes size
+  window.onresize = function(event) {
+    setCanvasSize();
+  };
+
+  function draw() {
+    setTimeout(function() {
+      requestAnimationFrame(draw);
+
+      // clear the previous render
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (y = 1; y <= rows; y++) { 
+        for (x = 1; x <= cols; x++) { 
+          var index = y * x;
+          context.beginPath();
+          context.arc((x * diameter - halfDiameter), (y * diameter - halfDiameter), halfDiameter, 0, twoPi);
+
+          var alpha = (Math.sin(alphas[index] + alphaOffset) + 0.5) / 2.0;
+
+          context.fillStyle = 'rgba(225, 225, 225,' + (alpha * maxOpacity[index])  + ')';
+          context.fill();
+        }
+      }
+
+      alphaOffset += fadeRate;
+    }, 1000 / fps);
+  }
+
+  setCanvasSize();
+  draw();
+</script>

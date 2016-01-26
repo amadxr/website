@@ -11,84 +11,6 @@ layout: default
   <canvas id="animated-dots"></canvas>
 </div>
 
-
-<style type="text/css">
-.full-screen {
-  position: relative;
-  z-index: -1;
-}
-
-#animated-dots {
-  position: absolute;
-  left: 0;
-  top: 0;
-
-  width: 100%;
-  height: 100%;
-
-}
-</style>
-
-<script type="text/javascript">
-  var parent = document.getElementById("slide");
-  var c = document.getElementById("animated-dots");
-  var context = c.getContext("2d");
-  var canvas = context.canvas;
-
-  // make canvas match final rendered size of element
-  canvas.height = parent.offsetHeight;
-  canvas.width = parent.offsetWidth;
-
-  var fps = 15;
-  var alphaOffset = 0;
-  var diameter = 100;
-  var halfDiameter = diameter / 2;
-  var twoPi = 2*Math.PI;
-  var circleOpacity = 0.2;
-
-  totalCircles = Math.round(canvas.height / diameter * canvas.width / diameter);
-  alphas = new Array(totalCircles);
-  maxOpacity = new Array(totalCircles);
-
-  var twoPi = 2*Math.PI;
-
-  // randomise the start value for each circle
-  for(var i = 0; i < totalCircles; i++) {
-      alphas[i] = Math.random() * twoPi;
-  }
-
-  // randomise the start value for each circle
-  for(var i = 0; i < totalCircles; i++) {
-      maxOpacity[i] = circleOpacity + ((Math.random() / 3) - 0.165);  // -0.165..0.165
-  }
-
-  function draw() {
-      setTimeout(function() {
-        requestAnimationFrame(draw);
-
-        // clear the render
-        context.clearRect(0, 0, canvas.width, canvas.height);
-
-        for (y = 1; y <= (canvas.height / diameter) + 1; y++) { 
-          for (x = 1; x <= (canvas.width / diameter) + 1; x++) { 
-            var index = y*x;
-            context.beginPath();
-            context.arc((x * diameter - halfDiameter), (y * diameter - halfDiameter), halfDiameter, 0, twoPi);
-
-            var alpha = (Math.sin(alphas[index] + alphaOffset) + 0.5) / 2.0;
-
-            context.fillStyle = 'rgba(225, 225, 225,' + (alpha * maxOpacity[index])  + ')';
-            context.fill();
-          }
-        }
-
-        alphaOffset += 0.08;
-      }, 1000 / fps);
-  }
-
-  draw();
-</script>
-
 <section>
   <picture class="wide screenshot">
     <source srcset="http://resolve.imgix.net/pinrose.png?auto=format&w=3000" media="(min-width: 2000px)">
@@ -192,3 +114,5 @@ layout: default
   </div>
 </section>
 
+
+{% include dots-animation.html %}
