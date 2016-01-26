@@ -12,3 +12,17 @@ markdown: kramdown
 
 sass:
   style: compressed
+
+authors:
+  - david_jones
+  - mark_haylock
+  - barry_harrison
+  - tim_ross
+  - isaac_freeman
+
+editors:
+  - david_jones
+  - mark_haylock
+  - barry_harrison
+  - tim_ross
+  - isaac_freeman

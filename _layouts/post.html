@@ -2,16 +2,51 @@
 layout: default
 ---
 
+{% assign author = site.data.person[page.author] %}
+{% assign editor = site.data.person[page.editor] %}
+{% assign additional_help = page.additional_help %}
 
 <div class="post">
   <section>
     <div class="very-narrow left-aligned">
       <header>
         <h1>{{ page.title }}</h1>
-        <p>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} &mdash; {{ page.author }}{% endif %}{% if page.meta %} &mdash; {{ page.meta }}{% endif %} &mdash; {% include word-count.html %}</p>
+        <p>
+        {% if author %}
+          By <a href="{{ author.url }}" target="_blank">{{ author.name }}</a>
+        {% endif %}
+        {% if page.meta %} &mdash; {{ page.meta }}{% endif %}
+        {% if page.date %} &mdash; {{ page.date | date: "%b %-d, %Y" }}{% endif %}
+        &mdash; {% include word-count.html %}</p>
       </header>
       <article>
-      {{ content }}
+        {{ content }}
+
+        <hr/>
+
+        <p class="attribution">
+          "{{ page.title }}" was
+          {% if author %}
+            written by <a href="{{ author.url }}" target="_blank">{{ author.name }}</a>.
+          {% endif %}
+          {% if editor %}
+            Editing by <a href="{{ editor.url }}" target="_blank">{{ editor.name }}</a>.
+          {% endif %}
+
+          {% if additional_help %}
+            Additional help from
+            {% for helper in additional_help %}
+
+              {% assign person = site.data.person[helper.person] %}
+              
+              {% unless forloop.last %}
+                <a href="{{ helper.url }}" target="_blank">{{ person.name }}</a>,
+              {% else %}
+                and <a href="{{ helper.url }}" target="_blank">{{ person.name }}</a>.
+              {% endunless %}
+            {% endfor %}
+          {% endif %}
+        </p>
       </article>
     </div>
   </section>
