@@ -13,7 +13,7 @@ markdown: kramdown
 sass:
   style: compressed
 
-persons: &default
+people: &default
   - david_jones
   - mark_haylock
   - barry_harrison

@@ -37,7 +37,7 @@ layout: default
             Additional help from
             {% for helper in additional_help %}
 
-              {% assign person = site.data.person[helper.person] %}
+              {% assign person = site.data.people[helper.person] %}
               
               {% unless forloop.last %}
                 <a href="{{ helper.url }}" target="_blank">{{ person.name }}</a>,
