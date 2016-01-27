@@ -6,6 +6,10 @@ layout: default
 {% assign editor = site.data.people[page.editor] %}
 {% assign additional_help = page.additional_help %}
 
+{% if page.dropcap %}
+  <link rel="stylesheet" href="{{ "/css/dropcap.css" | prepend: site.baseurl }}">
+{% endif %}
+
 <div class="post">
   <section>
     <div class="very-narrow left-aligned">
