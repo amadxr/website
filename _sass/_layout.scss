@@ -30,6 +30,7 @@ img.left-image {
   @include shift(-6);
 }
 
+// todo: doesn't actually work at the moment.
 img.wide-image {
   @include shift(-6);
   width: 200%;
@@ -86,8 +87,7 @@ img.wide-image {
 
 .page {
   @include outer-container;
-  @include pad();
-
+  padding: 0px $base-spacing $base-spacing $base-spacing;
 }
 
 @include media($tablet) {
@@ -115,7 +115,6 @@ img.wide-image {
 
 .green {
   background: $green;
-
 
   color: rgba(42, 56, 67, 0.90);
 

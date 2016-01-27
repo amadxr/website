@@ -33,9 +33,17 @@ $circle-size: 35px;
   }
 
   h1 {
-    font-size: 250%;
+    font-size: 2em;
+  }
+
+  @include media($mobile) {
+    h1 {
+      font-size: 1.5em;
+    }
   }
 }
+
+
 
 #animated-dots {
   position: absolute;
