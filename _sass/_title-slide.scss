@@ -1,9 +1,18 @@
 .full-screen {
   height: 85vh;
+  width: 100vw;
+
   background: $blue;
-  margin-bottom: -8vh;
-  position: relative;
-  z-index: -1;
+
+  position: absolute;
+  z-index: 1;
+
+  left: 0px;
+  right: 0px;
+}
+
+.after-title-slide {
+  margin-top: 92vh;
 }
 
 $circle-size: 35px;
@@ -27,13 +36,22 @@ $circle-size: 35px;
     transform: translateY(-50%);
   }
 
-  h2, h2 a:hover {
-    color: lighten($blue, 90%);
 
+
+  h2, h2 a {
+    color: lighten($blue, 98%);
+  }
+
+  h2 a:hover {
+    color: lighten($blue, 30%);
   }
 
   h1 {
-    font-size: 2em;
+    font-size: 2.9em;
+  }
+
+  h2 {
+    font-size: 1.8em;
   }
 
   @include media($mobile) {

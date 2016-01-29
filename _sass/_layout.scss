@@ -75,8 +75,8 @@ img.wide-image {
 }
 
 .wide {
-  @include span-columns(10);
-  @include shift(1);
+  @include span-columns(12);
+  @include shift(0);
   margin-bottom: $small-spacing;
   border: $base-border-height solid $light-gray;
 }
