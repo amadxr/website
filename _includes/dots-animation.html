@@ -1,7 +1,7 @@
 <script type="text/javascript">
   // Configurable values
   var fps = 15;
-  var fadeRate = 0.08; // how fast the circles fade in and out
+  var fadeRate = 0.05; // how fast the circles fade in and out
   var diameter = 100;
   var circleOpacity = 0.2;
   var targetCanvasId = "animated-dots";
@@ -58,10 +58,13 @@
       for (y = 1; y <= rows; y++) { 
         for (x = 1; x <= cols; x++) { 
           var index = y * x;
-          context.beginPath();
-          context.arc((x * diameter - halfDiameter), (y * diameter - halfDiameter), halfDiameter, 0, twoPi);
-
           var alpha = (Math.sin(alphas[index] + alphaOffset) + 0.5) / 2.0;
+
+          context.beginPath();
+          var currentDiameter = diameter + (diameter * alpha);
+          console.log(alpha);
+
+          context.arc((x * diameter - halfDiameter), (y * diameter - halfDiameter), currentDiameter / 5, 0, twoPi);
 
           context.fillStyle = 'rgba(225, 225, 225,' + (alpha * maxOpacity[index])  + ')';
           context.fill();
