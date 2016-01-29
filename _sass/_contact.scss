@@ -1,0 +1,15 @@
+.verbal-form  {
+  @include outer-container;
+
+  input {
+    vertical-align:baseline;
+  }
+  
+
+  .field {
+    @include span-columns(4);
+    input {
+      width: 100%
+    }
+  }
+}

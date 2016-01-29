@@ -36,8 +36,6 @@ $circle-size: 35px;
     transform: translateY(-50%);
   }
 
-
-
   h2, h2 a {
     color: lighten($blue, 98%);
   }
@@ -56,7 +54,11 @@ $circle-size: 35px;
 
   @include media($mobile) {
     h1 {
-      font-size: 1.5em;
+      font-size: 1.3em;
+    }
+
+    h2 {
+      font-size: 1.1em;
     }
   }
 }
