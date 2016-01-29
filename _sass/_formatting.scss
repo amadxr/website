@@ -13,6 +13,15 @@ p.attribution {
 
 .call-to-action {
   text-align: center;
+  background: $blue;
+  padding: 5px;
+  display: inline-block;
+  border-radius: 3px;
+  padding: .75em 1.5em;
+
+  &:hover {
+    background-color: shade($action-color, 20%);
+  }
 }
 
 .upcase {

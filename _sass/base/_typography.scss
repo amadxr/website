@@ -104,7 +104,8 @@ blockquote {
   font-size: golden-ratio($base-font-size, 0);
 }
 
-.call-to-action {
+a.call-to-action {
   font-weight: bold;
-  font-size: golden-ratio($base-heading-size, 0);
+  color: white;
+  text-decoration: none;
 }
