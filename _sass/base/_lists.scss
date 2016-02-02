@@ -3,17 +3,15 @@ ol {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  text-align: left;
 
-  &%default-ul {
-    list-style-type: disc;
-    margin-bottom: $small-spacing;
-    padding-left: $base-spacing;
+  li {
+    margin-left: $base-spacing;
+    list-style: disc;
   }
 
-  &%default-ol {
-    list-style-type: decimal;
-    margin-bottom: $small-spacing;
-    padding-left: $base-spacing;
+  &.two-column {
+    column-count: 2;
   }
 }
 
@@ -21,7 +19,7 @@ dl {
   margin-bottom: $small-spacing;
 
   dt {
-    font-weight: bold;
+    font-weight: 600;
     margin-top: $small-spacing;
   }
 
