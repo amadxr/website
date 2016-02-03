@@ -1,5 +1,6 @@
 footer {
   margin-top: $base-spacing;
+  line-height: 1em;
   @include pad();
 
   svg {
