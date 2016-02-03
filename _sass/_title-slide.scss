@@ -34,6 +34,7 @@ $circle-size: 35px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 100;
   }
 
   h2, h2 a {

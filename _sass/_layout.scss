@@ -2,10 +2,6 @@
 .narrow {
   @include span-columns(8 of 12);
   @include shift(2);
-  
-  p {
-    text-align: left;
-  }
 }
 
 .very-narrow {
