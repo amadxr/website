@@ -1,12 +1,10 @@
 // Formatting of inline content elements
 // Not typography though. Put that in _typography.scss
 
-p.caption {
+.caption {
   text-align: center;
   color: rgba(0,0,0, 0.3);
 }
-
-
 
 .middle-aligned {
   vertical-align: middle;

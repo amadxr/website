@@ -1,15 +1,13 @@
 .post {
   margin-top: $base-spacing;
+}
 
-  ul {
-      list-style-type: disc;
-      margin-bottom: $small-spacing;
-      padding-left: $base-spacing;
-  }
+span.blog-date {
+  min-width: 70px;
+  display: inline-block;
+  text-align: left;
 
-  ol {
-    list-style-type: decimal;
-    margin-bottom: $small-spacing;
-    padding-left: $base-spacing;
+  @include media($mobile) {
+    display: none;
   }
 }

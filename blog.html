@@ -19,8 +19,7 @@ permalink: /blog/
         {% endif %}
 
         <li>
-          <a href="{{ post.url }}">{{ post.title }}</a>
-          <span style="float: right;">{{post.date | date: "%b %-d" }}</span>
+          <span class="caption blog-date">{{post.date | date: "%b %-d" }}</span>  <a href="{{ post.url }}">{{ post.title }}</a>
         </li>
 
         {% if forloop.last %}
