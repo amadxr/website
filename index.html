@@ -66,13 +66,19 @@ layout: default
 <section>
   <div class="narrow">
     <h2 class="editable">From Our Blog</h2>
-    <ul>
-      {% for post in site.posts limit: 5 %}
+    <ul class="timeline">
+      {% for post in site.posts limit: 3 %}
+        {% assign author = site.data.people[post.author] %}
         <li>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <span class="caption blog-date"></span>
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><br/>
+          {{ author.name }} &mdash; {{post.date | date: "%b %-d" }}
         </li>
       {% endfor %}
     </ul>
+    <p class="center-aligned">
+      <a href="/blog/">see all posts</a>
+    </p>
     <hr/>
 
     <p class="editable center-aligned">

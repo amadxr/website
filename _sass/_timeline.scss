@@ -1,0 +1,81 @@
+$dot-size: 20px;
+
+.timeline {
+  position: relative;
+  @include clearfix;
+  margin: 0px;
+  padding: 0px 0px $base-spacing 0px;
+
+  &::before {
+    /* this is the vertical line */
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    margin-left: 49.5%;
+    width: 1%;
+    background: $light-gray;
+  }
+
+  li {
+    a {
+      font-family: $heading-font-family;
+    }
+
+    width: 46%;
+    list-style: none;
+    background: $light-gray;
+    padding: $small-spacing;
+    position: relative;
+    margin: 0px;
+
+    .blog-date {
+      font-family: $base-font-family;
+      position: absolute;
+      top: 7px;
+      background: white;
+      background: #CCC;
+      width: $dot-size;
+      height: $dot-size;
+      border-radius: $dot-size / 2;
+      background: $blue;
+      border: 2px solid white;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      height: 0;
+      width: 0;
+      border: 7px solid transparent;
+    }
+  }
+
+  li:nth-child(odd) {
+    float: left;
+    margin-right: 54%;
+
+    .blog-date {
+      right: -11.25%;
+    }
+
+    &::before {
+      left: 100%;
+      border-left: 7px solid $light-gray;
+    }
+  }
+
+  li:nth-child(even) {
+    float: right;
+
+    .blog-date {
+      left: -11.25%;
+    }
+
+    &::before {
+      right: 100%;
+      border-right: 7px solid $light-gray;
+    }
+  }
+}
