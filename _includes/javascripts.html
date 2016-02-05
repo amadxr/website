@@ -7,10 +7,40 @@
         return hljs.highlightBlock(block);
       });
     }
+
+
+    function displayTimelineItems(){
+      $(".timeline li.hidden").each(function(){
+        if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 ) {
+          $(this).removeClass('hidden').addClass('appear');
+        }
+      });
+    }
+    $(window).on('scroll', function(){
+      displayTimelineItems();
+    });
+
+    displayTimelineItems();
+
+
+
+    $('.feature-number').each(function() {
+      $(this).prop('Counter', 0).animate({
+        Counter: $(this).text()
+      }, {
+        duration: 1000,
+        easing: 'swing',
+        step: function(now) {
+          $(this).text(Math.ceil(now));
+        }
+      });
+    });
   }
 
   var script = document.createElement('script');
   script.src = '/js/jquery.min.js';
   script.onload = jQueryLoaded;
   document.body.appendChild(script);  
+
+
 </script>
