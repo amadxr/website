@@ -2,8 +2,8 @@ textarea, input { box-shadow:none !important }
 
 fieldset {
   background-color: $secondary-background-color;
-  border: $base-border;
   margin: 0 0 $small-spacing;
+  border: none;
   padding: $base-spacing;
 }
 
