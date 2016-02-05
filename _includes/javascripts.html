@@ -8,39 +8,35 @@
       });
     }
 
-
     function displayTimelineItems(){
       $(".timeline li.hidden").each(function(){
-        if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 ) {
+        if( $(this).offset().top <= $(window).scrollTop()+$(window).height() ) {
           $(this).removeClass('hidden').addClass('appear');
         }
       });
     }
-    $(window).on('scroll', function(){
+
+    // attached to scroll event in a more effecient way.
+    var scrollTimeout;  // global for any pending scrollTimeout
+
+    function update(){
+      if (scrollTimeout) { // clear the timeout, if one is pending
+        clearTimeout(scrollTimeout);
+        scrollTimeout = null;
+      }
+      scrollTimeout = setTimeout(scrollHandler, 5);
+    }
+
+    scrollHandler = function () {
       displayTimelineItems();
-    });
+    };
 
-    displayTimelineItems();
-
-
-
-    $('.feature-number').each(function() {
-      $(this).prop('Counter', 0).animate({
-        Counter: $(this).text()
-      }, {
-        duration: 1000,
-        easing: 'swing',
-        step: function(now) {
-          $(this).text(Math.ceil(now));
-        }
-      });
-    });
+    $(window).scroll(function () { update(); });
+    $(window).resize(function(){ update(); });
   }
 
   var script = document.createElement('script');
   script.src = '/js/jquery.min.js';
   script.onload = jQueryLoaded;
-  document.body.appendChild(script);  
-
-
+  document.body.appendChild(script);
 </script>
