@@ -4,7 +4,7 @@ $dot-size: 20px;
   position: relative;
   @include clearfix;
   margin: 0px;
-  padding: 0px 0px $base-spacing 0px;
+  padding: $base-spacing 0px $base-spacing 0px;
 
   &::before {
     /* this is the vertical line */
@@ -19,6 +19,7 @@ $dot-size: 20px;
   }
 
   li {
+
     transform: rotateX(90);
     a {
       font-family: $heading-font-family;
@@ -31,6 +32,7 @@ $dot-size: 20px;
     padding: $small-spacing;
     position: relative;
     margin: 0px;
+    margin-top: -20px;
 
     .dot {
       font-family: $base-font-family;
