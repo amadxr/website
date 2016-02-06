@@ -5,7 +5,11 @@
     </a>
 
     <nav>
-      {% for item in site.data.nav %}<a href="{{ item.link }}" {% if page.url == item.link %}class="active"{% endif %}>{{ item.name }}</a>{% endfor %}
+      {% for item in site.data.nav %}
+        <a href="{{ item.link }}" class="{% if page.url == item.link %}active {% endif %}{% if item.featured == "true" %}featured{% endif %}">
+          {{ item.name }}
+        </a>
+      {% endfor %}
     </nav>
   </div>
 </header>

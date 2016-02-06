@@ -24,6 +24,7 @@ $dot-size: 20px;
       font-family: $heading-font-family;
     }
 
+    border-radius: 3px;
     width: 46%;
     list-style: none;
     background: $light-gray;
@@ -84,15 +85,15 @@ $dot-size: 20px;
   @keyframes appear {
     0% {
       opacity: 0;
-      transform: rotateX(45deg) perspective(200px);
+      //transform: rotateX(45deg) perspective(200px);
     }
     100% {
       opacity: 1;
-      transform: rotateX(0deg) perspective(200px);
+      //transform: rotateX(0deg) perspective(200px);
     }
   }
 
   li.appear {
-    animation: "appear" 1.0s ease-out;
+    animation: "appear" 1.5s ease-out;
   }
 }

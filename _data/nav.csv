@@ -1,5 +1,5 @@
-name,link
-Blog,/blog/
-Work,/work.html
-Services,/services/
-Hire Us,/hire-us/
+name,link,featured
+Blog,/blog/,false
+Work,/work/,false
+Services,/services/,false
+Hire Us,/hire-us/,true
