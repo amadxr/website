@@ -24,6 +24,9 @@ permalink: /blog/
 
         <li class="hidden">
           <span class="dot"></span>
+          {% if post.feature_image %}
+            <img src="{{post.feature_image}}" />
+          {% endif %}
           <a href="{{ post.url }}">{{ post.title }}</a><br/>
           {{ author.name }} &mdash; {{post.date | date: "%b %-d" }}
         </li>

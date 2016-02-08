@@ -3,7 +3,12 @@ layout: post
 title: Devmob 2015
 dropcap: true
 author: tim_ross
+feature_image: http://resolve.imgix.net/devmob-2015.jpeg?auto=format&ch=Width,DPR
 ---
+
+{% if page.feature_image %}
+  <img src="{{page.feature_image}}" alt="devmob 2015"/>
+{% endif %}
 
 <p>Over the weekend, <a href="https://twitter.com/mark_haylock" title="https://twitter.com/mark_haylock">Mark Haylock</a> and I had the pleasure of attending the annual <a href="http://devmob.co.nz/" title="http://devmob.co.nz/">devmob</a> mobile development conference in Auckland. The conference is run as a self-organising <a href="http://en.wikipedia.org/wiki/BarCamp" title="http://en.wikipedia.org/wiki/BarCamp">BarCamp</a> format. Each morning, attendees post session topics on a board. The types of sessions range from prepared talks to open discussions. The idea is that everyone who attends has some knowledge that's worth sharing and it's not just down to a few well-paid "experts" to dictate the session topics.</p>
 <p>This year there was a great deal of buzz about Apple <a href="https://swift.org/" title="https://swift.org/">open-sourcing</a> the Swift programming language. I attended some excellent sessions on App Store rejection horror stories, Swift tips and tricks and Auto Layout using <a href="http://snapkit.io/" title="http://snapkit.io/">SnapKit</a>. Mark and I ran a session on working with legacy code and how to avoid writing it, which we plan on turning into a couple of blog posts.</p>
