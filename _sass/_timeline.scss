@@ -1,8 +1,8 @@
 $dot-size: 20px;
 
 .timeline {
-  position: relative;
   @include clearfix;
+  position: relative;
   margin: 0px;
   padding: $base-spacing 0px $base-spacing 0px;
 
@@ -19,12 +19,6 @@ $dot-size: 20px;
   }
 
   li {
-
-    transform: rotateX(90);
-    a {
-      font-family: $heading-font-family;
-    }
-
     border-radius: 3px;
     width: 46%;
     list-style: none;
@@ -34,18 +28,6 @@ $dot-size: 20px;
     margin: 0px;
     margin-top: -20px;
 
-    .dot {
-      font-family: $base-font-family;
-      position: absolute;
-      top: 7px;
-      background: white;
-      background: #CCC;
-      width: $dot-size;
-      height: $dot-size;
-      border-radius: $dot-size / 2;
-      background: $blue;
-      border: 2px solid white;
-    }
 
     &::before {
       content: '';
@@ -55,6 +37,24 @@ $dot-size: 20px;
       width: 0;
       border: 7px solid transparent;
     }
+
+    a {
+      font-family: $heading-font-family;
+    }
+
+    .dot {
+      font-family: $base-font-family;
+      position: absolute;
+      top: 7px;
+      background: $light-gray;
+      width: $dot-size;
+      height: $dot-size;
+      border-radius: $dot-size / 2;
+      background: $blue;
+      border: 2px solid white;
+    }
+
+
   }
 
   li:nth-child(odd) {
@@ -85,17 +85,11 @@ $dot-size: 20px;
   }
 
   @keyframes appear {
-    0% {
-      opacity: 0;
-      //transform: rotateX(45deg) perspective(200px);
-    }
-    100% {
-      opacity: 1;
-      //transform: rotateX(0deg) perspective(200px);
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
   }
 
   li.appear {
-    animation: "appear" 1.5s ease-out;
+    animation: "appear" 0.3s ease-out;
   }
 }
