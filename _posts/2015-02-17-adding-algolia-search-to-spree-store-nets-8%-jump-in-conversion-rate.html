@@ -1,9 +1,13 @@
 ---
 layout: post
 title: Adding Algolia Search to Spree Store Nets 8% Jump in Conversion Rate
+author:
+feature_image:
+editor: 
+additional_help:
 ---
 
-<p>Google search is an incredibly advanced product that we're all accustomed to. When visitors use search on your store, they expect to be able to make typos and spelling mistakes and still get relevant results at near instantaneous speed.&#160;</p>
+<p>Google search is an incredibly advanced product that we're all accustomed to. When visitors use search on your store, they expect to be able to make typos and spelling mistakes and still get relevant results at near instantaneous speed. </p>
 <p><a href="https://spreecommerce.com" title="https://spreecommerce.com" target="_blank">Spree Commerce</a> offers built-in search which does a decent job, but with nearly 4,000 products and 12,000 variants it wasn't optimal for our client, <a href="http://www.wardrobesupplies.com" title="http://www.wardrobesupplies.com" target="_blank">Manhattan Wardrobe Supply</a> (MWS). Our journey to a better search option for MWS led us to try a new service, <a href="http://www.algolia.com" title="http://www.algolia.com" target="_blank">Algolia</a>.</p>
 <p><img src="//dl3u9qgv64mry.cloudfront.net/system/images/W1siZiIsIjIwMTUvMDIvMTYvMTgvMzgvMjQvMTAvQWxnb2xpYV9Mb2dvX0xpZ2h0X0JhY2tncm91bmQucG5nIl1d/Algolia-Logo-Light-Background.png" title="Algolia Logo Light Background" alt="Algolia Logo Light Background" data-rel="225x255"   class="img-thumbnail image-align-center" /></p>
 <p>
@@ -16,7 +20,7 @@ When I first picked up Algolia, I got excited. It offers many advanced search fe
 </p>
 <p><span style="background-color: transparent;">Algolia currently has twelve server locations around the world. They call it a <a href="https://www.algolia.com/dsn" title="https://www.algolia.com/dsn" target="_blank">"distributed search network"</a>. When setting up, they guide you to store your search index at a location close to your customers. This keeps latency to a minimum.</span>
 </p>
-<p><strong>Response Time</strong>&#160;</p>
+<p><strong>Response Time</strong> </p>
 <p>Now that the connection has been made, we have to wait for the search result response. The search engine itself is <a href="http://stackshare.io/posts/how-algolia-built-their-realtime-search-as-a-service-product" title="http://stackshare.io/posts/how-algolia-built-their-realtime-search-as-a-service-product" target="_blank">implemented as an nginx module</a> which makes their stack unbelievably shallow. This is a brave, creative and frankly a brilliant solution that works like a charm in practice. With over 12,000 records to search, 99% of our response times are below 7ms. Your results will differ based on how many records you have indexed and how you've configured Algolia.</p>
 <p class="text-align-center"><strong>Algolia: Response Time From 99% of Queries</strong>
 </p>
@@ -32,7 +36,7 @@ When I first picked up Algolia, I got excited. It offers many advanced search fe
 </blockquote>
 
 <h3>The first A/B test</h3>
-<p>After waiting several weeks the results were in for the A/B test. The c<span style="background-color: transparent;">onversion rate declined from 4.31% to 4.28% when introducing Algolia.&#160;</span>
+<p>After waiting several weeks the results were in for the A/B test. The c<span style="background-color: transparent;">onversion rate declined from 4.31% to 4.28% when introducing Algolia. </span>
 <span style="background-color: transparent;">I wondered how could this be? It’s so much faster.</span>
 </p>
 <p><span style="background-color: transparent;">Clearly I’d overlooked something. Thankfully I had a raft of data in Google Analytics to help figure me it out. After much theorising, I realized that the layout of the search had changed too and I must have made it worse. Not Algolia’s fault at all.</span>
@@ -42,7 +46,7 @@ When I first picked up Algolia, I got excited. It offers many advanced search fe
 <p>Manhattan Wardrobe Supply’s best and most loyal customers are wardrobe professionals running productions for theater, film and TV. Ordering supplies is a vital part of the job. They don’t typically buy one or two items, they buy for a whole production. </p>
 <p>The old search listed all product options and allowed customers to buy many items directly from the search results. The results page was almost like an order sheet. And there was enough knowledge and trust that customers often didn’t need to visit product detail pages to order.</p>
 <p>The newer interface took away the “buy now” option from search results. We also limited the number of results by not listing all product options. This is how you’d usually see search results on an online store, but this obviously didn’t work as well for MWS customers.</p>
-<h3>Revising the search interface&#160;</h3>
+<h3>Revising the search interface </h3>
 <p>With these thoughts in mind, I went about changing the Algolia search interface to more closely match the original. Not only that, I could confidently go further in this direction now I had a better understanding of what the customer is trying to achieve.</p>
 <p>I added the ability to buy products from the search results page. I also listed out variations of a product in search results, though it did make the results really tall. Finally, I decided to make every product buyable from search results.</p>
 <p>I was now using advanced Algolia techniques to store custom fields about stock levels and variant information. I also added some neat features like being able to drill down your results by category and highlighting words on the page that exactly match what you’re searching for. This makes the results page very scannable.</p>

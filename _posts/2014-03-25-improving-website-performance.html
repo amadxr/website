@@ -1,10 +1,13 @@
 ---
 layout: post
 title: Improving Website Performance
+author:
+feature_image:
+editor: 
+additional_help:
 ---
 
 <p>Recently we were contacted by an educational software company that&nbsp;needed immediate help analyzing their website performance and implementing a quick fix. We really love this kind of challenge and agreed to take a look.</p>
-<!---more---> <!--more-->
 <p>We focused on the slowest queries in <a title="http://newrelic.com/" href="http://newrelic.com/" target="_blank">New Relic</a> and identified each could be sped up significantly by adding missing indexes. We also observed that the app’s database had been built with almost no indexes at all - so there's more room for improvement.</p>
 <p>Paying attention to your database design and including the appropriate indexes can make a big difference in your app’s ability to grow and handle more users. In this particular case, some queries went from averaging up to 1 second execution time to consistently averaging less than 10 ms (ten thousandths of a second).</p>
 <p>Here's what our client reported: "We deployed your changes to production last night. New Relic shows significant improvement with database queries, perhaps 60-80% less time overall (see attached). I can feel it as an end-user.&nbsp;Much better performance, thank you!"</p>

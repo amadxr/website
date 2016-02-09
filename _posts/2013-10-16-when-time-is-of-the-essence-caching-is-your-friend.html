@@ -1,13 +1,17 @@
 ---
 layout: post
 title: When Time Is of the Essence Caching Is Your Friend
+author:
+feature_image:
+editor: 
+additional_help:
 ---
 
-<p><img style="float: left; margin: 0px 20px 20px 0px;" title="88mph" src="/system/images/W1siZiIsIjIwMTQvMTEvMjcvMDAvNDkvNDAvNDkyLzg4bXBoLmpwZyJdXQ/88mph.jpg" alt="88mph" align="left" />Speed. It's an extremely important metric for judging a site. So much so&#160;<a href="http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html" target="_blank">Google has been bumping up rankings</a> for fast sites since 2010. <a href="http://www.fastcompany.com/1825005/how-one-second-could-cost-amazon-16-billion-sales" target="_blank">Amazon calculated</a> that a page load slowdown of just one second could cost it $1.6 billion in sales each year.</p>
+<p><img style="float: left; margin: 0px 20px 20px 0px;" title="88mph" src="/system/images/W1siZiIsIjIwMTQvMTEvMjcvMDAvNDkvNDAvNDkyLzg4bXBoLmpwZyJdXQ/88mph.jpg" alt="88mph" align="left" />Speed. It's an extremely important metric for judging a site. So much so <a href="http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html" target="_blank">Google has been bumping up rankings</a> for fast sites since 2010. <a href="http://www.fastcompany.com/1825005/how-one-second-could-cost-amazon-16-billion-sales" target="_blank">Amazon calculated</a> that a page load slowdown of just one second could cost it $1.6 billion in sales each year.</p>
 
 <p>Caching content is one of the best ways to make your website faster to respond.</p>
 <p>Websites usually display content that changes. In order to allow content to be updated easily the data is stored in a database. When a web page is loaded the server has to go off to the database, load in all the content, work out how it's going to present the information and then send it back to your browser. Usually this process is pretty fast. Sometimes however, if some extra processing is going on things can slow right down.</p>
-<p>With our recent <a href="/work/degreestory" title="DegreeStory">DegreeStory</a>&#160;website, our client was concerned that the site had become slower as more and more content was added. We looked into it and found that the homepage was performing badly in one particular area (the part shaded brown in the picture below)</p>
+<p>With our recent <a href="/work/degreestory" title="DegreeStory">DegreeStory</a> website, our client was concerned that the site had become slower as more and more content was added. We looked into it and found that the homepage was performing badly in one particular area (the part shaded brown in the picture below)</p>
 <p><img title="Before After Caching" src="/system/images/W1siZiIsIjIwMTQvMTEvMjcvMDAvNDkvNDAvMTc4L2JlZm9yZV9hZnRlcl9jYWNoaW5nLmpwZyJdXQ/before_after_caching.jpg" alt="Before After Caching" /></p>
 <p>In the picture above you can see at 14:20 or so the brown part of the graph (which represents the time displaying each individual story) has almost completely disappeared. What we did was to "cache" the content. What caching (in this context) means is that the first time a story is displayed we save a copy of the HTML and then the next time we need to display it the content is there - ready to go.</p>
 <p>The trick with caching is knowing what content to cache and when to expire it. For example, if a user updates the title of a story we have cached, then we need to expire our cached copy so that only the new content is displayed to the next visitor. Fortunately Rails makes this simple so it's easy to shave precious seconds off your page load speed!</p>

@@ -31,7 +31,7 @@ In this tutorial we’re going to create a simple client-server web application 
 <p>First up, let’s run the following to create a new Phoenix app:</p>
 <pre><code class="ruby terminal hljs">$ mix phoenix.new phoenix_todos_api --no-brunch
 $ cd phoenix_todos_api</code></pre>
-<p>We are excluding <a href="http://brunch.io/" title="http://brunch.io/" target="_blank">Brunch.io</a> because our API-only app will not need asset management.&#160;When you are prompted to "Fetch and install dependencies?" answer <code>Y</code>.</p>
+<p>We are excluding <a href="http://brunch.io/" title="http://brunch.io/" target="_blank">Brunch.io</a> because our API-only app will not need asset management. When you are prompted to "Fetch and install dependencies?" answer <code>Y</code>.</p>
 <h3>2) Create the database</h3>
 <p>Next we’ll create the database. Make sure that the correct credentials for your PostgreSQL server are in both <code>config/dev.exs</code> and <code>config/test.exs</code>. The default credentials are:</p>
 <p class="tip"><strong>Tip</strong> if you have installed PostgreSQL using Homebrew you can just remove the username and password lines and it should just work.
@@ -138,7 +138,7 @@ Repo.insert!(%Todo{title: "Ensure the Apps Work Together", is_completed: false})
 <p>Visit <a href="http://localhost:4200" rel="nofollow" target="_blank">http://localhost:4200</a> in your browser. At this point you can add todos, but it is only using in-memory storage and todos are not persisted when you refresh the page.</p>
 
 <h3>Connecting Ember to Phoenix</h3>
-<p>So far we have a working server-side API app written with Phoenix, and a working client-side app written with Ember. But the two apps aren't talking to each other. Next we’ll look at connecting the two apps together and have our todos persisted.&#160;</p>
+<p>So far we have a working server-side API app written with Phoenix, and a working client-side app written with Ember. But the two apps aren't talking to each other. Next we’ll look at connecting the two apps together and have our todos persisted. </p>
 <hr/>
 <h3>Changes to the Ember App</h3>
 <h4>1) Configuring Ember Data to use Phoenix</h4>
@@ -220,7 +220,7 @@ end</code></pre>
   plug CORSPlug, [origin: "http://localhost:9000"] # add this line
   plug PhoenixTodosApi.Router
 end</code></pre>
-<p>We’ve placed it above&#160;<code>PhoenixTodosApi.Router</code> in the pipeline, and we are also passing it <code>http://localhost:9000</code> as the origin, which is using the port we configured the Ember App to run on.</p>
+<p>We’ve placed it above <code>PhoenixTodosApi.Router</code> in the pipeline, and we are also passing it <code>http://localhost:9000</code> as the origin, which is using the port we configured the Ember App to run on.</p>
 <h4>2) Configuring the JSON root keys</h4>
 <p>The <code>RESTAdapter</code> in Ember expects the root key of our JSON responses to map to the Ember Data model it should be deserialized into. For the Todo model this will mean <code>todos</code> for a collection of todos, and <code>todo</code> for a single todo. But when we ran <code>mix phoenix.gen.json Todo</code> it set up the TodoView to always respond with <code>data</code> as the root key.</p>
 <p>Let's change the JSON output to use <code>todos</code> as the root key for a collection of todos, and <code>todo</code> as the root key for a single todo. First we will update the controller test to expect this change. Open up <code>test/controllers/todo_controller_test.exs</code> and replace all instances of <code>["data"]</code> with <code>["todo"]</code> (there should be 4 replacements). Then find the test for the <code>:index</code> action and change the expected root from <code>["todo"]</code> to <code>["todos"]</code>:</p>

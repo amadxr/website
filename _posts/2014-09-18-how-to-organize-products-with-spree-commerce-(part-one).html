@@ -1,6 +1,10 @@
 ---
 layout: post
 title: How to Organize Products with Spree Commerce (Part One)
+author:
+feature_image:
+editor: 
+additional_help:
 ---
 
 <p><img src="/system/images/W1siZiIsIjIwMTQvMTEvMjcvMDAvNDkvMjgvOTUvdF9zaGlydHMucG5nIl1d/t-shirts.png" alt="t-shirts" /></p>
@@ -11,7 +15,7 @@ title: How to Organize Products with Spree Commerce (Part One)
 </span>how you how these concepts relate to each other and how you use them to build a store that’s easy for customers to shop, storekeepers to manage, and developers to maintain.</p>
 <h3 dir="ltr"><span>Products and Variants: the main thing to know.</span>
 </h3>
-<p dir="ltr"><span>Suppose we have an online store selling emoji t-shirts. We have hundreds of t-shirts with different designs. &#160;</span>
+<p dir="ltr"><span>Suppose we have an online store selling emoji t-shirts. We have hundreds of t-shirts with different designs.  </span>
 </p>
 <p dir="ltr">Generally speaking, most customers choose between t-shirts mainly by the design.<strong> In Spree, we’d treat each design as a separate product.</strong>
 </p>
@@ -24,11 +28,11 @@ title: How to Organize Products with Spree Commerce (Part One)
 <p dir="ltr"><span>Spree’s admin interface doesn’t always make the distinction between products and variants clear. It’s tempting to just make everything a product and ignore variants. If you do, however, you’ll make your store much harder for customers to navigate. Most likely you’ll also end up duplicating the idea by grouping products together in non-standard ways.</span>�</p>
 <h3 dir="ltr"><span>Understanding Variants</span>
 </h3>
-<p dir="ltr"><span>Every product in Spree has at least one variant. This isn’t immediately obvious. &#160;</span>
+<p dir="ltr"><span>Every product in Spree has at least one variant. This isn’t immediately obvious.  </span>
 </p>
 <p><span><img src="/system/images/W1siZiIsIjIwMTQvMTEvMjcvMDAvNDkvMjkvMzAzL25ld19wcm9kdWN0LnBuZyJdXQ/new_product.png" alt="new_product" /></span>
 </p>
-<p dir="ltr"><span>When you create a product in Spree, <strong>you’re actually creating both a product and a “master variant.”</strong>&#160;The new product form merges the information for the product and the master variant into a single form. The Name, Prototype, Available On date and Shipping Categories fields belong to the product. The SKU and Master Price belong to the master variant. </span>
+<p dir="ltr"><span>When you create a product in Spree, <strong>you’re actually creating both a product and a “master variant.”</strong> The new product form merges the information for the product and the master variant into a single form. The Name, Prototype, Available On date and Shipping Categories fields belong to the product. The SKU and Master Price belong to the master variant. </span>
 <strong>Spree never mentions the master variant in the admin interface.</strong>
 </p>
 <p>If you add variants, it becomes clear which fields naturally belong there: they’re the things you might reasonably expect to vary without changing the product. For example, if your products are books you’d expect to charge different prices for the hardback, paperback and ebook editions. Price, therefore, must be a characteristic that belongs to each variant, not to the product as a whole.</p>
@@ -40,7 +44,7 @@ title: How to Organize Products with Spree Commerce (Part One)
 </p>
 <p dir="ltr"><span>Spree even allows you to create a variant with no SKU at all, but we strongly recommend that every product have one.</span>
 </p>
-<h3 dir="ltr">&#160;</h3>
+<h3 dir="ltr"> </h3>
 <h3 dir="ltr"><span>Understanding Products</span>
 </h3>
 <p dir="ltr"><span><strong>Products in Spree have two jobs.</strong> First, to group variants that belong together. Second, to store the information those variants have in common.</span>
@@ -50,7 +54,7 @@ title: How to Organize Products with Spree Commerce (Part One)
 </p>
 <p>The available on date gives you control over when the product will be on sale. If you leave it blank or set it to a future date, customers won’t see the product on the site.</p>
 <p dir="ltr"><strong>Products can belong to taxons.</strong>
-<span> Taxons (and the taxonomies they belong to) deserve an article of their own, but briefly they’re the categories and tags customers browse through to find your products. If you’re selling furniture, you might have taxons for dining room furniture, bedroom furniture and office furniture. You might also have tables, chairs, beds and desks. You could have taxons for different brands, price ranges, or any other way you like to organise your products. Taxons can be hierarchies of categories and subcategories, or flat collections like featured products.&#160;<img style="float: right;" src="/system/images/W1siZiIsIjIwMTQvMTEvMjcvMDAvNDkvMzAvOTE5L3RheG9ub215LnBuZyJdXQ/taxonomy.png" alt="taxonomy" align="right" /></span>
+<span> Taxons (and the taxonomies they belong to) deserve an article of their own, but briefly they’re the categories and tags customers browse through to find your products. If you’re selling furniture, you might have taxons for dining room furniture, bedroom furniture and office furniture. You might also have tables, chairs, beds and desks. You could have taxons for different brands, price ranges, or any other way you like to organise your products. Taxons can be hierarchies of categories and subcategories, or flat collections like featured products. <img style="float: right;" src="/system/images/W1siZiIsIjIwMTQvMTEvMjcvMDAvNDkvMzAvOTE5L3RheG9ub215LnBuZyJdXQ/taxonomy.png" alt="taxonomy" align="right" /></span>
 </p>
 <p><strong>Products can also have properties.</strong> Not all sites use these, but they’re handy if you want to provide a table of features.</p>
 <p>Finally, <strong>products can have options</strong> (also known as option types). If you’ve felt like something is missing in the relationship between products and variants, options are the missing link.</p>
