@@ -6,11 +6,21 @@
   "base/variables";
 
 
-.post article::first-letter { 
-    font-size: 3.3em;
+.post article {
+  p:first-of-type:first-letter, p.feature:first-of-type:first-letter {
     vertical-align: top;
     float: left;
-    line-height: 0.85em;
     padding-right: 0.1em;
     color: $green;
+  }
+
+  p:first-of-type:first-letter { 
+    font-size: 3.3em;
+    line-height: 0.85em;
+  }
+
+  p.feature:first-of-type:first-letter { 
+    font-size: 2.82em;
+    line-height: 0.93em;
+  }
 }
