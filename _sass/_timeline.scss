@@ -24,10 +24,9 @@ $dot-size: 20px;
 
   li {
     text-align: center;
-    border-radius: 3px;
     list-style: none;
     background: white;
-    border: 2px solid $light-gray;
+    border: $base-border;
     padding: $small-spacing;
     margin: $base-spacing 0px;
 
@@ -40,7 +39,7 @@ $dot-size: 20px;
       width: $dot-size;
       height: $dot-size;
       border-radius: $dot-size / 2;
-      border: 4px solid $light-gray;
+      border: $base-border-height solid white;
       display: block;
       margin: -28px auto 10px auto;
     }
