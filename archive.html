@@ -9,7 +9,7 @@ permalink: /blog/archive/
     <h1 class="editable">Blog Archive</h1>
 
     <p class="editable center-aligned">Here's all the posts we've archived. <a href="/blog/">Return to the main blog</a></p>
-    <section class="left-aligned">
+    <section class="left-aligned timeline-series">
       {% assign posts = site.posts | where:'archived', true %}
       {% for post in posts %}
         {% assign author = site.data.people[post.author] %}

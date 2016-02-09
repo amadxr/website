@@ -7,7 +7,7 @@ permalink: /blog/
 <section class="top-spacing">
   <div class="narrow">
     <h1 class="editable">Blog</h1>
-    <section class="left-aligned">
+    <section class="left-aligned timeline-series">
       {% assign posts = site.posts | where:'archived', nil %}
       {% for post in posts  %}
         {% assign author = site.data.people[post.author] %}
