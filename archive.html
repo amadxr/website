@@ -10,35 +10,34 @@ permalink: /blog/archive/
 
     <p class="editable center-aligned">Here's all the posts we've archived. <a href="/blog/">Return to the main blog</a></p>
     <section class="left-aligned">
-      {% for post in site.posts  %}
-        {% if post.archived %}
-          {% assign author = site.data.people[post.author] %}
+      {% assign posts = site.posts | where:'archived', true %}
+      {% for post in posts %}
+        {% assign author = site.data.people[post.author] %}
 
-          {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-          {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+        {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+        {% capture next_year %}{{ posts[forloop.index].date | date: "%Y" }}{% endcapture %}
 
-          {% if forloop.first %}
-            <h2 id="{{ this_year }}-ref">{{this_year}}</h2>
-            <ul class="timeline">
+        {% if forloop.first %}
+          <h2>{{this_year}}</h2>
+          <ul class="timeline">
+        {% endif %}
+
+        <li class="hidden">
+          <span class="dot"></span>
+          {% if post.feature_image %}
+            <img src="{{post.feature_image}}" />
           {% endif %}
+          <a href="{{ post.url }}">{{ post.title }}</a><br/>
+          {{ author.name }} &mdash; {{post.date | date: "%b %-d" }}
+        </li>
 
-          <li class="hidden">
-            <span class="dot"></span>
-            {% if post.feature_image %}
-              <img src="{{post.feature_image}}" />
-            {% endif %}
-            <a href="{{ post.url }}">{{ post.title }}</a><br/>
-            {{ author.name }} &mdash; {{post.date | date: "%b %-d" }}
-          </li>
-
-          {% if forloop.last %}
+        {% if forloop.last %}
+          </ul>
+        {% else %}
+          {% if this_year != next_year %}
             </ul>
-          {% else %}
-            {% if this_year != next_year %}
-              </ul>
-              <h2 id="{{ next_year }}-ref">{{next_year}}</h2>
-              <ul class="timeline">
-            {% endif %}
+            <h2>{{next_year}}</h2>
+            <ul class="timeline">
           {% endif %}
         {% endif %}
       {% endfor %}

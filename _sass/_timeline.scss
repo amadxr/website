@@ -3,7 +3,7 @@ $dot-size: 20px;
 .timeline {
   position: relative;
   margin: 0px;
-  padding: $tiny-spacing 0px $base-spacing 0px;
+  padding: $tiny-spacing 0px $tiny-spacing 0px;
 
   &::before {
     /* this is the vertical line */
