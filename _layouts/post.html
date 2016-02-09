@@ -21,7 +21,7 @@ layout: default
         {% endif %}
         {% if page.meta %} &mdash; {{ page.meta }}{% endif %}
         {% if page.date %} &mdash; {{ page.date | date: "%b %-d, %Y" }}{% endif %}
-        &mdash; {% include word-count.html %}</p>
+        {% if page.read_count %}&mdash; {% include word-count.html %}{% endif %}</p>
       </header>
       <article>
         {{ content }}

@@ -6,12 +6,19 @@ ol {
 
   li {
     margin-left: $base-spacing;
-    list-style: disc;
   }
 
   &.two-column {
     column-count: 2;
   }
+}
+
+ol li {
+  list-style: decimal;
+}
+
+ul li {
+  list-style: disc;
 }
 
 dl {
