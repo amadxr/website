@@ -1,15 +1,17 @@
 ---
 layout: post
 title: Improving Website Performance
-author:
+author: mark_haylock
 feature_image:
 editor: 
 additional_help:
+dropcap: true
 ---
 
-<p>Recently we were contacted by an educational software company that&nbsp;needed immediate help analyzing their website performance and implementing a quick fix. We really love this kind of challenge and agreed to take a look.</p>
+<p class="feature">Recently we were contacted by an educational software company that needed immediate help analyzing their website performance and implementing a quick fix. We really love this kind of challenge and agreed to take a look.</p>
 <p>We focused on the slowest queries in <a title="http://newrelic.com/" href="http://newrelic.com/" target="_blank">New Relic</a> and identified each could be sped up significantly by adding missing indexes. We also observed that the app’s database had been built with almost no indexes at all - so there's more room for improvement.</p>
 <p>Paying attention to your database design and including the appropriate indexes can make a big difference in your app’s ability to grow and handle more users. In this particular case, some queries went from averaging up to 1 second execution time to consistently averaging less than 10 ms (ten thousandths of a second).</p>
-<p>Here's what our client reported: "We deployed your changes to production last night. New Relic shows significant improvement with database queries, perhaps 60-80% less time overall (see attached). I can feel it as an end-user.&nbsp;Much better performance, thank you!"</p>
-<p><img title="Before " src="/system/images/W1siZiIsIjIwMTQvMTEvMjcvMDAvNTAvMDQvMjkvYmVmb3JlLmdpZiJdXQ/before.gif" alt="Before " height="597" width="736"></p>
-<p><img title="After " src="/system/images/W1siZiIsIjIwMTQvMTEvMjcvMDAvNTAvMDUvMTAwL2FmdGVyLmdpZiJdXQ/after.gif" alt="After " height="598" width="736"></p>
+<p>Here's what our client reported:</p>
+<blockquote>"New Relic shows significant improvement with database queries, perhaps 60-80% less time overall (see attached). I can feel it as an end-user. Much better performance, thank you!"</blockquote>
+<p><img title="Before " src="http://resolve.imgix.net/before.gif?auto=format&ch=Width,DPR" alt="Before"/></p>
+<p><img title="After " src="http://resolve.imgix.net/after.gif?auto=format&ch=Width,DPR" alt="After"/></p>

@@ -1,18 +1,20 @@
 ---
 layout: post
 title: 'Code for Success: Focus on Architecture'
-author:
+author: david_jones
 feature_image:
 editor: 
 additional_help:
+dropcap: true
+read_count: true
 ---
 
-<p>Software architecture is a metaphor derived from the architecture of buildings. It’s a way of describing the high level structure of an application and is considered to be a balance of science and art, but I'd describe it more as a silent killer. Get it wrong and it will handcuff you beyond escape. At that point, the business impact will be devastating.</p>
+<p class="feature">Software architecture is a metaphor derived from the architecture of buildings. It’s a way of describing the high level structure of an application and is considered to be a balance of science and art, but I'd describe it more as a silent killer. Get it wrong and it will handcuff you beyond escape. At that point, the business impact will be devastating.</p>
 <p>A client came to us to add features to their 4 year old application. You’d expect development over this period of time to result in a refined and well architected application. In our experience this is rarely the truth. It was an overly complex system lumped into one application.</p>
-<h3>The condition of its architecture and lack of tests today gave us big hints as to how future development was going to pan out.</h3>
+<blockquote>The condition of its architecture and lack of tests today gave us big hints as to how future development was going to pan out.</blockquote>
 <p>It was going to be slow and painful. It makes you wonder though, how does this happen? How does an application back itself into a corner?</p>
 <p>One common cause is what developers refer to as a “tightly coupled” codebase. That means code that’s dependant on other code and is very resistant to change. As you attempt to add a new feature to a tightly coupled codebase you'll find you have to change other seemingly unrelated parts of your application. Repeat this process and your application development will slowly grind to a complete halt.</p>
-<h3>You’ll end up with a monolithic application: One application that does everything. It’s a frustrating tangled mess to deal with.</h3>
+<blockquote>You’ll end up with a monolithic application: One application that does everything. It’s a frustrating tangled mess to deal with.</blockquote>
 <p>At first you won’t know you’re headed down this path. Development will be rapid, agile and appear to be going great. Fast forward several months and you’re now considering a rewrite and freezing all new features until it’s fixed.</p>
 <p>As you attempt to scale a monolithic tightly coupled application, it will tax you in just about every way possible. It will:</p>
 <ul>
@@ -20,13 +22,13 @@ additional_help:
 <li>be tricky to upgrade because you have to change your entire application in one shot.</li>
 <li>make it difficult to onboard new developers as they’ll have to learn so much before they can start any real work.</li>
 </ul>
-<h3>During the lifespan of a project, you should expect significant requirement changes. Architect your application accordingly.</h3>
+<blockquote>During the lifespan of a project, you should expect significant requirement changes. Architect your application accordingly.</blockquote>
 <p>Instead of a single large application, what you need is an application that’s modular and expects change. Modularise your application into logical, organised parts. You might even split those parts into a new application. Your admin area or marketing website are common examples of this.</p>
 <p>Aside from the larger segments of the project, the details matter too. Within these modules, focus on keeping them decoupled.</p>
-<h3>Give your developers time to identify and refactor appropriate areas within your codebase.</h3>
+<blockquote>Give your developers time to identify and refactor appropriate areas within your codebase.</blockquote>
 <p>Easily said but you’ll no doubt have other important todos you’re going to have to put aside. You need to be prepared to take the time to improve what you have without adding new features. This will help decouple and enhance your application’s architecture.</p>
 <p><a href="/blog/posts/code-for-success-write-tests" title="/blog/posts/code-for-success-write-tests">Writing tests</a> (code that tests code) is crucial to confidently refactoring your codebase.</p>
-<h3>A quality test suite makes your codebase more open and inviting to being refactored.</h3>
+<blockquote>A quality test suite makes your codebase more open and inviting to being refactored.</blockquote>
 <p>Your developers will use it to check the external functionality still works while they refactor the internal workings.</p>
 <p>Focusing on architecture regularly has some real business benefits too:</p>
 <ul>
