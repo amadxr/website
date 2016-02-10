@@ -7,33 +7,6 @@
         return hljs.highlightBlock(block);
       });
     }
-
-    function displayTimelineItems(){
-      $(".timeline li.hidden").each(function(){
-        if( $(this).offset().top <= $(window).scrollTop()+$(window).height() ) {
-          $(this).removeClass('hidden').addClass('appear');
-        }
-      });
-    }
-
-    // attached to scroll event in a more effecient way.
-    var scrollTimeout;  // global for any pending scrollTimeout
-
-    function update(){
-      if (scrollTimeout) { // clear the timeout, if one is pending
-        clearTimeout(scrollTimeout);
-        scrollTimeout = null;
-      }
-      scrollTimeout = setTimeout(scrollHandler, 10);
-    }
-
-    scrollHandler = function () {
-      displayTimelineItems();
-    };
-
-    $(window).scroll(function () { update(); });
-    $(window).resize(function(){ update(); });
-    displayTimelineItems();
   }
 
   var script = document.createElement('script');

@@ -69,7 +69,7 @@ layout: default
     <ul class="timeline">
       {% for post in site.posts limit: 3 %}
         {% assign author = site.data.people[post.author] %}
-        <li class="hidden">
+        <li>
           <span class="dot"></span>
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><br/>
           {{ author.name }} &mdash; {{post.date | date: "%b %-d" }}
