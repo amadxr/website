@@ -50,6 +50,8 @@ layout: default
               {% endunless %}
             {% endfor %}
           {% endif %}
+
+          {% if page.disclosure %}Disclosure: {{page.disclosure}}{% endif %}
         </p>
       </article>
     </div>

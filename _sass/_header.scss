@@ -14,7 +14,7 @@
 
   nav {
     float: right;
-    margin-top: $tiny-spacing;
+    margin-top: $small-spacing;
     font-size: 0.75em;
 
     a {
@@ -51,7 +51,7 @@
 
 @include media($tablet) {
   .page > header nav a {
-    padding: $tiny-spacing;
+    padding: $small-spacing;
   }
 }
 
