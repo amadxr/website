@@ -9,7 +9,6 @@
   font-family: $base-font-family;
   font-size: 1em;
   -webkit-font-smoothing: antialiased;
-  font-weight: 600;
   line-height: 1;
   padding: $small-spacing $base-spacing;
   text-decoration: none;
@@ -17,6 +16,7 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  font-family: $heading-font-family;
 
   &:hover,
   &:focus {
