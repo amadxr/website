@@ -10,6 +10,14 @@ p.feature {
   color: rgba(0,0,0, 0.3);
   line-height: 1em;
   margin-top: 0em;
+
+  a {
+    color: lighten($action-color, 15%);
+    
+    &:hover {
+      color: shade($action-color, 30%);
+    }
+  }
 }
 
 .hidden {
@@ -74,7 +82,9 @@ hr {
 
 img,
 picture {
-  margin: 0;
+  // negative bottom margin helps bring captions
+  // closer to the image
+  margin: 0 0 -0.4em 0;
   max-width: 100%;
 }
 
@@ -108,6 +118,7 @@ pre code {
 
   strong:first-child {
     font-family: $heading-font-family;
+    font-size: 0.95em;
   }
 }
 
