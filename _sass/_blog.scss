@@ -1,8 +1,12 @@
 .post {
   margin-top: $base-spacing;
 
-  h2 {
+  // brings headings closer to the text that follows
+  // particularly good for long write ups. 
+  // Doesn't look good for marketing pages.
+  h2, h3, h4 {
     text-align: left;
+    margin-top: 1.0em;
     margin-bottom: 0.075em;
   }
 }
