@@ -3,6 +3,10 @@ footer {
   line-height: 1em;
   @include pad();
 
+  img {
+    margin-bottom: 0em;
+  }
+  
   svg {
     width: 180px;
     height: 25px;
