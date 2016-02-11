@@ -9,6 +9,12 @@
     margin-top: 1.0em;
     margin-bottom: 0.075em;
   }
+
+  img, picture {
+    // negative bottom margin helps bring captions
+    // closer to the image
+    margin: 0 0 -0.4em 0;
+  }
 }
 
 span.blog-date {
