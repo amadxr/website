@@ -1,14 +1,23 @@
-.verbal-form  {
-  @include outer-container;
+#contact_form {
+  label.error {
+    font-weight: normal;
+    font-size: 0.8em;
+    margin-top: -0.8em;
+    display: block;
+    padding: 0px $tiny-spacing;
+  }
 
-  input {
-    vertical-align:baseline;
+  input.error {
+    border-color: $red;
   }
 
   .field {
-    @include span-columns(4);
-    input {
-      width: 100%
+    @include span-columns(4 of 12);
+  }
+
+  @include media($mobile) {
+    .field {
+      @include span-columns(12 of 12);
     }
   }
 }

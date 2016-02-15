@@ -6,6 +6,13 @@ fieldset {
   border: $base-border;
 }
 
+@include media($mobile) {
+  fieldset {
+    padding: $tiny-spacing;
+    border: none;
+  }
+}
+
 input,
 label,
 select {
@@ -41,7 +48,7 @@ select[multiple=multiple] {
   vertical-align: middle;
   padding: $tiny-spacing;
   transition: border-color $base-duration $base-timing;
-  //width: 100%;
+  width: 100%;
 
   &:hover {
     border-color: shade($base-border-color, 20%);

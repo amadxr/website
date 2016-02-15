@@ -16,7 +16,7 @@ section {
   }
 }
 
-@include media($mobile) {
+@include media($tablet) {
   .very-narrow, .narrow {
     @include span-columns(12 of 12);
     @include shift(0);
