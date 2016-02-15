@@ -71,7 +71,7 @@ layout: default
         {% assign author = site.data.people[post.author] %}
         <li>
           <span class="dot"></span>
-          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><br/>
+          <a href="{{ post.url }}">{{ post.title }}</a><br/>
           {{ author.name }} &mdash; {{post.date | date: "%b %-d" }}
         </li>
       {% endfor %}

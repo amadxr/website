@@ -14,12 +14,5 @@
     {% for script in page.javascripts %}
     loadScript("{{script.name}}", {{script.afterLoad}});
     {% endfor %}
-
-    // Code highlighting initialisation
-    if (typeof hljs !== 'undefined') {
-      $("pre code").each(function(i, block) {
-        return hljs.highlightBlock(block);
-      });
-    }
   });
 </script>

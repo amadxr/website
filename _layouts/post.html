@@ -1,14 +1,28 @@
 ---
 layout: default
+javascripts:
+  - name: highlight.pack.js
+    afterLoad: "applyCodeHighlight"
 ---
+
+{% if page.highlightSyntax %}
+  <link rel="stylesheet" href="{{ "/css/code-highlight.css" }}">
+  <script type="text/javascript">
+    function applyCodeHighlight(){
+      $("pre code").each(function(i, block) {
+        return hljs.highlightBlock(block);
+      });
+    }
+  </script>
+{% endif %}
+
+{% if page.dropcap %}
+  <link rel="stylesheet" href="{{ "/css/dropcap.css" }}">
+{% endif %}
 
 {% assign author = site.data.people[page.author] %}
 {% assign editor = site.data.people[page.editor] %}
 {% assign additional_help = page.additional_help %}
-
-{% if page.dropcap %}
-  <link rel="stylesheet" href="{{ "/css/dropcap.css" | prepend: site.baseurl }}">
-{% endif %}
 
 <div class="post">
   <section>
@@ -58,5 +72,3 @@ layout: default
     </div>
   </section>
 </div>
-
-{% include code-highlight.html %}
