@@ -1,9 +1,7 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# This comment must remain here
 ---
-@charset "utf-8";
 
-// Import partials from _sass directory
 @import
   "normalize/normalize",
   "bourbon/bourbon",
@@ -12,10 +10,7 @@
   "base/base",
   "layout",
   "header",
-  "home",
   "contact",
-  "blog",
   "formatting",
-  "title-slide",
   "timeline",
   "footer";

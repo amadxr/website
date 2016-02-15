@@ -1,9 +1,8 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# This comment must remain here
 ---
-@charset "utf-8";
-@import "base/variables";
 
+@import "base/variables";
 
 .post article  {
   &> p:first-of-type:first-letter, &> p.feature:first-of-type:first-letter {
