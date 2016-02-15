@@ -1,19 +1,9 @@
 ---
 layout: default
-javascripts:
-  - name: highlight.pack.js
-    afterLoad: "applyCodeHighlight"
 ---
 
 {% if page.highlightSyntax %}
   <link rel="stylesheet" href="{{ "/css/code-highlight.css" }}">
-  <script type="text/javascript">
-    function applyCodeHighlight(){
-      $("pre code").each(function(i, block) {
-        return hljs.highlightBlock(block);
-      });
-    }
-  </script>
 {% endif %}
 
 {% if page.dropcap %}
