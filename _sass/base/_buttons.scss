@@ -10,7 +10,8 @@
   font-size: 1em;
   -webkit-font-smoothing: antialiased;
   line-height: 1;
-  padding: $small-spacing;
+  padding: $small-spacing - 0.1em; // fix required to get alignment perfect
+  margin-top: -0.1em;
   text-decoration: none;
   transition: background-color $base-duration $base-timing;
   user-select: none;

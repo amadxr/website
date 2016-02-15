@@ -1,16 +1,25 @@
 <script src="https://use.typekit.net/plv3wfy.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 <script type="text/javascript">
-  function jQueryLoaded(){
+  function loadScript(filename, loaded) {
+    var script = document.createElement("script");
+    script.src = "/js/" + filename;
+    script.onload = loaded;
+    document.body.appendChild(script);
+  }
+
+  loadScript("jquery.min.js", function(){
+    // Load in page-specific scripts. E.g. validation
+    {% for script in page.javascripts %}
+    loadScript("{{script.name}}", {{script.afterLoad}});
+    {% endfor %}
+
+    // Code highlighting initialisation
     if (typeof hljs !== 'undefined') {
       $("pre code").each(function(i, block) {
         return hljs.highlightBlock(block);
       });
     }
-  }
-
-  var script = document.createElement('script');
-  script.src = '/js/jquery.min.js';
-  script.onload = jQueryLoaded;
-  document.body.appendChild(script);
+  });
 </script>
