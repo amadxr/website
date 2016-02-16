@@ -101,3 +101,35 @@ select {
   max-width: 100%;
   width: auto;
 }
+
+.subscribe-form {
+  input {
+    @include shift(2);
+    @include span-columns(5);
+
+    @include media($tablet) {
+      @include shift(0);
+      @include span-columns(5);
+    }
+
+    @include media($mobile) {
+      @include shift(0);
+      @include span-columns(4);
+    }
+  }
+
+  input[type='submit'] {
+    @include shift(0);
+    @include span-columns(3);
+
+    @include media($tablet) {
+      @include shift(0);
+      @include span-columns(3);
+    }
+
+    @include media($mobile) {
+      @include shift(0);
+      @include span-columns(4);
+    }
+  }
+}
