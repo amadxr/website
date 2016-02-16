@@ -11,6 +11,10 @@ p.feature {
   line-height: 1em;
   margin-top: 0em;
 
+  img {
+    margin: 0.5em auto;
+  }
+
   a {
     color: lighten($action-color, 15%);
     

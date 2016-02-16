@@ -1,4 +1,7 @@
-textarea, input { box-shadow:none !important }
+textarea, input {
+  box-shadow:none !important;
+  -webkit-appearance: none;
+}
 
 fieldset {
   margin: 0 0 $small-spacing;

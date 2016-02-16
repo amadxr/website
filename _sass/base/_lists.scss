@@ -10,6 +10,10 @@ ol {
 
   &.two-column {
     column-count: 2;
+    
+    @include media($mobile) {
+      column-count: 1;
+    }
   }
 }
 
