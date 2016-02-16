@@ -1,0 +1,24 @@
+{% for post in posts  %}
+  {% assign author = site.data.people[post.author] %}
+
+  {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+  {% capture next_year %}{{ posts[forloop.index].date | date: "%Y" }}{% endcapture %}
+
+  {% if forloop.first %}
+    <h2>{{this_year}}</h2>
+    <ul class="timeline">
+  {% endif %}
+
+  {% include post-item.html post=post foo="true" %}
+  
+
+  {% if forloop.last %}
+    </ul>
+  {% else %}
+    {% if this_year != next_year %}
+      </ul>
+      <h2>{{next_year}}</h2>
+      <ul class="timeline">
+    {% endif %}
+  {% endif %}
+{% endfor %}
