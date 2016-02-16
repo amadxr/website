@@ -87,12 +87,22 @@ picture {
 }
 
 .screenshot {
-  border-radius: 5px 5px 0px 0px; 
+  border-radius: 5px 5px 0px 0px;
   padding-top: $base-spacing;
   background: $light-gray;
+  margin-bottom: 0px;
   background-repeat: no-repeat;
   background-image: url(/images/browser-chrome-buttons.svg);
   background-position: $base-spacing / 3.8 $base-spacing / 3.8;
+
+  &.phone {
+    border-radius: 5px;
+    background-image: none;
+    padding-top: 0px;
+    background: none;
+    border: $base-border;
+    padding: ($base-spacing * 2) $tiny-spacing;
+  }
 }
 
 blockquote {

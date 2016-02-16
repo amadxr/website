@@ -25,8 +25,8 @@ section {
 }
 
 img.left-image {
-  @include span-columns(12 of 12);
-  @include shift(-6);
+  @include span-columns(6 of 12);
+  @include shift(-3);
 }
 
 // todo: doesn't actually work at the moment.
@@ -38,6 +38,7 @@ img.wide-image {
 @include media($mobile) {
   img.left-image {
     @include shift(0);
+    @include span-columns(12 of 12);
   }
 
   img.wide-image {
