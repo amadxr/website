@@ -83,6 +83,10 @@ img.wide-image {
 
 .top-spacing {
   margin-top: $base-spacing;
+
+  @include media($mobile) {
+    margin-top: 0px;
+  }
 }
 
 .page {
