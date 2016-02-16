@@ -6,6 +6,15 @@ p.feature {
   line-height: 1.2em;
 }
 
+p.subheader {
+  font-family: $heading-font-family;
+  font-size: 1.4em;
+  line-height: 1.2em;
+  color: $medium-gray;
+  font-weight: 400;
+  margin-top: -1em;
+}
+
 .caption {
   color: rgba(0,0,0, 0.5);
   line-height: 1em;
