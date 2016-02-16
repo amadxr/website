@@ -1,7 +1,7 @@
 .page > header {
   @include clearfix;
   
-  padding: $small-spacing 0px ($small-spacing / 2) 0px;
+  padding: $small-spacing $small-spacing ($small-spacing / 2) $small-spacing;
   margin-bottom: 2em;
 
   .logo {
