@@ -11,6 +11,10 @@
   right: 0px;
 
   margin-top: -2em;
+
+  @include media($mobile-landscape) {
+    margin-top: -1em;
+  }
 }
 
 .after-title-slide {
