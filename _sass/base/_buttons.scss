@@ -8,9 +8,10 @@
   display: inline-block;
   font-family: $base-font-family;
   font-size: 1em;
+  font-weight: bold;
   -webkit-font-smoothing: antialiased;
   line-height: 1;
-  padding:  0.65em $tiny-spacing;
+  padding:  0.55em $tiny-spacing;
   text-decoration: none;
   transition: background-color $base-duration $base-timing;
   user-select: none;
