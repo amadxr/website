@@ -4,6 +4,10 @@
   padding: $small-spacing $small-spacing ($small-spacing / 2) $small-spacing;
   margin-bottom: 2em;
 
+  @include media($mobile-landscape) {
+    margin-bottom: 1em;
+  }
+
   .logo {
     float: left;
 
@@ -62,10 +66,11 @@
     
     .logo, nav {
       float: none;
+      text-align: center;
 
       a {
-        display: none;
-        padding: $small-spacing / 2;
+        display: inline-block;
+        padding: $tiny-spacing / 1.5;
       }
     }
   }
