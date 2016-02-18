@@ -3,9 +3,10 @@ footer {
   line-height: 1em;
   @include pad();
 
-  svg {
+  .caption img {
     width: 180px;
     height: 25px;
     vertical-align: text-bottom;
+    margin-bottom: 0em;
   }
 }

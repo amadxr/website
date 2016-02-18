@@ -41,6 +41,7 @@ $circle-size: 35px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 100;
+
   }
 
   h2, h2 a {
@@ -59,7 +60,7 @@ $circle-size: 35px;
     font-size: 1.8em;
   }
 
-  @include media($mobile) {
+  @include media($tablet) {
     h1 {
       font-size: 1.3em;
     }
