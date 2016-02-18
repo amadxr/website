@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+    <link rel="stylesheet" href="/css/main.css">
+
     {% if page.description %}
       <meta name="description" content="{{ page.description }}">
     {% endif %}
 
-    <link rel="stylesheet" href="/css/main.css">
+    {% include structured-data/organization.html %}
+    {% include structured-data/breadcrumb.html %}
+    {% include structured-data/social.html %}
 </head>
