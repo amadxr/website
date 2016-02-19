@@ -1,0 +1,45 @@
+{% assign author = site.data.people[page.author] %}
+{% if author %}
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage":{
+      "@type":"WebPage",
+      "@id":"{{page.url}}"
+    },
+    "headline": "{{ page.title }}",
+    {% if page.feature_image %}
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ page.feature_image }}",
+        {% if page.feature_image_height %}
+        "height": {{ page.feature_image_height }},
+        {% endif %}
+        {% if page.feature_image_width %}
+        "width": {{ page.feature_image_width }}
+        {% endif %}
+      },
+    {% endif %}
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.date | date_to_xmlschema }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ author.name }}"
+    },
+     "publisher": {
+      "@type": "Organization",
+      "name": "Resolve Digital",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}/images/resolve-digital-logo.png",
+        "width": "1562",
+        "height": "162"
+      }
+    },
+    {% if page.description %}
+      "description": "{{ page.description }}"
+    {% endif %}
+  }
+  </script>
+{% endif %}
