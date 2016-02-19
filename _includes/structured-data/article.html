@@ -12,13 +12,7 @@
     {% if page.feature_image %}
       "image": {
         "@type": "ImageObject",
-        "url": "{{ page.feature_image }}",
-        {% if page.feature_image_height %}
-        "height": {{ page.feature_image_height }},
-        {% endif %}
-        {% if page.feature_image_width %}
-        "width": {{ page.feature_image_width }}
-        {% endif %}
+        "url": "{{ page.feature_image }}"
       },
     {% endif %}
     "datePublished": "{{ page.date | date_to_xmlschema }}",
