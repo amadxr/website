@@ -1,6 +1,7 @@
 ---
 layout: post
-title: 
+title: ""
+description: ""
 author: david_jones
 dropcap: false
 read_count: false
