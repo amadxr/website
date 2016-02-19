@@ -1,0 +1,17 @@
+{% assign author = site.data.people[page.author] %}
+
+<meta name="twitter:site" content="@resolvedigital" />
+
+{% if page.feature_image %}
+  <meta name="twitter:card" content="summary_large_image" />
+{% else %}
+  <meta name="twitter:card" content="summary" />
+{% endif %}
+
+{% if page.feature_image %}
+  <meta name="twitter:image:src" content="{{page.feature_image}}" />
+{% endif %}
+
+{% if author.twitter %}
+  <meta name="twitter:creator" content="@{{author.twitter}}">
+{% endif %}

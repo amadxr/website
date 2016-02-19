@@ -1,18 +1,35 @@
+{% assign author = site.data.people[page.author] %}
+
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <link rel="canonical" href="{{ page.url }}">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
-    <link rel="stylesheet" href="/css/main.css">
+    {% if page.title %}
+        <meta name="title" content="{{ page.title }}">
+    {% endif %}
+
+    <meta name="referrer" content="always">
 
     {% if page.description %}
       <meta name="description" content="{{ page.description }}">
     {% endif %}
+    
+    {% include structured-data/open-graph.html %}
+    {% include structured-data/twitter-cards.html %}
+
+    <meta name="theme-color" content="#2babee">
+    <meta name="msapplication-navbutton-color" content="#2babee">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="dns-prefetch" href="//resolve.imgix.net">
 
     {% include structured-data/organization.html %}
     {% include structured-data/breadcrumb.html %}
     {% include structured-data/article.html %}
-    {% include structured-data/social.html %}
 </head>
