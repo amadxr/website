@@ -8,16 +8,22 @@
   <meta name="twitter:card" content="summary" />
 {% endif %}
 
-<meta name="og:title" content="{{ page.title }}" />
-{% if page.description %}
-  <meta name="og:description" content="{{ page.description }}" />
-{% endif %}
-
 {% if page.feature_image %}
-  <meta name="og:image" content="{{page.feature_image}}" />
+  <meta property="og:image" content="{{page.feature_image}}" />
   <meta name="twitter:image" content="{{page.feature_image}}" />
 {% endif %}
 
 {% if author.twitter %}
   <meta name="twitter:creator" content="@{{author.twitter}}">
+{% endif %}
+
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:website" content="{{ site.url }} " />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="en_NZ" />
+<meta property="og:site_name" content="{{ site.title }}" />
+
+{% if page.description %}
+  <meta property="og:description" content="{{ page.description }}" />
 {% endif %}
