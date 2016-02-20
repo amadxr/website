@@ -13,18 +13,18 @@ additional_help:
 <p class="feature">Spree Commerce extends the intuitive idea of a “product” with a set of more abstract concepts: Variants, taxons, properties, options and prototypes. We'll show you how these concepts relate to each other and how you use them to build a store that’s easy for customers to shop, storekeepers to manage, and developers to maintain.</p>
 <h2>Products and Variants: the main thing to know.</h2>
 <p>Suppose we have an online store selling emoji t-shirts. We have hundreds of t-shirts with different designs.</p>
-<p><img src="http://resolve.imgix.net/t-shirts.png?auto=format&ch=Width,DPR" alt="t-shirts" /></p>
+<p><img src="/images/t-shirts.png" alt="t-shirts" /></p>
 <p>Generally speaking, most customers choose between t-shirts mainly by the design.<strong> In Spree, we’d treat each design as a separate product.</strong></p>
 <p>However, selecting the emoji design that best expresses their personality isn’t the end of the shopping experience for our customers. T-shirts also come in different sizes, colors and fits. A customer might come to our store to buy a mug-of-beer t-shirt, but what they actually put in their cart is a red XL men’s mug-of-beer t-shirt, or a small blue women’s mug-of-beer t-shirt. These finer distinctions define the variants of a product. Variants are the specific items customers actually buy.</p>
 <h2>We browse products, but we buy variants.</h2>
-<p><img src="http://resolve.imgix.net/products-variants.png?auto=format&ch=Width,DPR" alt="products-variants" />
+<p><img src="/images/products-variants.png" alt="products-variants" />
 </p>
 <p >It’s worth emphasising this point: the specific items that people buy are variants, not products. As far as Spree is concerned, products are just a way of organising groups of related variants so it’s easy for cutovers to find the one they want.
 </p>
 <p>Spree’s admin interface doesn’t always make the distinction between products and variants clear. It’s tempting to just make everything a product and ignore variants. If you do, however, you’ll make your store much harder for customers to navigate. Most likely you’ll also end up duplicating the idea by grouping products together in non-standard ways.</p>
 <h3>Understanding Variants</h3>
 <p>Every product in Spree has at least one variant. This isn’t immediately obvious.</p>
-<p><img src="http://resolve.imgix.net/new_product.png?auto=format&ch=Width,DPR" alt="new product" />
+<p><img src="/images/new_product.png" alt="new product" />
 </p>
 <p>When you create a product in Spree, <strong>you’re actually creating both a product and a “master variant.”</strong> The new product form merges the information for the product and the master variant into a single form. The Name, Prototype, Available On date and Shipping Categories fields belong to the product. The SKU and Master Price belong to the master variant. 
 <strong>Spree never mentions the master variant in the admin interface.</strong>
@@ -62,7 +62,7 @@ additional_help:
 <pre><code class="nohighlight hljs">https://www.mystore.com/products/slug-for-the-product</code></pre>
 <p>The available on date gives you control over when the product will be on sale. If you leave it blank or set it to a future date, customers won’t see the product on the site.</p>
 <aside class="tip">
-<img src="http://resolve.imgix.net/taxonomy.png?auto=format&ch=Width,DPR" alt="taxonomy"/>
+<img src="/images/taxonomy.png" alt="taxonomy"/>
 </aside>
 <p><strong>Products can belong to taxons.</strong>
  Taxons (and the taxonomies they belong to) deserve an article of their own, but briefly they’re the categories and tags customers browse through to find your products. If you’re selling furniture, you might have taxons for dining room furniture, bedroom furniture and office furniture. You might also have tables, chairs, beds and desks. You could have taxons for different brands, price ranges, or any other way you like to organise your products. Taxons can be hierarchies of categories and subcategories, or flat collections like featured products.
