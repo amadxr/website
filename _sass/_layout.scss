@@ -21,6 +21,15 @@ section {
   }
 }
 
+.two-column {
+  @include span-columns(6 of 12);
+
+  @include media($tablet) {
+    @include span-columns(10 of 12);
+    @include shift(1);
+  }
+}
+
 @include media($tablet) {
   .very-narrow, .narrow {
     @include span-columns(12 of 12);
