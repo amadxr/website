@@ -2,6 +2,11 @@ section {
   @include row();
 }
 
+.full-width {
+  @include span-columns(12 of 12);
+  @include shift(0);
+}
+
 .narrow {
   @include span-columns(8 of 12);
   @include shift(2);
