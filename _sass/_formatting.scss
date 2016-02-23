@@ -107,6 +107,7 @@ picture {
   background-repeat: no-repeat;
   background-image: url(/images/browser-chrome-buttons.svg);
   background-position: $base-spacing / 3.8 $base-spacing / 3.8;
+  border: 2px solid darken($light-gray, 5%);
 
   &.phone {
     border-radius: 5px;
