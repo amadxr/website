@@ -30,6 +30,10 @@ $dot-size: 20px;
     padding: $small-spacing;
     margin: $base-spacing 0px;
 
+    img {
+      margin-bottom: 0px;
+    }
+
     a {
       font-family: $heading-font-family;
       font-weight: bold;

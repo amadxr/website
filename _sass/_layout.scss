@@ -21,7 +21,7 @@ section {
   }
 }
 
-.two-column {
+div.two-column {
   @include span-columns(6 of 12);
 
   @include media($tablet) {
@@ -63,7 +63,7 @@ img.wide-image {
 
 .three-split-section {
   @include shift(0);
-  @include pad();
+  margin-bottom: $base-spacing;
 
   .split {
     @include span-columns(4);

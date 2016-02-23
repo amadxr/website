@@ -10,8 +10,12 @@
 
   .logo {
     float: left;
-
+    img {
+      margin-bottom: 0px;
+    }
+    
     svg {
+
       width: 289px;
       height: 35px;
     }

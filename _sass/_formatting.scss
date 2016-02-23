@@ -18,7 +18,7 @@ p.subheader {
 .caption {
   color: rgba(0,0,0, 0.5);
   line-height: 1em;
-  margin-top: 0em;
+  margin-top: -1em;
 
   img {
     margin: 0.5em auto;
@@ -95,7 +95,7 @@ hr {
 
 img,
 picture {
-  margin: 0;
+  margin: 0 0 $base-spacing 0;
   max-width: 100%;
 }
 
@@ -103,7 +103,6 @@ picture {
   border-radius: 5px 5px 0px 0px;
   padding-top: $base-spacing;
   background: $light-gray;
-  margin-bottom: 0px;
   background-repeat: no-repeat;
   background-image: url(/images/browser-chrome-buttons.svg);
   background-position: $base-spacing / 3.8 $base-spacing / 3.8;
