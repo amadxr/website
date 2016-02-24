@@ -12,7 +12,7 @@
     {% if page.feature_image %}
       "image": {
         "@type": "ImageObject",
-        "url": "{{ page.feature_image }}",
+        "url": "{{ site.url }}{{ page.feature_image }}",
         {% if page.feature_image_height %}
         "height": {{ page.feature_image_height }},
         {% endif %}
