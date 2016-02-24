@@ -7,7 +7,6 @@ task :test do
     href_ignore: ['http://localhost:4000'],
     file_ignore: [/.*node_modules.*/],
     check_html: true,
-    check_favicon: true,
-    empty_alt_ignore: false
+    check_favicon: true
   }).run
 end
