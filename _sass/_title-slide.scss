@@ -45,7 +45,7 @@ $circle-size: 35px;
   }
 
   h2, h2 a {
-    color: lighten($blue, 98%);
+    color: lighten($blue, 70%);
   }
 
   h2 a:hover {
@@ -58,6 +58,14 @@ $circle-size: 35px;
 
   h2 {
     font-size: 1.8em;
+    line-height: 1.3em;
+    font-weight: lighter;
+
+    span {
+      font-size: 1em;
+      color: lighten($blue, 50%);
+      padding: 0em $tiny-spacing;
+    }
   }
 
   @include media($tablet) {
