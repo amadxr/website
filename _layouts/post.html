@@ -35,10 +35,10 @@ layout: default
         <p class="attribution">
           "{{ page.title }}" was
           {% if author %}
-            written by <a href="{{ author.url }}" target="_blank">{{ author.name }}</a>.
+            written by <a href="https://twitter.com/{{ author.twitter }}" target="_blank">{{ author.name }}</a>.
           {% endif %}
           {% if editor %}
-            Editing by <a href="{{ editor.url }}" target="_blank">{{ editor.name }}</a>.
+            Editing by <a href="https://twitter.com/{{ editor.twitter }}" target="_blank">{{ editor.name }}</a>.
           {% endif %}
 
           {% if additional_help %}

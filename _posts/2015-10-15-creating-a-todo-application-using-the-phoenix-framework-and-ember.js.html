@@ -23,7 +23,7 @@ In this tutorial we’re going to create a simple client-server web application 
 </p>
 
 
-<p>Here’s what the todo app we’ll be building looks like: <img src="//dl3u9qgv64mry.cloudfront.net/system/images/W1siZiIsIjIwMTUvMTAvMTMvMjMvNDQvNDYvNDM0L1RvX0RvX2FwcGxpY2F0aW9uX3NjcmVlbnNob3QucG5nIl1d/To%20Do%20application%20screenshot.png" title="To Do Application Screenshot" alt="To Do Application Screenshot" /></p>
+<p>Here’s what the todo app we’ll be building looks like: <img src="/images/To%20Do%20application%20screenshot.png" title="To Do Application Screenshot" alt="To Do Application Screenshot" class="no-border" /></p>
 
 
 <h2>Creating the Phoenix App</h2>
@@ -47,12 +47,12 @@ password: "postgres",
 <p>With the correct credentials in place, run:</p>
 <pre class="highlight"><code>$ mix ecto.create</code></pre>
 <p>You might be prompted to install “rebar”, accept this to continue. After the app has finished compiling you will see:</p>
-<pre><code class="nohighlight hljs">$ The database for PhoenixTodosApi.Repo has been created.</code></pre>
+<pre><code>$ The database for PhoenixTodosApi.Repo has been created.</code></pre>
 <h3>3) Boot the server</h3>
 <p>Next let’s start the Phoenix web server:
 </p>
 <pre><code>$ mix phoenix.server</code></pre>
-<p>The app should now be accessible at <a href="http://localhost:4000/" rel="nofollow" target="_blank">http://localhost:4000</a> and will display Phoenix's default landing page.</p>
+<p>The app should now be accessible at <a href="http://localhost:4000/" rel="nofollow" target="_blank" data-proofer-ignore>http://localhost:4000</a> and will display Phoenix's default landing page.</p>
 <p>Exit the server by hitting <code>Ctrl + C</code> twice.</p>
 <h3>4) Generate a Todo resource</h3>
 <p>The single resource in our API is the Todo item. Each Todo item stores a <code>title</code> string and an <code>is_completed</code> boolean. Phoenix provides a generator for creating all the files necessary for a JSON resource and we can invoke that using:</p>
@@ -97,7 +97,7 @@ end
 <h3>7) Seed the database</h3>
 <p>Start the server up again:</p>
 <pre><code>$ mix phoenix.server</code></pre>
-<p>Now we can visit <a href="http://localhost:4000/todos" rel="nofollow" target="_blank">http://localhost:4000/todos</a> to access our todos but you’ll notice that we don’t have any yet.</p>
+<p>Now we can visit <a href="http://localhost:4000/todos" rel="nofollow" target="_blank" data-proofer-ignore>http://localhost:4000/todos</a> to access our todos but you’ll notice that we don’t have any yet.</p>
 <p>Let’s fix this by seeding the database with some initial data. Add the following lines to <code>priv/repo/seeds.exs:</code>
 </p>
 {% highlight elixir %}
@@ -110,7 +110,7 @@ Repo.insert!(%Todo{title: "Ensure the Apps Work Together", is_completed: false})
 {% endhighlight %}
 <p>To load in the seeds run:</p>
 <pre><code>$ mix run priv/repo/seeds.exs</code></pre>
-<p>Now when we visit <a href="http://localhost:4000/todos" rel="nofollow" target="_blank">http://localhost:4000/todos</a> we see some todos!</p>
+<p>Now when we visit <a href="http://localhost:4000/todos" rel="nofollow" target="_blank" data-proofer-ignore>http://localhost:4000/todos</a> we see some todos!</p>
 {% highlight json %}
 {
   "data": [{
@@ -144,7 +144,7 @@ $ cd ember-cli-todos</code></pre>
 <h3>2) Start Ember’s server</h3>
 <p>To confirm that everything is installed as it should be, boot the app with:</p>
 <pre><code>$ ember server</code></pre>
-<p>Visit <a href="http://localhost:4200" rel="nofollow" target="_blank">http://localhost:4200</a> in your browser. At this point you can add todos, but it is only using in-memory storage and todos are not persisted when you refresh the page.</p>
+<p>Visit <a href="http://localhost:4200" rel="nofollow" target="_blank" data-proofer-ignore>http://localhost:4200</a> in your browser. At this point you can add todos, but it is only using in-memory storage and todos are not persisted when you refresh the page.</p>
 
 <h3>Connecting Ember to Phoenix</h3>
 <p>So far we have a working server-side API app written with Phoenix, and a working client-side app written with Ember. But the two apps aren't talking to each other. Next we’ll look at connecting the two apps together and have our todos persisted. </p>
@@ -281,5 +281,5 @@ Finished in 0.4 seconds (0.3s on load, 0.1s on tests)
 <pre><code>$ mix phoenix.server</code></pre>
 <p>Followed by Ember:</p>
 <pre><code>$ ember server</code></pre>
-<p>And then visiting <a href="http://localhost:9000/" rel="nofollow" target="_blank">http://localhost:9000</a> in our browser.</p>
+<p>And then visiting <a href="http://localhost:9000/" rel="nofollow" target="_blank" data-proofer-ignore>http://localhost:9000</a> in our browser.</p>
 <p>We should see the Ember App populated with the data we seeded into the Phoenix App previously. Any changes we make in the Ember App are persisted to the Phoenix App. You can watch the log output from <code>mix phoenix.server</code> to see this in action. If we refresh the page, your changes have been persisted.</p>
