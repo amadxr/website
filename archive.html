@@ -4,16 +4,14 @@ title: Blog Archive
 permalink: /blog/archive/
 ---
 
-<section class="top-spacing">
-  <div class="narrow">
-    <h1 class="editable">Blog Archive</h1>
+<section class="narrow top-spacing">
+  <h1 class="editable">Blog Archive</h1>
 
-    <p class="editable center-aligned">Here's all the posts we've archived. <a href="/blog/">Return to the main blog</a></p>
-    <section class="left-aligned timeline-series">
-      {% assign posts = site.posts | where:'archived', true %}
-      {% include timeline.html posts=posts %}
-    </section>
+  <p class="editable center-aligned">Here's all the posts we've archived. <a href="/blog/">Return to the main blog</a></p>
+  <section class="left-aligned timeline-series">
+    {% assign posts = site.posts | where:'archived', true %}
+    {% include timeline.html posts=posts %}
+  </section>
 
-    {% include subscribe-form.html %}
-  </div>
+  {% include subscribe-form.html %}
 </section>
