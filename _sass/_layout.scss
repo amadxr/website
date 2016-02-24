@@ -5,7 +5,7 @@ section {
 .full-width {
   @include span-columns(12 of 12);
   @include shift(0);
-  padding: $small-spacing;
+
 }
 
 .narrow {
