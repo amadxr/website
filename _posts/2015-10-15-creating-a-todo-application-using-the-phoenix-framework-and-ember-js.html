@@ -14,12 +14,12 @@ additional_help:
 
 <p>
 
-We’re always on the lookout for relevant technologies for our clients. Today we’re going to look at a web application framework called <a href="http://www.phoenixframework.org" title="http://www.phoenixframework.org" target="_blank">Phoenix</a>. 
+We’re always on the lookout for relevant technologies for our clients. Today we’re going to look at a web application framework called <a href="http://www.phoenixframework.org" target="_blank">Phoenix</a>. 
 Phoenix is built on Elixir, a blazing fast functional programming language that will feel familiar in some ways if you’ve been writing Ruby.
 </p>
 
 <p>
-In this tutorial we’re going to create a simple client-server web application using Phoenix and Elixir on the server, with PostgreSQL as our store data. On the client side, the Ember Javascript framework will provide the user interface and communicate changes to the server. This combination of components is coming to be known as the <a href="https://medium.com/@j_mcnally/the-peep-stack-b7ba5afdd055" title="https://medium.com/@j_mcnally/the-peep-stack-b7ba5afdd055" target="_blank">PEEP (Postgres, Elixir, Ember, Phoenix) stack</a>.
+In this tutorial we’re going to create a simple client-server web application using Phoenix and Elixir on the server, with PostgreSQL as our store data. On the client side, the Ember Javascript framework will provide the user interface and communicate changes to the server. This combination of components is coming to be known as the <a href="https://medium.com/@j_mcnally/the-peep-stack-b7ba5afdd055" target="_blank">PEEP (Postgres, Elixir, Ember, Phoenix) stack</a>.
 </p>
 
 
@@ -27,10 +27,10 @@ In this tutorial we’re going to create a simple client-server web application 
 
 
 <h2>Creating the Phoenix App</h2>
-<p>Before you get started, make sure you followed the <a href="http://www.phoenixframework.org/docs/installation" title="http://www.phoenixframework.org/docs/installation" target="_blank">Phoenix Installation Guide</a> so you have all the necessary dependencies installed.</p>
+<p>Before you get started, make sure you followed the <a href="http://www.phoenixframework.org/docs/installation" target="_blank">Phoenix Installation Guide</a> so you have all the necessary dependencies installed.</p>
 <h3>1) Create the skeleton application</h3>
 <p>First up, let’s run the following to create a new Phoenix app:</p>
-<pre><code class="nohighlight hljs">$ mix phoenix.new phoenix_todos_api --no-brunch
+<pre><code>$ mix phoenix.new phoenix_todos_api --no-brunch
 $ cd phoenix_todos_api</code></pre>
 <p>We are excluding <a href="http://brunch.io/" title="http://brunch.io/" target="_blank">Brunch.io</a> because our API-only app will not need asset management. When you are prompted to "Fetch and install dependencies?" answer <code>Y</code>.</p>
 <h3>2) Create the database</h3>
@@ -88,7 +88,7 @@ end
 
 <h3>6) Migrate the database</h3>
 <p>Next we need to migrate the database to create the table where <code>Todos</code> will be stored. </p>
-<pre><code class="nohighlight hljs">$ mix ecto.migrate
+<pre><code>$ mix ecto.migrate
 …
 17:55:14.586 [info]  == Running PhoenixTodosApi.Repo.Migrations.CreateTodo.change/0 forward
 17:55:14.586 [info]  create table todos
@@ -169,7 +169,7 @@ if (config.environment === 'test') {
 
 export default adapter;
 {% endhighlight %}
-<p class="tip"><strong>Tip</strong> The default adapter for Ember Data is actually the <code>JSONAPIAdapter</code> which expects an API that is modeled after the <a href="http://jsonapi.org/" title="http://jsonapi.org/" target="_blank">JSON API Spec</a>. If you are planning to build a serious API, it would be a good strategy to explore following this specification (perhaps by using the <a href="https://github.com/AgilionApps/ja_serializer" title="https://github.com/AgilionApps/ja_serializer" target="_blank">ja_serializer</a> or <a href="https://github.com/jeregrine/jsonapi " title="https://github.com/jeregrine/jsonapi " target="_blank">jsonapi</a> packages). However for the purposes for this tutorial we using the <code>RESTAdapter</code> in order to keep our example simple.
+<p class="tip"><strong>Tip</strong> The default adapter for Ember Data is actually the <code>JSONAPIAdapter</code> which expects an API that is modeled after the <a href="http://jsonapi.org/" target="_blank">JSON API Spec</a>. If you are planning to build a serious API, it would be a good strategy to explore following this specification (perhaps by using the <a href="https://github.com/AgilionApps/ja_serializer"  target="_blank">ja_serializer</a> or <a href="https://github.com/jeregrine/jsonapi " title="https://github.com/jeregrine/jsonapi " target="_blank">jsonapi</a> packages). However for the purposes for this tutorial we using the <code>RESTAdapter</code> in order to keep our example simple.
 </p>
 <p><a href="http://jsonapi.org/" title="http://jsonapi.org/" target="_blank"></a>Note that if the app is booted under the test environment then we are going to continue to use the original <code>FixtureAdapter</code>, but for all other environments we are now using the <code>RESTAdapter</code> and instructing it to look for our Phoenix API at <a href="http://localhost:4000/" rel="nofollow" target="_blank">http://localhost:4000</a>.
 </p>
@@ -200,7 +200,7 @@ export default serializer;
 <p>Again we’re using a different serializer in the test environment, but otherwise we provide a custom <code>RESTSerializer</code> that uses Ember's builtin in <code>decamelize</code> adapter to translate all Ember Data model attributes into snake_case. This is a fairly simplistic approach, but will work for the our purposes today.</p>
 <h4>3) Setting up CORS</h4>
 
-<p>Because our client and server are going to be hosted from different ports we’ll need to put in place security policies that allow them to communicate. First we’ll update the <a href="https://en.wikipedia.org/wiki/Content_Security_Policy" title="https://en.wikipedia.org/wiki/Content_Security_Policy" target="_blank">CSP headers</a> that the Ember server is providing. Modify the contents of <code>ENV.contentSecurityPolicy</code> for the development environment, inside of <code>config/environment.js:</code>
+<p>Because our client and server are going to be hosted from different ports we’ll need to put in place security policies that allow them to communicate. First we’ll update the <a href="https://en.wikipedia.org/wiki/Content_Security_Policy" target="_blank">CSP headers</a> that the Ember server is providing. Modify the contents of <code>ENV.contentSecurityPolicy</code> for the development environment, inside of <code>config/environment.js:</code>
 </p>
 {% highlight javascript %}
 ENV.contentSecurityPolicy = {
@@ -211,7 +211,7 @@ ENV.contentSecurityPolicy = {
 {% endhighlight %}
 <p>The change we have made here is to append <code>http://localhost:*</code> to the <code>connect-src</code> rule, permitting connections to any port on localhost.
 </p>
-<p>We will also need to add <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" title="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">CORS headers</a> to the Phoenix App, and to do so we need to know what port the Ember App will be running from. Let's set the port to 9000 inside of the project’s <code>.ember-cli</code> config file (found in the root directory of the Ember App):</p>
+<p>We will also need to add <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">CORS headers</a> to the Phoenix App, and to do so we need to know what port the Ember App will be running from. Let's set the port to 9000 inside of the project’s <code>.ember-cli</code> config file (found in the root directory of the Ember App):</p>
 {% highlight javascript %}
 {
   // ...
@@ -220,9 +220,9 @@ ENV.contentSecurityPolicy = {
 {% endhighlight %}
 <hr/>
 <h3>Changes to the Phoenix App</h3>
-<p>We need to add <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" title="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">CORS headers</a> to the app so the browser will permit Ember to make requests to it.</p>
+<p>We need to add <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">CORS headers</a> to the app so the browser will permit Ember to make requests to it.</p>
 <h4>1) Setting up cors_plug</h4>
-<p>We can do this by employing an open source <a href="http://www.phoenixframework.org/docs/understanding-plug" title="http://www.phoenixframework.org/docs/understanding-plug" target="_blank">plug</a> called <a href="https://github.com/mschae/cors_plug" title="https://github.com/mschae/cors_plug" target="_blank">cors_plug</a>. To use it we need to add it to our dependencies in <code>mix.exs</code>:
+<p>We can do this by employing an open source <a href="http://www.phoenixframework.org/docs/understanding-plug" target="_blank">plug</a> called <a href="https://github.com/mschae/cors_plug" title="https://github.com/mschae/cors_plug" target="_blank">cors_plug</a>. To use it we need to add it to our dependencies in <code>mix.exs</code>:
 </p>
 {% highlight elixir %}
 def deps do
