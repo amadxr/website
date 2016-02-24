@@ -171,7 +171,7 @@ export default adapter;
 {% endhighlight %}
 <p class="tip"><strong>Tip</strong> The default adapter for Ember Data is actually the <code>JSONAPIAdapter</code> which expects an API that is modeled after the <a href="http://jsonapi.org/" target="_blank">JSON API Spec</a>. If you are planning to build a serious API, it would be a good strategy to explore following this specification (perhaps by using the <a href="https://github.com/AgilionApps/ja_serializer"  target="_blank">ja_serializer</a> or <a href="https://github.com/jeregrine/jsonapi " title="https://github.com/jeregrine/jsonapi " target="_blank">jsonapi</a> packages). However for the purposes for this tutorial we using the <code>RESTAdapter</code> in order to keep our example simple.
 </p>
-<p><a href="http://jsonapi.org/" title="http://jsonapi.org/" target="_blank"></a>Note that if the app is booted under the test environment then we are going to continue to use the original <code>FixtureAdapter</code>, but for all other environments we are now using the <code>RESTAdapter</code> and instructing it to look for our Phoenix API at <a href="http://localhost:4000/" rel="nofollow" target="_blank">http://localhost:4000</a>.
+<p><a href="http://jsonapi.org/" title="http://jsonapi.org/" target="_blank"></a>Note that if the app is booted under the test environment then we are going to continue to use the original <code>FixtureAdapter</code>, but for all other environments we are now using the <code>RESTAdapter</code> and instructing it to look for our Phoenix API at <a href="http://localhost:4000/" rel="nofollow" target="_blank" data-proofer-ignore>http://localhost:4000</a>.
 </p>
 
 <h4>2) Configuring the serializer</h4>
