@@ -69,10 +69,14 @@ img.wide-image {
 
   .split {
     @include span-columns(4);
-    padding: $tiny-spacing $base-spacing;
+    padding: 0em $base-spacing;
 
     margin: $tiny-spacing 0px;
     border-right: $base-border-height solid $light-gray;
+
+    p {
+      margin-bottom: 0em;
+    }
   }
 
   .split:last-child {
