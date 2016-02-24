@@ -1,4 +1,5 @@
 footer {
+  @include span-columns(12 of 12);
   margin-top: $base-spacing;
   line-height: 1em;
   @include pad();

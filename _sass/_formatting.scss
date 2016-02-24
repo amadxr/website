@@ -15,14 +15,8 @@ p.subheader {
   margin-top: -0.9em;
 }
 
-.caption {
+.caption, .dim {
   color: rgba(0,0,0, 0.5);
-  line-height: 1em;
-  margin-top: -1em;
-
-  img {
-    margin: 0.5em auto;
-  }
 
   a {
     color: lighten($action-color, 15%);
@@ -30,6 +24,15 @@ p.subheader {
     &:hover {
       color: shade($action-color, 30%);
     }
+  }
+}
+
+.caption {
+  line-height: 1em;
+  margin-top: -1em;
+
+  img, video, picture {
+    margin: $image-space auto;
   }
 }
 
@@ -73,7 +76,8 @@ p.attribution {
 
 .feature-number {
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.7em;
+  line-height: 1.3em;
   font-family: $heading-font-family;
   vertical-align: middle;
   color: $orange;
@@ -86,17 +90,23 @@ p.attribution {
 }
 
 hr {
-  width: 10%;
+  width: 4em;
   height: $base-border-height;
   border: none;
-  background: $light-gray;
+  background: $blue;
   margin: $base-spacing auto;
 }
 
 img,
-picture {
-  margin: 0 0 $base-spacing 0;
+picture,
+video {
+  margin: 0 0 $tiny-spacing 0;
   max-width: 100%;
+  border: $base-border-height solid $light-gray;
+}
+
+video {
+  width: 100%;
 }
 
 .screenshot {
@@ -155,3 +165,10 @@ header p {
   text-align: center !important;
 }
 
+.no-border {
+  border: none;
+}
+
+header, footer, small {
+  img { border: none; }
+}

@@ -5,6 +5,7 @@ section {
 .full-width {
   @include span-columns(12 of 12);
   @include shift(0);
+  padding: $small-spacing;
 }
 
 .narrow {
@@ -22,6 +23,7 @@ section {
 }
 
 div.two-column {
+  margin-top: $small-spacing;
   @include span-columns(6 of 12);
 
   @include media($tablet) {
@@ -67,7 +69,9 @@ img.wide-image {
 
   .split {
     @include span-columns(4);
-    @include pad();
+    padding: $tiny-spacing $base-spacing;
+
+    margin: $tiny-spacing 0px;
     border-right: $base-border-height solid $light-gray;
   }
 
@@ -86,13 +90,6 @@ img.wide-image {
       @include span-columns(8);
     }
   }
-}
-
-.wide {
-  @include span-columns(12);
-  @include shift(0);
-  margin-bottom: $small-spacing;
-  border: $base-border-height solid $light-gray;
 }
 
 .top-spacing {

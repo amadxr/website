@@ -13,7 +13,7 @@
   img, picture {
     // negative bottom margin helps bring captions
     // closer to the image
-    margin: 0 0 -0.4em 0;
+    margin-bottom: -$image-space;
   }
 }
 
