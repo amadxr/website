@@ -1,5 +1,10 @@
 .full-screen {
+
   height: 85vh;
+
+  @include media($tablet) {
+    height: 75vh;
+  }
   width: 100vw;
   background: $blue;
   position: absolute;
@@ -15,6 +20,10 @@
 
 .after-title-slide {
   margin-top: 87vh;
+
+  @include media($tablet) {
+    margin-top: 75vh;
+  }
 }
 
 .title-slide {
