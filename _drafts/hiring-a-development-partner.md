@@ -30,6 +30,8 @@ Application development is not a commodity. Experience matters. Expertise matter
 
 So how do *we* address this situation? By thinking strategically. By defining an MVP and getting it launched so real people start using it. By architecting a flexible solution we can expand upon. By delivering the greatest value we can within your project budget.
 
-It’s not that there aren’t trade-offs. There most certainly are. But compromising on code quality or hoping that inexperienced developers will know how to solve tough technical problems doesn't lead to happy endings.
+It’s not that there aren’t trade-offs. There most certainly are. But compromising on code quality or hoping inexperienced developers will know how to solve tough technical problems doesn't lead to happy endings.
+
+If you're [looking for a development partner](/hire-us/), remember, you get what you pay for.
 
 &nbsp;
