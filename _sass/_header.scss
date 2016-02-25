@@ -28,15 +28,6 @@
       vertical-align: text-bottom;
       padding: 0.5em 1em;
 
-      &.featured {
-        background: $orange;
-        border-radius: 50px;
-      }
-
-      &.featured:hover {
-        background: $green;
-      }
-
       &:hover {
         background: $light-gray;
         border-radius: 50px;
@@ -44,6 +35,15 @@
 
       &.active:hover {
         background: none;
+      }
+
+      &.featured {
+        background: $orange;
+        border-radius: 50px;
+      }
+
+      &.featured:hover {
+        background: $green;
       }
     }
   }
