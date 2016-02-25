@@ -3,7 +3,7 @@
   height: 85vh;
 
   @include media($tablet) {
-    height: 75vh;
+    height: 65vh;
   }
   width: 100vw;
   background: $blue;
@@ -22,7 +22,7 @@
   margin-top: 87vh;
 
   @include media($tablet) {
-    margin-top: 75vh;
+    margin-top: 65vh;
   }
 }
 
