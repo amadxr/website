@@ -15,7 +15,7 @@ staging:
   url: "http://witty-chicken.cloudvent.net"
 
 highlighter: pygments
-google_analytics: false
+google_analytics: true
 
 # Build settings
 markdown: kramdown
