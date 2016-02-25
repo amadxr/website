@@ -21,7 +21,7 @@
   @include pad();
 
   @include media($mobile) {
-    padding: $small-spacing;
+    padding: $tiny-spacing;
   }
 
   .vertical-center {
@@ -33,7 +33,7 @@
 
   p {
     font-family: $heading-font-family;
-    font-size: 1.4em;
+    font-size: 1.2em;
 
     span {
       font-size: 1em;
@@ -61,10 +61,16 @@
   @include media($tablet) {
     h1 {
       font-size: 1.3em;
+      line-height: 2em;
     }
 
     h2 {
       font-size: 1.1em;
+      margin-bottom: 1em;
+    }
+
+    p {
+      font-size: 0.8em;
     }
   }
 }
