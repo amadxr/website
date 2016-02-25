@@ -8,7 +8,7 @@ $dot-size: 20px;
 .timeline {
   position: relative;
   margin: 0px;
-  padding: $tiny-spacing 0px $tiny-spacing 0px;
+  padding: $tiny-spacing 0px;
 
   &::before {
     /* this is the vertical line */
@@ -46,16 +46,7 @@ $dot-size: 20px;
       border-radius: $dot-size / 2;
       border: $base-border-height solid white;
       display: block;
-      margin: -28px auto 10px auto;
+      margin: -28px auto $dot-size / 2 auto;
     }
-  }
-
-  @keyframes appear {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
-  li.appear {
-    animation: "appear" 0.1s ease-out;
   }
 }

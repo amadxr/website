@@ -1,11 +1,19 @@
 # Site settings
 title: Resolve Digital
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: >
+  We build, optimize and maintain stores for innovative eCommerce retailers.
+  Specializing in Solidus, Spree, Ruby on Rails, iOS and Machine Learning
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://silly-finch.cloudvent.net" # the base hostname & protocol for your site
+
+url: "http://witty-chicken.cloudvent.net"
+
+development:
+  url: "http://localhost:4000"
+production:
+  url: "http://silly-finch.cloudvent.net"
+staging:
+  url: "http://witty-chicken.cloudvent.net"
+
 highlighter: pygments
 google_analytics: false
 
@@ -24,3 +32,5 @@ people: &default
 
 authors: *default
 editors: *default
+
+permalink: "/blog/posts/:title"

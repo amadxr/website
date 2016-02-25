@@ -118,3 +118,59 @@ a.call-to-action {
   text-decoration: none;
 }
 
+p.feature {
+  font-size: 1.15em;
+  line-height: 1.3em;
+}
+
+p.subheader {
+  font-family: $heading-font-family;
+  font-size: 1.29em;
+  line-height: 1.2em;
+  font-weight: 400;
+}
+
+.caption {
+  line-height: 1em;
+}
+
+article footer {
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.feature-number {
+  font-weight: bold;
+  font-size: 1.7em;
+  line-height: 1.3em;
+  font-family: $heading-font-family;
+  vertical-align: middle;
+  color: $orange;
+
+  span {
+    color: $medium-gray;
+    font-size: 50%;
+    vertical-align: super;
+  }
+}
+
+.page > header {
+  nav {
+    font-size: 0.75em;
+    text-transform: uppercase;
+
+    a {
+      font-weight: bold;
+      text-decoration: none;
+
+      &.featured, &.featured.active {
+        color: white;
+      }
+
+      &.active {
+        color: $base-font-color;
+        text-decoration: none;
+      }
+    }
+  }
+}

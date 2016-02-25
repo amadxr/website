@@ -1,22 +1,13 @@
 // Formatting of inline content elements
 // Not typography though. Put that in _typography.scss
 
-p.feature {
-  font-size: 1.15em;
-  line-height: 1.3em;
-}
-
 p.subheader {
-  font-family: $heading-font-family;
-  font-size: 1.29em;
-  line-height: 1.2em;
+  margin-top: -0.5em;
   color: $medium-gray;
-  font-weight: 400;
-  margin-top: -0.9em;
 }
 
 .caption, .dim {
-  color: rgba(0,0,0, 0.5);
+  color: $transparent-black;
 
   a {
     color: lighten($action-color, 15%);
@@ -29,41 +20,10 @@ p.subheader {
 
 .caption {
   line-height: 1em;
-  margin-top: -1em;
-
-  img, video, picture {
-    margin: $image-space auto;
-  }
-}
-
-.hidden {
-  opacity: 0;
 }
 
 .middle-aligned {
   vertical-align: middle;
-}
-
-p.attribution {
-  font-style: italic;
-  font-size: 0.9em;
-}
-
-.call-to-action {
-  text-align: center;
-  background: $blue;
-  padding: 5px;
-  display: inline-block;
-  border-radius: 3px;
-  padding: .75em 1.5em;
-
-  &:hover {
-    background-color: shade($action-color, 20%);
-  }
-}
-
-.upcase {
-  text-transform: uppercase;
 }
 
 .left-aligned {
@@ -74,19 +34,8 @@ p.attribution {
   text-align: center;
 }
 
-.feature-number {
-  font-weight: bold;
-  font-size: 1.7em;
-  line-height: 1.3em;
-  font-family: $heading-font-family;
-  vertical-align: middle;
-  color: $orange;
-
-  span {
-    color: $medium-gray;
-    font-size: 50%;
-    vertical-align: super;
-  }
+.no-border {
+  border: none;
 }
 
 hr {
@@ -116,17 +65,7 @@ video {
   background-repeat: no-repeat;
   background-image: url(/images/browser-chrome-buttons.svg);
   background-position: $base-spacing / 3.8 $base-spacing / 3.8;
-  border: 2px solid darken($light-gray, 5%);
-
-  &.phone {
-    border-radius: 5px;
-    background-image: none;
-    padding-top: 0px;
-    background: none;
-    border: $base-border;
-    padding: $tiny-spacing;
-    margin-bottom: 0px;
-  }
+  border: $base-border-height solid darken($light-gray, 5%);
 }
 
 blockquote {
@@ -158,14 +97,6 @@ pre code {
     @include shift(0);
     @include span-columns(4);
   }
-}
-
-header p {
-  text-align: center !important;
-}
-
-.no-border {
-  border: none;
 }
 
 header, footer, small {

@@ -5,7 +5,6 @@ section {
 .full-width {
   @include span-columns(12 of 12);
   @include shift(0);
-
 }
 
 .narrow {
@@ -16,10 +15,6 @@ section {
 .very-narrow {
   @include span-columns(6 of 12);
   @include shift(3);
-  
-  p {
-    text-align: left;
-  }
 }
 
 div.two-column {
@@ -37,29 +32,6 @@ div.two-column {
     @include span-columns(12 of 12);
     @include shift(0);
     @include pad($small-spacing);
-  }
-}
-
-img.left-image {
-  @include span-columns(6 of 12);
-  @include shift(-3);
-}
-
-// todo: doesn't actually work at the moment.
-img.wide-image {
-  @include shift(-6);
-  width: 200%;
-}
-
-@include media($mobile) {
-  img.left-image {
-    @include shift(0);
-    @include span-columns(12 of 12);
-  }
-
-  img.wide-image {
-    margin: auto;
-    width: 100%;
   }
 }
 
@@ -113,48 +85,4 @@ img.wide-image {
   .page {
     padding: 0em;
   }
-}
-
-.colored {
-  @include pad();
-  margin: $base-spacing 0px;
-
-  blockquote {
-    color: rgba(255,255,255, 0.95);
-  }
-
-  h3 {
-    color: rgba(255,255,255, 0.95);
-  }
-
-  a {
-    color: rgba(255,255,255, 0.95);
-  }
-}
-
-.green {
-  background: $green;
-
-  color: rgba(42, 56, 67, 0.90);
-
-  h3, h2 {
-    color: rgba(255,255,255, 0.95);
-  }
-}
-
-.gray {
-  background: $light-gray;
-
-  h3 {
-    color: rgba(42, 56, 67, 0.9);
-  }
-
-  a {
-    color: rgba(42, 56, 67, 0.9);
-  }
-}
-
-.orange {
-  background: $orange;
-  color: rgba(42, 56, 67, 0.90);
 }
