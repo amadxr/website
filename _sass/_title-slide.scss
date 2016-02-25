@@ -31,7 +31,18 @@
     z-index: 100;
   }
 
-  h2, h2 a {
+  p {
+    font-family: $heading-font-family;
+    font-size: 1.4em;
+
+    span {
+      font-size: 1em;
+      color: $transparent-white;
+      padding: 0em $tiny-spacing;
+    }
+  }
+
+  h2, h2 a, p {
     color: lighten($blue, 70%);
   }
 
@@ -44,11 +55,7 @@
     line-height: 1.3em;
     font-weight: lighter;
 
-    span {
-      font-size: 1em;
-      color: $transparent-white;
-      padding: 0em $tiny-spacing;
-    }
+
   }
 
   @include media($tablet) {
