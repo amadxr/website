@@ -2,7 +2,7 @@
   appearance: none;
   background-color: $action-color;
   border: 0;
-  border-radius: $base-border-radius;
+  border-radius: 50px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -11,7 +11,9 @@
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
   line-height: 1;
-  padding:  0.55em $tiny-spacing;
+  //padding:  0.55em $tiny-spacing;
+  padding: 0.5em 1em;
+
   text-decoration: none;
   transition: background-color $base-duration $base-timing;
   user-select: none;

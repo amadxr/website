@@ -26,11 +26,11 @@
 
     a {
       vertical-align: text-bottom;
-      padding: $small-spacing / 1.5;
+      padding: 0.5em 1em;
 
       &.featured {
-        background: $blue;
-        border-radius: 3px;
+        background: $orange;
+        border-radius: 50px;
       }
 
       &.featured:hover {
@@ -39,6 +39,11 @@
 
       &:hover {
         background: $light-gray;
+        border-radius: 50px;
+      }
+
+      &.active:hover {
+        background: none;
       }
     }
   }
@@ -60,7 +65,7 @@
 
       a {
         display: inline-block;
-        padding: $tiny-spacing / 1.5;
+        padding: 0.3em 0.6em;
       }
     }
   }
