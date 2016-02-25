@@ -15,7 +15,6 @@
     }
     
     svg {
-
       width: 289px;
       height: 35px;
     }
@@ -24,17 +23,13 @@
   nav {
     float: right;
     margin-top: $tiny-spacing;
-    font-size: 0.75em;
 
     a {
-      font-weight: bold;
       vertical-align: text-bottom;
-      text-transform: uppercase;
       padding: $small-spacing / 1.5;
-      text-decoration: none;
+
       &.featured {
         background: $blue;
-        color: white;
         border-radius: 3px;
       }
 
@@ -42,17 +37,8 @@
         background: $green;
       }
 
-      &.featured.active {
-        color: white;
-      }
-
       &:hover {
         background: $light-gray;
-      }
-
-      &.active {
-        color: $base-font-color;
-        text-decoration: none;
       }
     }
   }

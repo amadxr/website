@@ -15,8 +15,8 @@ layout: default
 {% assign additional_help = page.additional_help %}
 
 <div class="post">
-  <section>
-    <div class="very-narrow left-aligned">
+  <section class="very-narrow">
+    <article>
       <header>
         <h1>{{ page.title }}</h1>
         <p>
@@ -27,38 +27,37 @@ layout: default
         {% if page.date %} &mdash; {{ page.date | date: "%b %-d, %Y" }}{% endif %}
         {% if page.read_count %}&mdash; {% include word-count.html %}{% endif %}</p>
       </header>
-      <article>
-        {{ content }}
+    
+      {{ content }}
 
-        <hr/>
+      <hr/>
 
-        <p class="attribution">
-          "{{ page.title }}" was
-          {% if author %}
-            written by <a href="https://twitter.com/{{ author.twitter }}" target="_blank">{{ author.name }}</a>.
-          {% endif %}
-          {% if editor %}
-            Editing by <a href="https://twitter.com/{{ editor.twitter }}" target="_blank">{{ editor.name }}</a>.
-          {% endif %}
+      <footer>
+        "{{ page.title }}" was
+        {% if author %}
+          written by <a href="https://twitter.com/{{ author.twitter }}" target="_blank">{{ author.name }}</a>.
+        {% endif %}
+        {% if editor %}
+          Editing by <a href="https://twitter.com/{{ editor.twitter }}" target="_blank">{{ editor.name }}</a>.
+        {% endif %}
 
-          {% if additional_help %}
-            Additional help from
-            {% for helper in additional_help %}
+        {% if additional_help %}
+          Additional help from
+          {% for helper in additional_help %}
 
-              {% assign person = site.data.people[helper.person] %}
-              
-              {% unless forloop.last %}
-                <a href="https://twitter.com/{{ helper.twitter }}" target="_blank">{{ person.name }}</a>,
-              {% else %}
-                and <a href="https://twitter.com/{{ helper.twitter }}" target="_blank">{{ person.name }}</a>.
-              {% endunless %}
-            {% endfor %}
-          {% endif %}
+            {% assign person = site.data.people[helper.person] %}
+            
+            {% unless forloop.last %}
+              <a href="https://twitter.com/{{ helper.twitter }}" target="_blank">{{ person.name }}</a>,
+            {% else %}
+              and <a href="https://twitter.com/{{ helper.twitter }}" target="_blank">{{ person.name }}</a>.
+            {% endunless %}
+          {% endfor %}
+        {% endif %}
 
-          {% if page.disclosure %}Disclosure: {{page.disclosure}}{% endif %}
-          {% if page.notes %}{{page.notes}}{% endif %}
-        </p>
-      </article>
-    </div>
+        {% if page.disclosure %}Disclosure: {{page.disclosure}}{% endif %}
+        {% if page.notes %}{{page.notes}}{% endif %}
+      </footer>
+    </article>
   </section>
 </div>

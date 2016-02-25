@@ -7,13 +7,17 @@
   h2, h3, h4 {
     text-align: left;
     margin-top: 1.0em;
-    margin-bottom: 0.075em;
+    margin-bottom: 0.2em;
   }
 
   img, picture {
     // negative bottom margin helps bring captions
     // closer to the image
     margin-bottom: -$image-space;
+  }
+
+  header > p {
+    text-align: center;
   }
 }
 

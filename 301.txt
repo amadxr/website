@@ -5,6 +5,7 @@
 /blog/tag/* /blog/
 /blog/feed/ /feed.xml
 /blog/page/* /blog/
+/blog/categories/* /
 /pages/* /
 /projects/* /work/
 /blog/author/* /blog/
