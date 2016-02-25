@@ -24,7 +24,7 @@ Two-plus years later, they circled back with this update.
 
 *“I wish that we had gone with a company like you guys and I no doubt would not be in the mess I am in. [A…a] turned out to be spaghetti coders, so we moved to a local group called [E…l]. They have proved a disaster too and I now have a completely broken Xero integration. Losing customers daily. You live and you learn.”*
 
-It is so difficult, when faced with a limited budget, to resist the allure of the low-priced option. But the risk is enormous.
+> It is so difficult, when faced with a limited budget, to resist the allure of the low-priced option. But the risk is enormous.
 
 Application development is not a commodity. Experience matters. Expertise matters. What seems like a bargain rarely turns out to be one in retrospect. It isn’t the first time we’ve heard this sort of story, and it’s not going to be the last.
 
