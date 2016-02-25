@@ -22,8 +22,8 @@ div.two-column {
   @include span-columns(6 of 12);
 
   @include media($tablet) {
-    @include span-columns(10 of 12);
-    @include shift(1);
+    padding: 0.75em;
+    @include span-columns(12 of 12);
   }
 }
 
@@ -59,10 +59,11 @@ div.two-column {
 @include media($tablet) {
   .three-split-section {
     @include shift(0);
-    @include pad();
+    padding: 0.75em;
 
     .split {
       border-right: none;
+      padding: 0px;
       @include span-columns(8);
     }
   }
@@ -83,6 +84,6 @@ div.two-column {
 
 @include media($tablet) {
   .page {
-    padding: 0em;
+    padding: $tiny-spacing;
   }
 }

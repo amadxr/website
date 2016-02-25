@@ -4,6 +4,12 @@
 p.subheader {
   margin-top: -0.5em;
   color: $medium-gray;
+
+  @include media($tablet) {
+    margin-top: 0.0em;
+  }
+
+  
 }
 
 .caption, .dim {
