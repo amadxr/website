@@ -18,7 +18,7 @@ I wrote that email back in November 2013. But it was not meant to be. Instead of
 
 *“We believe that your company will be the one, not only to make […] a great product, but will also have the expertise needed to ensure the code is efficient, security flaws are minimal, plus your knowledge of the US market will help us get a foothold there.”*
 
-And then they hired another agency. Why? They were up-front about their reason: Lower hourly rates.
+**And then they hired another agency.** Why? They were up-front about their reason: Lower hourly rates.
 
 Two-plus years later, they circled back with this update.
 
