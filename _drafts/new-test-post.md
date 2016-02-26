@@ -10,6 +10,7 @@ feature_image: ''
 editor: david_jones
 additional_help:
   - person: david_jones
+  - person: barry_harrison
 ---
 
 > What You Want Is PCI Avoidance!
