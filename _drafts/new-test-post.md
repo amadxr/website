@@ -9,7 +9,6 @@ highlightSyntax: false
 feature_image: ''
 editor: david_jones
 additional_help:
-  - person: david_jones
   - person: barry_harrison
 ---
 
@@ -17,9 +16,9 @@ additional_help:
 
 PCI compliance is a security standard designed to keep credit card information safe and avoid fraud. The Payment Card Industry Data Security Standard (PCI DSS) applies to companies of any size that accept credit card payments.
 
-The problem is compliance can be difficult to achieve and hard to maintain. If your site &nbsp;doesn’t meet the current standard you can be subject to large fines or be denied the ability to process credit card payments.
+The problem is compliance can be difficult to achieve and hard to maintain. If your site  doesn’t meet the current standard you can be subject to large fines or be denied the ability to process credit card payments.
 
-Even if you are PCI compliant the system &nbsp;is far from perfect. There have been many instances where intruders have successfully stolen information while the business was completely PCI compliant.
+Even if you are PCI compliant the system  is far from perfect. There have been many instances where intruders have successfully stolen information while the business was completely PCI compliant.
 
 > When people ask me about becoming PCI compliant, I prefer to flip the question. What can we do about PCI avoidance?
 
@@ -82,7 +81,3 @@ Use a payment provider that allows you to offer both a great user experience and
 If your store is running on Spree or Solidus, you’ll be using the Active Merchant library to process payments. Stripe and Braintree are two common providers that support the PCI avoidance strategy outlined here.
 
 You can rest easy knowing your site is secure, your customers are happy, and you’ve avoided the pain and expense of PCI compliance.
-
-&nbsp;
-
-&nbsp;
