@@ -2,14 +2,14 @@
 layout: post
 title: Hiring a Development Partner
 description: ''
-author: david_jones
-dropcap: false
-read_count: false
+author: barry_harrison
+dropcap: true
+read_count: true
 highlightSyntax: false
-feature_image: null
+feature_image: ''
 editor: david_jones
 additional_help:
-  - person: patrick_davey
+  - person: david_jones
 ---
 
 *“It was great meeting you and the team this morning. Rarely does a prospective client come along who seems like such a great fit. We’re confident this will be the start of a long and mutually beneficial working relationship between our two companies.”*
