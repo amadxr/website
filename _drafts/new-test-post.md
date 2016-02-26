@@ -27,7 +27,7 @@ Our clients are able to completely avoid PCI compliance. So you’re probably wo
 
 Let’s consider five alternatives for implementing payments on your store.
 
-#### Solution 1: The Simplest Thing Possible
+## Solution 1: The Simplest Thing Possible
 
 [image 1 here]
 
