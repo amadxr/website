@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hiring a Development Partner
+title: Choosing Your Development Partner
 description: ''
 author: barry_harrison
 dropcap: true
