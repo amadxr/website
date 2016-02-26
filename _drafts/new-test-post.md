@@ -14,15 +14,13 @@ additional_help:
 
 > What You Want Is PCI Avoidance!
 
-## sdfdsdfsdfsfds
-
 PCI compliance is a security standard designed to keep credit card information safe and avoid fraud. The Payment Card Industry Data Security Standard (PCI DSS) applies to companies of any size that accept credit card payments.
 
 The problem is compliance can be difficult to achieve and hard to maintain. If your site &nbsp;doesn’t meet the current standard you can be subject to large fines or be denied the ability to process credit card payments.
 
 Even if you are PCI compliant the system &nbsp;is far from perfect. There have been many instances where intruders have successfully stolen information while the business was completely PCI compliant.
 
-When people ask me about becoming PCI compliant, I prefer to flip the question. What can we do about PCI avoidance?
+> When people ask me about becoming PCI compliant, I prefer to flip the question. What can we do about PCI avoidance?
 
 Many of our clients are able to completely avoid PCI compliance. So you’re probably wondering how can you avoid this burden? Before I can tell you how, first let’s understand how this system came about.
 
@@ -30,11 +28,17 @@ Let’s consider five alternatives for implementing payments on your store.
 
 ### Solution A: The Simplest Thing Possible
 
-> Nibh ut tempus venenatis, nunc est ultrices nisi, porttitor auctor elit velit sed ante.
+[image 1 here]
 
-Fusce eget neque et nibh blandit consequat porttitor ac massa. Aliquam imperdiet euismod dui, non consequat dolor semper et. Nulla dictum neque commodo dolor tempor porta. Cras sit amet diam elit. Cras ex leo, vulputate in condimentum at, ornare at lorem. Etiam sollicitudin nulla mi, id vestibulum augue egestas quis.
+In the early days of eCommerce (and sometimes even today) you see solutions like this. From the developer standpoint it’s the easiest solution you could implement with traditional payment providers.
 
-![](/uploads/versions/david-jones-papis-connect-speaking---x----1024-565x---.jpg)Sed eu turpis mollis, finibus dui quis, aliquet justo. Curabitur semper nibh ligula, ut facilisis est vehicula sed. Maecenas libero mauris, iaculis eu urna sed, cursus maximus ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed dictum efficitur leo, at lobortis mi scelerisque nec. Ut nulla ex, fermentum id ornare et, tincidunt sed est. Vestibulum ultricies neque quis feugiat tempus. Fusce eget lacus et massa hendrerit tincidunt.
+Credit details are stored in your database like everything else. You contact the payment provider with those details and get a response. You don’t bother setting up HTTPS to encrypt the transmission from the browser to your server.
+
+This solution is highly unsecure. Someone could intercept this information when it is transmitted or steal all the unencrypted credit card information stored in the database.
+
+It’s worth noting though that this flow is good in terms of developer time spent. It’s also good for the user because they stay on your site throughout the process.
+
+&nbsp;
 
 ### Aenean Aliquet
 
