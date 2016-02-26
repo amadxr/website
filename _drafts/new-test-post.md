@@ -27,7 +27,7 @@ Many of our clients are able to completely avoid PCI compliance. So you’re pro
 
 Let’s consider five alternatives for implementing payments on your store.
 
-#### Solution A: The Simplest Thing Possible
+#### Solution 1: The Simplest Thing Possible
 
 [image 1 here]
 
@@ -39,7 +39,7 @@ This solution is highly unsecure. Someone could intercept this information when 
 
 It’s worth noting though that this flow is good in terms of developer time spent. It’s also good for the user because they stay on your site throughout the process.
 
-#### Solution B: Bank Hosted Payment Page
+#### Solution 2: Bank Hosted Payment Page
 
 [image 2]
 
@@ -49,7 +49,7 @@ While this option is more secure, it forces your customers down a strange path. 
 
 Some payment providers try to reduce this confusion by allowing the store owner to customise the header and footer of the payment page to make it feel as much as possible like you’re still on the original store website.
 
-#### Solution C: Homegrown Encryption
+#### Solution 3: Homegrown Encryption
 
 [image 3]
 
@@ -59,22 +59,21 @@ There is also another problem. While you encrypted everything along the way, ide
 
 There’s a lot to be concerned about with this DIY solution. You’ll always be questioning if you’ve set up the encryption perfectly.
 
-#### Solution D: PCI Compliance
-&nbsp;
+#### Solution 4: PCI Compliance
 
 PCI compliance looks just like Solution C except you need to follow a long list of best practices to try and cover off all aspects of handling credit card data. You have the same setup but you’ll be subject to automated tests from the outside. You will also need to implement and follow security policies set out by PCI compliance. You’ll need to know exactly who has access to your server.
 
 PCI compliance is a lot of responsibility and If you break one of the many rules you’ll be subject to fines. For a store owner that’s a risk and an expense. What would be preferable is something we know is both secure and low risk.
 
-#### Solution E: PCI Avoidance (recommended)
+#### Solution 5: PCI Avoidance (recommended)
 
 [image 4]
 
 Finally we’re at PCI avoidance. The payment provider is PCI compliant but you do not need to be. Why is that? Because no credit card data is transmitted or stored with you. Here’s how it works.
 
-The customer’s credit card is sent directly to the payment provider. A token, not the actual credit card data, is then able to be stored in your database.
+The customer’s credit card is sent directly to the payment provider. A token, (not the actual credit card data) is then stored in your database.
 
-While being secure and avoiding PCI compliance, we’ve also given the customer a nice user experience by staying on your site at all times.
+While being secure and avoiding PCI compliance, we’ve also given the customer a better user experience by staying on your site at all times.
 
 #### Conclusion
 
