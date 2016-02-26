@@ -26,7 +26,7 @@ Two-plus years later, they circled back with this update.
 
 > It is so difficult, when faced with a limited budget, to resist the allure of the low-priced option. But the risk is enormous.
 
-Application development is not a commodity. Experience matters. Expertise matters. What seems like a bargain rarely turns out to be one in retrospect. It isn’t the first time we’ve heard this sort of story, and it’s not going to be the last.
+Application development is not a commodity. Experience matters. Expertise matters. What seems like a bargain rarely turns out to be one in retrospect. It isn’t the first time we’ve heard this sad story, and it’s not going to be the last.&nbsp;
 
 So how do *we* address this situation? By thinking strategically. By defining an MVP and getting it launched so real people start using it. By architecting a flexible solution we can expand upon. By delivering the greatest value we can within your project budget.
 
