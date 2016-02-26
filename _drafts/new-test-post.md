@@ -1,6 +1,6 @@
 ---
 layout: post
-title: New Test Post
+title: Forget PCI Compliance.
 description: ''
 author: david_jones
 dropcap: true
@@ -12,7 +12,7 @@ additional_help:
   - person: david_jones
 ---
 
-This is just a test. This is just a test. This is just a test. This is just a test. This is just a test. This is just a test. This is just a test. This is just a test. This is just a test. This is just a test. This is just a test. This is just a test. This is just a test.&nbsp;
+What You Want Is PCI Avoidance!
 
 ## sdfdsdfsdfsfds
 
