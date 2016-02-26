@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Forget PCI Compliance.
+title: Forget PCI Compliance
 description: ''
 author: david_jones
 dropcap: true
@@ -9,6 +9,7 @@ highlightSyntax: false
 feature_image: ''
 editor: david_jones
 additional_help:
+  - person: david_jones
   - person: barry_harrison
 ---
 
