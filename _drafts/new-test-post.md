@@ -16,14 +16,19 @@ additional_help:
 
 ## sdfdsdfsdfsfds
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer justo urna, venenatis id tellus non, pharetra luctus odio. Nullam vel sollicitudin velit. Phasellus nec ultrices orci. Phasellus luctus purus lectus, non lobortis mauris condimentum id. Nunc ullamcorper mattis nisi, fringilla malesuada eros. Sed sagittis mollis fringilla. Curabitur in finibus augue, at accumsan nisl. Sed vel fermentum sem:
+PCI compliance is a security standard designed to keep credit card information safe and avoid fraud. The Payment Card Industry Data Security Standard (PCI DSS) applies to companies of any size that accept credit card payments.
 
-* vel malesuada nisi.
-* Nulla in tincidunt urna.
-* Sed commodo est quam.
+The problem is compliance can be difficult to achieve and hard to maintain. If your site &nbsp;doesn’t meet the current standard you can be subject to large fines or be denied the ability to process credit card payments.
 
+Even if you are PCI compliant the system &nbsp;is far from perfect. There have been many instances where intruders have successfully stolen information while the business was completely PCI compliant.
 
-At consequat nunc rutrum quis. Suspendisse viverra nibh nibh, quis tristique urna sollicitudin id. Donec rutrum, odio quis faucibus consequat, ligula augue ultricies ligula, id elementum libero libero vitae felis. Cras aliquam.
+When people ask me about becoming PCI compliant, I prefer to flip the question. What can we do about PCI avoidance?
+
+Many of our clients are able to completely avoid PCI compliance. So you’re probably wondering how can you avoid this burden? Before I can tell you how, first let’s understand how this system came about.
+
+Let’s consider five alternatives for implementing payments on your store.
+
+### Solution A: The Simplest Thing Possible
 
 > Nibh ut tempus venenatis, nunc est ultrices nisi, porttitor auctor elit velit sed ante.
 
