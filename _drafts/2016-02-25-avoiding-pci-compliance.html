@@ -1,0 +1,106 @@
+---
+layout: post
+title: Avoiding PCI Compliance
+description: ''
+author: david_jones
+dropcap: true
+read_count: true
+highlightSyntax: false
+feature_image: ''
+editor: barry_harrison
+additional_help:
+  - person: barry_harrison
+---
+
+
+<p class="feature">Pci compliance is a security standard designed to keep credit card information safe and avoid fraud. The Payment Card Industry Data Security Standard (PCI DSS) applies to companies of any size that accept credit card payments.</p>
+
+<p>The problem is compliance can be difficult to achieve and hard to maintain. If your site doesn’t meet the current standard you can be subject to large fines or be denied the ability to process credit card payments.</p>
+
+<blockquote>
+For most online only merchants their choice of payment gateway is the single
+biggest factor determining the burden of PCI compliance on their
+business and informed selection can mitigate many if not all of these
+concerns.</blockquote>
+<p class="caption editable">
+  &mdash; Robert Coleman, Director at <a href="http://offtheback.co.nz">Etailer Limited</a>
+</p>
+<hr/>
+<h2>The PCI Compliance Burdon</h2>
+<p>PCI DSS has a large scope from websites to servers to the LANs and computers that come in contact with cardholder data. It's extremely specific and onerous.</p>
+
+<h3>Self-Assessment Questionnaire</h3>
+<p>In attempting to achieve compliance you will need to complete a Self-Assessment Questionnaire (SAQ). There are different types ranging from A to D. D is the most stringent.</p>
+<p>You must complete and submit your questionnaire to your merchant bank yearly. If you're not compliant you must develop a plan to resolve this and lodge this along with time frames.</p>
+<p>SAQ-D requires you cover off alot of things like encryption on your website, to what and how you're storing cardholder data through to the encryption protocols in use on your wireless networks.</p>
+<h3>Application and Network Security Scan</h3>
+<p>Regular security scan of the application and network. This essentially runs a set of heuristics/rules and scans the app and network for red flags. If there are too many, or any that are too severe then action must be taken to move back into compliance. This must be done by an authorised scanning vendor and the report or certificate of compliance also be submitted to the merchant bank on a regular basis.</p>
+<h3>Data Center Compliance</h3>
+<p>One of the factors of this is data centre compliance, so it's important for an ecommerce customer to make sure their hosting provider is compliant as they often can't control data center process. <a href="https://aws.amazon.com/compliance/pci-dss-level-1-faqs/">Amazon AWS</a> is extremely good in this regard.</p>
+<hr/>
+
+<h2>A Path To PCI Avoidance</h2>
+
+<p>Even if you are PCI compliant, the system is far from perfect. There have been many instances where intruders have successfully stolen information while the business was fully PCI compliant.</p>
+
+<blockquote>When people ask me about becoming PCI compliant, I prefer to flip the question. What can we do about PCI avoidance?</blockquote>
+
+<p>Our clients are able to completely avoid PCI compliance. So you’re probably wondering how can you sidestep this burden? Before I tell you, let’s first understand how this system came about.</p>
+
+<p>Let’s consider five alternatives for implementing payments on your store.</p>
+
+<h3>Solution 1: The Simplest Thing Possible</h3>
+
+<p><strong>[image 1 here]</strong></p>
+
+<p>In the early days of eCommerce (and sometimes even today) you see solutions like this. From the developer standpoint it’s the easiest solution you could implement with traditional payment providers.</p>
+
+<p>Credit details are stored in your database like everything else. You contact the payment provider with those details and get a response. You don’t bother setting up HTTPS to encrypt the transmission from the browser to your server.</p>
+
+<p>This solution is highly unsecure. Someone could intercept this information when it is transmitted or steal all the unencrypted credit card information stored in the database.</p>
+
+<p>It’s worth noting though that this flow is good in terms of developer time spent. It’s also good for the user because they stay on your site throughout the process.</p>
+
+<h3>Solution 2: Bank Hosted Payment Page</h3>
+
+<p><strong>[image 2 here]</strong></p>
+
+<p>This solution came about when payment providers saw how bad Solution A was. It allows payment providers to have full control and confidence that credit card data is secure all along the way.</p>
+
+<p>While this option is more secure, it forces your customers down a strange path. One moment they’re on your site, the next they’re on another site (that doesn’t look like the page they came from) and they’re asked to enter payment information. This disconnect will negatively impact your conversion rate.</p>
+
+<p>Some payment providers try to reduce this confusion by allowing the store owner to customize the header and footer of the payment page to make it feel as much as possible like you’re still on the original store website.</p>
+
+<h3>Solution 3: Homegrown Encryption</h3>
+
+<p><strong>[image 3 here]</strong></p>
+
+<p>With this solution credit card data is encrypted during every step of transmission and storage. It isn’t a bad option, but everyone will implement it differently.</p>
+
+<p>There's another problem. While everything is encrypted along the way, ideal security is much broader. Questions will arise like: Who has access to the server? How up to date is your software? Have you patched your servers with the latest fixes on the encryption protocols?</p>
+
+<p>There’s a lot to be concerned about with this DIY solution. You’ll always be questioning if you’ve set up the encryption perfectly.</p>
+
+<h3>Solution 4: PCI Compliance</h3>
+
+<p>PCI compliance looks just like Solution C except you need to follow a long list of best practices to cover off all aspects of handling credit card data. You have the same setup but you’ll be subject to automated tests from the outside. You will also need to implement and follow security policies set out by PCI compliance. You’ll need to know exactly who has access to your server.</p>
+
+<blockquote>PCI compliance is a lot of responsibility and if you break one of the many rules you’ll be subject to fines. That’s a risk and an expense. What would be preferable is a solution we know is both secure and low risk.</blockquote>
+
+<h3>Solution 5: PCI Avoidance (recommended)</h3>
+
+<p><strong>[image 5 here]</strong></p>
+
+<p>Finally we’re at PCI avoidance. The payment provider is PCI compliant but you do not need to be. Why is that? Because no credit card data is transmitted or stored with you. Here’s how it works.</p>
+
+<p>The customer’s credit card is sent directly to the payment provider. A token, (not the actual credit card data) is then stored in your database.</p>
+
+<p>While being secure and avoiding PCI compliance, we’ve also given the customer a better user experience by staying on your site at all times.</p>
+
+<h2>Conclusion</h2>
+
+<p>Use a payment provider that allows you to offer both a great user experience and eliminate the need for PCI compliance.</p>
+
+<p>If your store is running on Spree or Solidus, you’ll be using the Active Merchant library to process payments. Stripe and Braintree are two common providers that support the PCI avoidance strategy outlined here.</p>
+
+<p>You can rest easy knowing your site is secure, your customers are happy, and you’ve avoided the pain and expense of PCI compliance.</p>
