@@ -39,7 +39,7 @@ This solution is highly unsecure. Someone could intercept this information when 
 
 It’s worth noting though that this flow is good in terms of developer time spent. It’s also good for the user because they stay on your site throughout the process.
 
-#### Solution 2: Bank Hosted Payment Page
+## Solution 2: Bank Hosted Payment Page
 
 [image 2]
 
@@ -49,7 +49,7 @@ While this option is more secure, it forces your customers down a strange path. 
 
 Some payment providers try to reduce this confusion by allowing the store owner to customize the header and footer of the payment page to make it feel as much as possible like you’re still on the original store website.
 
-#### Solution 3: Homegrown Encryption
+## Solution 3: Homegrown Encryption
 
 [image 3]
 
@@ -59,13 +59,13 @@ There's another problem. While everything is encrypted along the way, ideal secu
 
 There’s a lot to be concerned about with this DIY solution. You’ll always be questioning if you’ve set up the encryption perfectly.
 
-#### Solution 4: PCI Compliance
+## Solution 4: PCI Compliance
 
 PCI compliance looks just like Solution C except you need to follow a long list of best practices to cover off all aspects of handling credit card data. You have the same setup but you’ll be subject to automated tests from the outside. You will also need to implement and follow security policies set out by PCI compliance. You’ll need to know exactly who has access to your server.
 
 > PCI compliance is a lot of responsibility and if you break one of the many rules you’ll be subject to fines. That’s a risk and an expense. What would be preferable is a solution we know is both secure and low risk.
 
-#### Solution 5: PCI Avoidance (recommended)
+## Solution 5: PCI Avoidance (recommended)
 
 [image 4]
 
@@ -75,7 +75,7 @@ The customer’s credit card is sent directly to the payment provider. A token, 
 
 While being secure and avoiding PCI compliance, we’ve also given the customer a better user experience by staying on your site at all times.
 
-#### Conclusion
+## Conclusion
 
 Use a payment provider that allows you to offer both a great user experience and eliminate the need for PCI compliance.
 
