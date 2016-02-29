@@ -6,7 +6,7 @@
 <meta property="og:locale" content="en_US" />
 
 {% if page.feature_image %}
-  <meta property="og:image" content="{{ site.url }}{{page.feature_image}}" />
+  <meta property="og:image" content="{{ site.cdn }}{{ page.feature_image }}{{ site.cdn_suffix }}" />
 {% endif %}
 {% if page.feature_image_height %}
   <meta property="og:image:height" content="{{ page.feature_image_height }}" />
