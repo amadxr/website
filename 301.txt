@@ -19,6 +19,7 @@
 /services/spree-commerce /
 /work/cellscope /work/
 /work/douglas-pharmaceuticals /work/
+/work/rock-medicine/ /work/
 /work/google-crm /work/
 /work/gap-filler /work/
 /work/newsroom /work/
@@ -157,3 +158,11 @@
 /blog/2010/02/ /blog/
 /blog/2010/07/ /blog/
 /services/non-profits /services/
+/blog/posts/learning-lunch-dynamic-forms-and-server-sent-events/ /blog/
+/blog/2009/02/07/it%E2%80%99s-not-about-you/ /blog/
+/blog/posts/communication-animated-gif-style/ /blog/
+/blog/posts/think-twice-code-once/ /blog/
+/jobs/ /
+/blog/posts/how-to-organize-products-with-spree-commerce-part-one/ /blog/posts/how-to-organize-products-with-spree-commerce-(part-one)/
+/blog/posts/how-to-organize-products-with-spree-commerce-part-two/ /blog/posts/how-to-organize-products-with-spree-commerce-(part-two)/
+/jobs/ruby-on-rails-software-engineer/ /
