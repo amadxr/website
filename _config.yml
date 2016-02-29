@@ -6,6 +6,9 @@ description: >
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://resolve.digital"
 
+cdn: "https://resolve.imgix.net"
+cdn_params: "?auto=format&ch=Width,DPR"
+
 highlighter: pygments
 
 # Build settings
