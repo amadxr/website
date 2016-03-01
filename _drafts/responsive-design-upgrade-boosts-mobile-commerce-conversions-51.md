@@ -3,8 +3,8 @@ layout: post
 title: 'Responsive Design Upgrade Boosts Mobile Commerce Conversions  51%'
 description: ''
 author: barry_harrison
-dropcap: false
-read_count: false
+dropcap: true
+read_count: true
 highlightSyntax: false
 feature_image: ''
 editor: david_jones
