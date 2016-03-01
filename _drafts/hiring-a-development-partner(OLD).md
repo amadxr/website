@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Choosing Your Development Partner: You Get What You Pay For'
+title: Choosing Your Development Partner and Getting What You Pay For
 description: ''
 author: barry_harrison
 dropcap: true
