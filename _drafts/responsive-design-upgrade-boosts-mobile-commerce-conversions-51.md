@@ -12,7 +12,8 @@ additional_help:
   - person: david_jones
 ---
 
-![](/uploads/versions/mws-responsive---x----1785-1352x---.jpg)Nearly one-third of Manhattan Wardrobe Supply’s visitors access the site on a mobile device but until recently, the customer experience was poor. Using the desktop version on a phone was tedious and difficult, a far cry from the friendly customer service offered in-store.
+![](/uploads/versions/mws-responsive---x----1785-1352x---.jpg)
+Nearly one-third of Manhattan Wardrobe Supply’s visitors access the site on a mobile device but until recently, the customer experience was poor. Using the desktop version on a phone was tedious and difficult, a far cry from the friendly customer service offered in-store.
 
 To solve this problem, we recommended a responsive design approach which we implemented in a couple phases. How did it work? After the first month, according to Google Analytics, the new responsive site is delivering a
 
