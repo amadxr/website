@@ -1,9 +1,4 @@
 #contact_form {
-  // only required because of a compression bug in cloud cannon
-  input {
-    margin-bottom: $small-spacing;
-  }
-
   label.error {
     font-weight: normal;
     font-size: 0.8em;
