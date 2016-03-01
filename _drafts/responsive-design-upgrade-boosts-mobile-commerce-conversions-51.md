@@ -14,9 +14,7 @@ additional_help:
 
 Nearly one-third of Manhattan Wardrobe Supply’s visitors access the site on a mobile device but until recently, the customer experience was poor. Using the desktop version on a phone was tedious and difficult, a far cry from the friendly customer service offered in-store.
 
-To solve this problem, we recommended a responsive design approach which we implemented in a couple phases.
-
-Did it work? After just one month, their new responsive site is delivering a
+To solve this problem, we recommended a responsive design approach which we implemented in a couple phases. How did it work? After the first month, the new responsive site is delivering a
 
 * 51% increase in conversions for mobile
 * 21% increase in conversions overall
@@ -43,4 +41,4 @@ We replaced the out-of-the-box Spree search with Algolia, which is faster and sm
 
 ## **The Pay-Off**
 
-Manhattan Wardrobe Supply’s new responsive site is simpler to update and maintain. It delivers a better customer experience, from navigation to search to checkout. The company is already seeing a significant increase in conversions and revenue. Responsive design suits their customers better, which makes it better for business.
+Manhattan Wardrobe Supply’s [new responsive site](https://www.wardrobesupplies.com) is simpler to update and maintain. It delivers a better customer experience, from navigation to search to checkout. The company is already seeing a significant increase in conversions and revenue. Responsive design suits their customers better, which makes it better for business.
