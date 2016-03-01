@@ -47,9 +47,9 @@ layout: default
           {% assign person = site.data.people[helper.person] %}
           
           {% unless forloop.last %}
-            <a href="https://twitter.com/{{ helper.twitter }}" target="_blank">{{ person.name }}</a>,
+            <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>,
           {% else %}
-            and <a href="https://twitter.com/{{ helper.twitter }}" target="_blank">{{ person.name }}</a>.
+            and <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
           {% endunless %}
         {% endfor %}
 
