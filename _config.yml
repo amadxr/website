@@ -4,7 +4,10 @@ description: >
   We build, optimize and maintain stores for innovative eCommerce retailers.
   Specializing in Solidus, Spree, Ruby on Rails, iOS and Machine Learning
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://resolve.digital"
+url: "https://resolve.digital"
+
+cdn: "https://resolve.imgix.net"
+cdn_params: "?auto=format&ch=Width,DPR"
 
 highlighter: pygments
 

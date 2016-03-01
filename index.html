@@ -29,7 +29,7 @@ feature_image: "/images/resolve-digital-logo-only.png"
 <section class="full-width top-spacing">
   <h2 class="editable">Featured Client</h2>
   <p class="caption center-aligned">
-    <a href="/work/pinrose/"><img src="/images/pinrose-screenshot.png" class="screenshot" alt="Pinrose.com Screenshot" /></a>
+    <a href="/work/pinrose/"><img src="{{ site.cdn }}/images/pinrose-screenshot.png{{ site.cdn_params }}" class="screenshot" alt="Pinrose.com Screenshot" /></a>
     <small>Pinrose.com product detail page for Campfire Rebel.</small>
   </p>
 </section>
@@ -56,7 +56,7 @@ feature_image: "/images/resolve-digital-logo-only.png"
   <h2 class="editable">What Our Clients Say</h2>
   <blockquote>"Resolve Digital did an excellent job, were professional at all times and adapted quickly to our processes. Above all they were great guys to work with."</blockquote>
   <p class="caption editable">
-    &mdash; Remy Burger, Product Manager at <img src="/images/google-logo.svg" alt="Google Logo" height="24" class="middle-aligned no-border no-bottom-margin" />
+    &mdash; Remy Burger, Product Manager at <img src="/images/google-logo.svg" alt="Google Logo" height="22" class="inline-logo" />
   </p>
 </section>
 
@@ -64,6 +64,7 @@ feature_image: "/images/resolve-digital-logo-only.png"
 <section class="narrow">
   <hr />
   <h2 class="editable">From Our Blog</h2>
+  <p class="center-aligned">We write about building, optimizing and maintaining eCommerce stores.</p>
   <ul class="timeline">
     {% for post in site.posts limit: 3 %}
       {% include post-item.html post=post image=false %}

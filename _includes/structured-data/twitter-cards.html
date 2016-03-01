@@ -9,7 +9,7 @@
 {% endif %}
 
 {% if page.feature_image %}
-  <meta name="twitter:image:src" content="{{ site.url }}{{page.feature_image}}" />
+  <meta name="twitter:image:src" content="{{ site.cdn }}{{ page.feature_image }}{{ site.cdn_suffix }}" />
 {% endif %}
 
 {% if author.twitter %}
