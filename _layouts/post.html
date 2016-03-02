@@ -41,17 +41,19 @@ layout: default
           Editing by <a href="https://twitter.com/{{ editor.twitter }}" target="_blank">{{ editor.name }}</a>.
         {% endif %}
 
-        Additional help from
-        {% for helper in additional_help %}
+        {% if additional_help %}
+          Additional help from
+          {% for helper in additional_help %}
 
-          {% assign person = site.data.people[helper.person] %}
-          
-          {% unless forloop.last %}
-            <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>,
-          {% else %}
-            and <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
-          {% endunless %}
-        {% endfor %}
+            {% assign person = site.data.people[helper.person] %}
+            
+            {% unless forloop.last %}
+              <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>,
+            {% else %}
+              and <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
+            {% endunless %}
+          {% endfor %}
+        {% endif %}
 
         {% if page.disclosure %}Disclosure: {{page.disclosure}}{% endif %}
         {% if page.notes %}{{page.notes}}{% endif %}

@@ -94,6 +94,25 @@ pre code {
   margin: $tiny-spacing 0em 0.1em 0em;
 }
 
+
+
+.wide-image {
+  margin: 0em -30% $small-spacing -30%;
+}
+
+.extra-wide-image {
+  margin: 0em -50% $small-spacing -50%;
+}
+
+.wide-image, .extra-wide-image {
+  text-align: center;
+
+  @include media($tablet) {
+    margin: 0em 0em $small-spacing 0em;
+  }
+}
+
+
 .tip {
   @include shift(-4);
   @include span-columns(4);
