@@ -44,14 +44,17 @@ layout: default
         {% if additional_help %}
           Additional help from
           {% for helper in additional_help %}
-
             {% assign person = site.data.people[helper.person] %}
             
-            {% unless forloop.last %}
-              <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>,
+            {% if additional_help.size == 1 %}
+              <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
             {% else %}
-              and <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
-            {% endunless %}
+              {% unless forloop.last %}
+                <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>,
+              {% else %}
+                and <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
+              {% endunless %}
+            {% endif %}
           {% endfor %}
         {% endif %}
 
