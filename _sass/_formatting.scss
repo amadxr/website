@@ -97,18 +97,18 @@ pre code {
 
 
 .wide-image {
-  margin: 0em -30% $small-spacing -30%;
+  margin: $small-spacing -30% $small-spacing -30%;
 }
 
 .extra-wide-image {
-  margin: 0em -50% $small-spacing -50%;
+  margin: $small-spacing -50% $small-spacing -50%;
 }
 
 .wide-image, .extra-wide-image {
   text-align: center;
 
   @include media($tablet) {
-    margin: 0em 0em $small-spacing 0em;
+    margin: $small-spacing 0em $small-spacing 0em;
   }
 }
 
