@@ -9,6 +9,7 @@ highlightSyntax: false
 editor: barry_harrison
 additional_help:
   - person: robert_coleman
+  - person: isaac_freeman
 ---
 
 
@@ -22,7 +23,7 @@ business and informed selection can mitigate many if not all of these
 concerns.</blockquote>
 <hr />
 <h2 class="editable">The PCI Compliance Burden</h2>
-<p class="editable">PCI DSS has a large scope: From websites to servers to the LANs and computers that come in contact with cardholder data. It's extremely specific and onerous.</p>
+<p class="editable">PCI DSS has a large scope: any computer that comes in contact with cardholder data is relevant. It's extremely specific and onerous.</p>
 
 <h3 class="editable">Self-Assessment Questionnaire</h3>
 <p class="editable">In attempting to achieve compliance you will need to complete a Self-Assessment Questionnaire (SAQ). There are different types ranging from A to D (the most stringent).</p>
@@ -41,7 +42,7 @@ concerns.</blockquote>
 
 <h2 class="editable">An Evolution of Payment Implementations</h2>
 
-<p class="editable">Let’s consider four alternatives for implementing payments on your store.</p>
+<p class="editable">Let’s consider four solutions for implementing payments on your store.</p>
 
 <h3 class="editable">Solution 1: The Simplest Thing Possible</h3>
 
@@ -49,11 +50,11 @@ concerns.</blockquote>
 
 <p class="editable">In the early days of eCommerce you would often see solutions like this. From the developer standpoint it’s the easiest solution you could implement with traditional payment providers.</p>
 
-<p class="editable">Credit details are stored in your database like everything else. You contact the payment provider with those details and get a response. You don’t bother setting up HTTPS to encrypt the transmission from the browser to your server.</p>
+<p class="editable">Credit details are stored in your database like everything else. You contact the payment provider with those card details and get a response. You don’t bother setting up HTTPS to encrypt the transmission from the browser to your server.</p>
 
-<p class="editable">It’s worth noting though that this flow is good in terms of developer time spent. It’s also good for the user because they stay on your site throughout the process.</p>
+<p class="editable">It’s worth noting that this flow is good in terms of developer time spent. It’s also good for the user because they stay on your site throughout the process.</p>
 
-<p class="editable">However the issue with this solution is it's highly unsecure. Someone could intercept this information when it is transmitted or steal all the unencrypted credit card information stored in the database.</p>
+<p class="editable">However the issue with this solution is it's highly unsecure. Someone could intercept this information when it is transmitted or steal all the unencrypted credit card information stored in your database.</p>
 
 <h3 class="editable">Solution 2: Payment Provider Hosted Payment Page</h3>
 
@@ -61,7 +62,7 @@ concerns.</blockquote>
 
 <p>In this solution, on payment you send your customer to a payment provider's hosted payment page. The customer fills out their details and information is sent encrypted to the payment provider for processing.</p>
 
-<p class="editable">Payment providers love this solution. It allows them to have full control and confidence that credit card data is secure all along the way. There's very little risk for the store owner.</p>
+<p class="editable">Payment providers love this solution. It allows them to have full control and confidence that credit card data is secure all along the way. There's very little risk for the store owner too.</p>
 
 <p class="editable">While this option is more secure, it forces your customers down a strange path. One moment they’re on your site, the next they’re on another site (that doesn’t look like the page they came from) and they’re asked to enter payment information. This disconnect will negatively impact your conversion rate.</p>
 
@@ -79,7 +80,7 @@ concerns.</blockquote>
 
 <p class="wide-image editable"><img src="/images/pci-compliance-solution-4.svg" alt="Payment processing flow without the need for PCI complaince" /></p>
 
-<p class="editable">The customer’s credit card is sent directly to the payment provider. A token, (not the actual credit card data) is then stored in your database and a payment accepted message is sent back to the customer.</p>
+<p class="editable">PCI avoidance is acheived by having the customer’s credit card is sent directly to the payment provider. A token, (not the actual credit card data) is then stored in your database and a payment accepted message is sent back to the customer.</p>
 
 <p class="editable">If someone where to get hold of the credit card token, they are not able to extract credit card data from it.</p>
 
@@ -89,8 +90,8 @@ concerns.</blockquote>
 
 <h2 class="editable">Conclusion</h2>
 
-<p class="editable">Use a payment provider that allows you to offer both a great user experience and avoid the need for PCI compliance.</p>
+<p class="editable">Use a payment provider that allows you to offer both a great user experience and avoid the need for you to be PCI compliant.</p>
 
 <p class="editable">If your store is running on Spree Commerce or Solidus, you’ll be using the <a href="http://activemerchant.org">Active Merchant</a> library to process payments. <strong>Payment processes such as <a href="https://stripe.com">Stripe</a> and <a href="https://www.braintreepayments.com">Braintree</a> offer modern payment solutions that allow you to avoid PCI compliance and are compatible with Active Merchant.</strong></p>
 
-<p class="editable">Avoiding the need for PCI compliance means you can rest easy knowing your site is secure, your customers are happy, and you've succcessfully outsourced the burden PCI complaince to your payment provider.</p>
+<p class="editable">Avoiding the need for PCI compliance means you can rest easy knowing your site is secure, your customers' experience is great, and you've succcessfully outsourced the burden PCI complaince to your payment provider.</p>
