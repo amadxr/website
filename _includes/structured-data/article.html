@@ -12,7 +12,11 @@
     {% if page.feature_image %}
       "image": {
         "@type": "ImageObject",
-        "url": "{{ site.cdn }}{{ page.feature_image }}{{ site.cdn_suffix }}",
+        {% if page.op_image %}
+          "url": "{{ site.cdn }}{{ page.feature_image }}{{ site.cdn_suffix }}",
+        {% else %}
+          "url": "{{ site.cdn }}{{ page.feature_image }}{{ site.cdn_suffix }}",
+        {% endif %}
         {% if page.feature_image_height %}
         "height": {{ page.feature_image_height }},
         {% endif %}

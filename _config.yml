@@ -27,4 +27,4 @@ people: &default
 authors: *default
 editors: *default
 
-permalink: "/blog/posts/:title"
+permalink: "/blog/posts/:title/"

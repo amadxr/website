@@ -8,8 +8,12 @@
   <meta name="twitter:card" content="summary" />
 {% endif %}
 
-{% if page.feature_image %}
-  <meta name="twitter:image:src" content="{{ site.cdn }}{{ page.feature_image }}{{ site.cdn_suffix }}" />
+{% if page.op_image %}
+  <meta name="twitter:image:src" content="{{ site.cdn }}{{ page.op_image }}{{ site.cdn_suffix }}" />
+{% else %}
+  {% if page.feature_image %}
+    <meta name="twitter:image:src" content="{{ site.cdn }}{{ page.feature_image }}{{ site.cdn_suffix }}" />
+  {% endif %}
 {% endif %}
 
 {% if author.twitter %}
