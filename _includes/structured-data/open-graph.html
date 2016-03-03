@@ -2,11 +2,15 @@
 
 <meta property="og:site_name" content="{{ site.title }}" />
 <meta property="og:title" content="{{ page.title }}" />
-<meta property="og:url" content="{{ site.url }}{{ page.url }}/" />
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 <meta property="og:locale" content="en_US" />
 
-{% if page.feature_image %}
-  <meta property="og:image" content="{{ site.cdn }}{{ page.feature_image }}{{ site.cdn_suffix }}" />
+{% if page.op_image %}
+  <meta property="og:image" content="{{ site.cdn }}{{ page.op_image }}{{ site.cdn_suffix }}" />
+{% else %}
+  {% if page.feature_image %}
+    <meta property="og:image" content="{{ site.cdn }}{{ page.feature_image }}{{ site.cdn_suffix }}" />
+  {% endif %}
 {% endif %}
 {% if page.feature_image_height %}
   <meta property="og:image:height" content="{{ page.feature_image_height }}" />
