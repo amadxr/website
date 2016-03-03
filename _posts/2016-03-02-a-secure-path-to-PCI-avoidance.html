@@ -41,7 +41,7 @@ concerns.</blockquote>
 
 <h2 class="editable">An Evolution of Payment Implementations</h2>
 
-<p class="editable">Let’s consider five alternatives for implementing payments on your store.</p>
+<p class="editable">Let’s consider four alternatives for implementing payments on your store.</p>
 
 <h3 class="editable">Solution 1: The Simplest Thing Possible</h3>
 
@@ -55,37 +55,35 @@ concerns.</blockquote>
 
 <p class="editable">However the issue with this solution is it's highly unsecure. Someone could intercept this information when it is transmitted or steal all the unencrypted credit card information stored in the database.</p>
 
-<h3 class="editable">Solution 2: Bank Hosted Payment Page</h3>
+<h3 class="editable">Solution 2: Payment Provider Hosted Payment Page</h3>
 
 <p class="wide-image editable"><img src="/images/pci-compliance-solution-2.svg" /></p>
 
-<p class="editable">This solution came about when payment providers saw how bad Solution 1 was. It allows payment providers to have full control and confidence that credit card data is secure all along the way.</p>
+<p>In this solution, on payment you send your customer to a payment provider's hosted payment page. The customer fills out their details and information is sent encrypted to the payment provider for processing.</p>
+
+<p class="editable">Payment providers love this solution. It allows them to have full control and confidence that credit card data is secure all along the way. There's very little risk for the store owner.</p>
 
 <p class="editable">While this option is more secure, it forces your customers down a strange path. One moment they’re on your site, the next they’re on another site (that doesn’t look like the page they came from) and they’re asked to enter payment information. This disconnect will negatively impact your conversion rate.</p>
 
-<p class="editable">Some payment providers try to reduce this confusion by allowing the store owner to customize the header and footer of the payment page to make it feel as much as possible like you’re still on the original store website.</p>
+<p class="editable">Some payment providers try to reduce this confusion by allowing the store owner to customize the header and footer of the payment page to make it feel like you’re still on the original store website. Ultimately though this is just a compromise.</p>
 
-<h3 class="editable">Solution 3: Homegrown Encryption</h3>
+<h3 class="editable">Solution 3: PCI Compliance</h3>
 
 <p class="wide-image editable"><img src="/images/pci-compliance-solution-3.svg" /></p>
 
-<p class="editable">With this solution credit card data is encrypted during every step of transmission and storage. It isn’t a bad option, but everyone will implement it differently.</p>
+<p class="editable">With this solution credit card data is encrypted during every step of transmission and storage.</p>
 
-<p class="editable">There's another problem. While everything is encrypted along the way, ideal security is much broader. Questions will arise like: Who has access to the server? How up to date is your software? Have you patched your servers with the latest fixes on the encryption protocols?</p>
+<p class="editable">This solution has a nice user flow and is secure but as the store owner you are wholly responsible for maintaining PCI complaince. You will need to be competent with encryption, patches, server access and know how to respond to any incidents.</p>
 
-<p class="editable">There’s a lot to be concerned about with this DIY solution. You’ll always be questioning if you’ve set up the encryption perfectly.</p>
+<h3 class="editable">Solution 4: PCI Avoidance (recommended)</h3>
 
-<h3 class="editable">Solution 4: PCI Compliance</h3>
+<p class="wide-image editable"><img src="/images/pci-compliance-solution-4.svg" alt="Payment processing flow without the need for PCI complaince" /></p>
 
-<p class="editable">PCI compliance looks just like Solution 3 except you'll be subject to the burden of PCI compliance as discussed earlier.</p>
+<p class="editable">The customer’s credit card is sent directly to the payment provider. A token, (not the actual credit card data) is then stored in your database and a payment accepted message is sent back to the customer.</p>
 
-<h3 class="editable">Solution 5: PCI Avoidance (recommended)</h3>
+<p class="editable">If someone where to get hold of the credit card token, they are not able to extract credit card data from it.</p>
 
-<p class="wide-image editable"><img src="/images/pci-compliance-solution-4.svg" /></p>
-
-<p class="editable">Finally we’re at PCI avoidance. The payment provider is PCI compliant but you do not need to be. Why is that? Because no credit card data is transmitted or stored with you. Here’s how it works.</p>
-
-<p class="editable">The customer’s credit card is sent directly to the payment provider. A token, (not the actual credit card data) is then stored in your database.</p>
+<p class="editable">The payment provider is PCI compliant but you do not need to be. Why is that? Because no credit card data is transmitted or stored with you.</p>
 
 <p class="editable">While being secure and avoiding PCI compliance, we’ve also given the customer a better user experience by staying on your site at all times.</p>
 
@@ -93,6 +91,6 @@ concerns.</blockquote>
 
 <p class="editable">Use a payment provider that allows you to offer both a great user experience and avoid the need for PCI compliance.</p>
 
-<p class="editable">If your store is running on Spree Commerce or Solidus, you’ll be using the <a href="http://activemerchant.org">Active Merchant</a> library to process payments. <strong>Payment processes such as <a href="https://stripe.com">Stripe</a> and <a href="https://www.braintreepayments.com">Braintree</a> offer modern payment solutions that allow you to avoid PCI compliance and are compatable with Active Merchant.</strong></p>
+<p class="editable">If your store is running on Spree Commerce or Solidus, you’ll be using the <a href="http://activemerchant.org">Active Merchant</a> library to process payments. <strong>Payment processes such as <a href="https://stripe.com">Stripe</a> and <a href="https://www.braintreepayments.com">Braintree</a> offer modern payment solutions that allow you to avoid PCI compliance and are compatible with Active Merchant.</strong></p>
 
-<p class="editable">Avoiding the need for PCI compliance means you can rest easy knowing your site is secure, your customers are happy, and you&rsquo;ve warded off the pain and expense of staying compliant.</p>
+<p class="editable">Avoiding the need for PCI compliance means you can rest easy knowing your site is secure, your customers are happy, and you've succcessfully outsourced the burden PCI complaince to your payment provider.</p>
