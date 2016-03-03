@@ -50,7 +50,7 @@ layout: default
               <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
             {% else %}
               {% unless forloop.last %}
-                <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>,
+                <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>{% if additional_help.size > 2 %},{% endif %}
               {% else %}
                 and <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
               {% endunless %}
