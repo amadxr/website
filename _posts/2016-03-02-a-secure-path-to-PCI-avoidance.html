@@ -33,11 +33,13 @@ concerns.</blockquote>
 <p class="editable">You must also make sure that the data center your site is hosted with is compliant. <a href="https://aws.amazon.com/compliance/pci-dss-level-1-faqs/">Amazon AWS</a> is extremely good in this regard.</p>
 <hr />
 
-<h2 class="editable">A Path To PCI Avoidance</h2>
+
 
 <blockquote>When people ask us about becoming PCI compliant, we prefer to flip the question. What can we do about PCI avoidance?</blockquote>
 
 <p class="editable">Our clients are often able to completely avoid PCI compliance. So you’re probably wondering how can you sidestep this burden? Before I tell you, let’s first understand how PCI compliance came about from a practical perspective.</p>
+
+<h2 class="editable">An Evolution of Payment Implementations</h2>
 
 <p class="editable">Let’s consider five alternatives for implementing payments on your store.</p>
 
@@ -49,9 +51,9 @@ concerns.</blockquote>
 
 <p class="editable">Credit details are stored in your database like everything else. You contact the payment provider with those details and get a response. You don’t bother setting up HTTPS to encrypt the transmission from the browser to your server.</p>
 
-<p class="editable">This solution is highly unsecure. Someone could intercept this information when it is transmitted or steal all the unencrypted credit card information stored in the database.</p>
-
 <p class="editable">It’s worth noting though that this flow is good in terms of developer time spent. It’s also good for the user because they stay on your site throughout the process.</p>
+
+<p class="editable">However the issue with this solution is it's highly unsecure. Someone could intercept this information when it is transmitted or steal all the unencrypted credit card information stored in the database.</p>
 
 <h3 class="editable">Solution 2: Bank Hosted Payment Page</h3>
 
