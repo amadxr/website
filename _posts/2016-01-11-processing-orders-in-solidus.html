@@ -14,31 +14,31 @@ author: isaac_freeman
 <p>The basic steps for processing an order are as follows:</p>
 <h3>1. Log in to Solidus Admin</h3>
 <p>You'll be taken to the orders page. A list of completed orders shows the most recently completed at the top.</p>
-<p class="wide-image"><img src="{{ site.cdn }}/images/Screenshot%201%20-%20orders%20list.png{{ site.cdn_suffix }}" alt="Solidus Orders List"/></p>
+<p class="wide-image"><img src="{{ site[jekyll.environment].cdn }}/images/Screenshot%201%20-%20orders%20list.png{{ site[jekyll.environment].cdn_suffix }}" alt="Solidus Orders List"/></p>
 <hr/>
 <h3>2. Select an order for payment</h3>
 <p>Choose an order you need to process and click on the payment state (usually "Balance Due" or "Failed" – click right on the text). This will take you straight to a page listing the payments for that order.</p>
 <p class="wide-image">
-<img src="{{ site.cdn }}/images/Screenshot%202%20-%20payments%20page.png{{ site.cdn_suffix }}" alt="Solidus Order Payment Screen"/><br/><small class="caption left-aligned">Solidus Order Payments Screen</small></p>
+<img src="{{ site[jekyll.environment].cdn }}/images/Screenshot%202%20-%20payments%20page.png{{ site[jekyll.environment].cdn_suffix }}" alt="Solidus Order Payment Screen"/><br/><small class="caption left-aligned">Solidus Order Payments Screen</small></p>
 <hr/>
 <h3>3. Capture the payment</h3>
 <p>In the most common case, there’ll be an authorized payment ready to capture for the full amount of the order. Click on the checkmark button to capture the payment.</p>
 <p>If the order has a failed payment you can edit the amount for each payment, or void it with the cross button. You can also create a new payment to record payments made in cash or credit cards outside Solidus.</p>
 <p>When the payments add up to the order total, you’re done. Click on "Back to Orders List" to return to the list of orders. The Payment State for your order has changed to "Paid."</p>
 <p class="wide-image">
-<img src="{{ site.cdn }}/images/Screenshot%203%20-%20orders%20list%20with%20paid%20order.png{{ site.cdn_suffix }}" alt="Solidus Orders List. Order Paid."/><br/><small class="caption left-aligned">Solidus Orders List Screen. Payment state for the order is now marked as "Paid".</small>
+<img src="{{ site[jekyll.environment].cdn }}/images/Screenshot%203%20-%20orders%20list%20with%20paid%20order.png{{ site[jekyll.environment].cdn_suffix }}" alt="Solidus Orders List. Order Paid."/><br/><small class="caption left-aligned">Solidus Orders List Screen. Payment state for the order is now marked as "Paid".</small>
 </p>
 <hr/>
 <h3>4. Select an order for shipping</h3>
 <p>From the Orders list, click on the edit button. This will take you to the main order edit page. You can edit the order, add or remove products, apply discounts or extra charges (adjustments) and change shipping details.</p>
 <p class="wide-image">
-<img src="{{ site.cdn }}/images/Screenshot%204%20-%20edit%20order.png{{ site.cdn_suffix }}" alt="Solidus Edit Order Screen"/>
+<img src="{{ site[jekyll.environment].cdn }}/images/Screenshot%204%20-%20edit%20order.png{{ site[jekyll.environment].cdn_suffix }}" alt="Solidus Edit Order Screen"/>
 </p>
 <hr/>
 <h3>5. Ship</h3>
 <p>You should see something like "[Code number] Ready Package From [Stock location]" and a SHIP button. Click on SHIP, and the order will be recorded as shipped. Click on "Back to Orders List" to return to the list of orders, and you’ll see the Shipment State for your order has changed to "Shipped."</p>
 <p class="wide-image">
-<img src="{{ site.cdn }}/images/Screenshot%205%20-%20orders%20list%20with%20shipped%20order.png{{ site.cdn_suffix }}" alt="Solidus Edit Order Screen. Order Shipped"/><br/><small class="caption left-aligned">Solidus Orders List Screen. Shipment state for the order is now marked as "Shipped".</small>
+<img src="{{ site[jekyll.environment].cdn }}/images/Screenshot%205%20-%20orders%20list%20with%20shipped%20order.png{{ site[jekyll.environment].cdn_suffix }}" alt="Solidus Edit Order Screen. Order Shipped"/><br/><small class="caption left-aligned">Solidus Orders List Screen. Shipment state for the order is now marked as "Shipped".</small>
 </p>
 <hr/>
 <h2>Not All Orders Come From Customers</h2>

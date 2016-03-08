@@ -6,7 +6,7 @@ description: >
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://resolve.digital"
 
-cdn: "https://resolve.imgix.net"
+
 cdn_params: "?auto=format&ch=Width,DPR"
 
 highlighter: pygments
@@ -28,3 +28,12 @@ authors: *default
 editors: *default
 
 permalink: "/blog/posts/:title/"
+
+production:
+  cdn: "https://resolve.imgix.net"
+
+staging:
+  cdn: "https://resolve-staging.imgix.net"
+
+development:
+  cdn: ""
