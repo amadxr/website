@@ -8,7 +8,7 @@ feature_image: /images/david-jones-papis-2015.jpg
 ---
 
 <p class="wide-image">
-<img src="{{ site.cdn }}{{page.feature_image}}{{ site.cdn_suffix }}" alt="David Jones at PAPIs 2015"/>
+<img src="{{ site[jekyll.environment].cdn }}{{page.feature_image}}{{ site[jekyll.environment].cdn_suffix }}" alt="David Jones at PAPIs 2015"/>
 <br/><small class="caption">David Jones speaking at PAPIs 2015.</small>
 </p>
 <p>Today I had the pleasure of speaking at PAPIs 2015 which was held in Sydney, Australia.</p>

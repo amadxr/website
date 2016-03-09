@@ -6,16 +6,16 @@
     "@type": "BlogPosting",
     "mainEntityOfPage":{
       "@type":"WebPage",
-      "@id":"{{ site.url }}{{page.url}}"
+      "@id":"{{ site[jekyll.environment].url }}{{page.url}}"
     },
     "headline": "{{ page.title }}",
     {% if page.feature_image %}
       "image": {
         "@type": "ImageObject",
         {% if page.op_image %}
-          "url": "{{ site.cdn }}{{ page.feature_image }}{{ site.cdn_suffix }}",
+          "url": "{{ site[jekyll.environment].cdn }}{{ page.op_image }}{{ site[jekyll.environment].cdn_suffix }}",
         {% else %}
-          "url": "{{ site.cdn }}{{ page.feature_image }}{{ site.cdn_suffix }}",
+          "url": "{{ site[jekyll.environment].cdn }}{{ page.feature_image }}{{ site[jekyll.environment].cdn_suffix }}",
         {% endif %}
         {% if page.feature_image_height %}
         "height": {{ page.feature_image_height }},
@@ -36,7 +36,7 @@
       "name": "Resolve Digital",
       "logo": {
         "@type": "ImageObject",
-        "url": "{{ site.url }}/images/resolve-digital-logo-only-60x60.png",
+        "url": "{{ site[jekyll.environment].url }}/images/resolve-digital-logo-only-60x60.png",
         "height": 60,
         "width": 60
       }

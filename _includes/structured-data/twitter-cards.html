@@ -9,10 +9,10 @@
 {% endif %}
 
 {% if page.op_image %}
-  <meta name="twitter:image:src" content="{{ site.cdn }}{{ page.op_image }}{{ site.cdn_suffix }}" />
+  <meta name="twitter:image:src" content="{{ site[jekyll.environment].cdn }}{{ page.op_image }}{{ site[jekyll.environment].cdn_suffix }}" />
 {% else %}
   {% if page.feature_image %}
-    <meta name="twitter:image:src" content="{{ site.cdn }}{{ page.feature_image }}{{ site.cdn_suffix }}" />
+    <meta name="twitter:image:src" content="{{ site[jekyll.environment].cdn }}{{ page.feature_image }}{{ site[jekyll.environment].cdn_suffix }}" />
   {% endif %}
 {% endif %}
 
