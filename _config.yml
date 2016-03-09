@@ -31,9 +31,12 @@ permalink: "/blog/posts/:title/"
 
 production:
   cdn: "https://resolve.imgix.net"
+  url: "https://resolve.digital"
 
 staging:
   cdn: "https://resolve-staging.imgix.net"
+  url: "http://witty-chicken.cloudvent.net"
 
 development:
   cdn: ""
+  url: "http://localhost:4000"

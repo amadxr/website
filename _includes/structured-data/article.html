@@ -6,7 +6,7 @@
     "@type": "BlogPosting",
     "mainEntityOfPage":{
       "@type":"WebPage",
-      "@id":"{{ site.url }}{{page.url}}"
+      "@id":"{{ site[jekyll.environment].url }}{{page.url}}"
     },
     "headline": "{{ page.title }}",
     {% if page.feature_image %}
@@ -36,7 +36,7 @@
       "name": "Resolve Digital",
       "logo": {
         "@type": "ImageObject",
-        "url": "{{ site.url }}/images/resolve-digital-logo-only-60x60.png",
+        "url": "{{ site[jekyll.environment].url }}/images/resolve-digital-logo-only-60x60.png",
         "height": 60,
         "width": 60
       }
