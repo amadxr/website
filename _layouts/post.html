@@ -30,40 +30,78 @@ layout: default
     
       {{ content }}
 
-      <hr/>
+      
 
       <footer>
-        "{{ page.title }}" was
-        {% if author %}
-          written by <a href="https://twitter.com/{{ author.twitter }}" target="_blank">{{ author.name }}</a>.
-        {% endif %}
-        {% if editor %}
-          Editing by <a href="https://twitter.com/{{ editor.twitter }}" target="_blank">{{ editor.name }}</a>.
-        {% endif %}
+        <p>
+          "{{ page.title }}" was
+          {% if author %}
+            written by <a href="https://twitter.com/{{ author.twitter }}" target="_blank">{{ author.name }}</a>.
+          {% endif %}
+          {% if editor %}
+            Editing by <a href="https://twitter.com/{{ editor.twitter }}" target="_blank">{{ editor.name }}</a>.
+          {% endif %}
 
-        {% if additional_help %}
-          Additional help from
-          {% for helper in additional_help %}
-            {% assign person = site.data.people[helper.person] %}
-            
-            {% if additional_help.size == 1 %}
-              <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
-            {% else %}
-              {% unless forloop.last %}
-                <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>{% if additional_help.size > 2 %},{% endif %}
+          {% if additional_help %}
+            Additional help from
+            {% for helper in additional_help %}
+              {% assign person = site.data.people[helper.person] %}
+              
+              {% if additional_help.size == 1 %}
+                <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
               {% else %}
-                and <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
-              {% endunless %}
-            {% endif %}
-          {% endfor %}
-        {% endif %}
+                {% unless forloop.last %}
+                  <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>{% if additional_help.size > 2 %},{% endif %}
+                {% else %}
+                  and <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
+                {% endunless %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
 
-        {% if page.disclosure %}Disclosure: {{page.disclosure}}{% endif %}
-        {% if page.notes %}{{page.notes}}{% endif %}
+          {% if page.disclosure %}Disclosure: {{page.disclosure}}{% endif %}
+          {% if page.notes %}{{page.notes}}{% endif %}
+        </p>
       </footer>
     </article>
   </section>
-  <section class="narrow top-spacing">
+
+  <section class="top-spacing narrow">
+    <hr/>
+    <h2 class="editable">More On Our Blog</h2>
+
+    <a href="/blog/posts/seo-cutting-through-the-bullshit/" class="editable">
+      <h3>SEO: Cutting Through The Bullshit</h3>
+    </a>
+
+    <p><img src="/images/seo-cutting-through-bullshit.svg" alt="SEO: Cutting Through The Bullshit" style="float: right; max-height: 150px; max-width: 150px; margin-top: -30px;"/>
+    I’ve had the dubious pleasure of dealing with several self-proclaimed “SEO experts” over the years. Be careful who you listen to. I recommend only following official information from Google.
+    <br/>
+    <small class="caption">David Jones &mdash; 3 March, 2016</small></p>
+    
+
+    <a href="/blog/posts/responsive-design-upgrade-boosts-mobile-commerce-conversions-51-percent/" class="editable">
+      <h3>Responsive Design Upgrade Boosts Mobile Commerce Conversions 51%</h3>
+    </a>
+    <p>
+      <img src="{{ site[jekyll.environment].cdn }}/images/manhattan-wardrobe-supply.png{{ site[jekyll.environment].cdn_suffix }}" alt="SEO: Cutting Through The Bullshit" style="float: right; max-height: 150px; max-width: 150px; margin-top: -30px;"/>
+    After adding responsive design to Manhattan Wardrobe Supply we measured a 51% increase in conversions for mobile.
+      <br/>
+    <small class="caption">Barry Harrison &mdash; Mar 1, 2016</small>
+    </p>
+    <a href="/blog/posts/devmob-2015/">
+      <h3>Devmob 2015</h3>
+    </a>
+    <p><a href="/blog/posts/devmob-2015/"><img src="{{ site[jekyll.environment].cdn }}/images/devmob-2015.jpeg{{ site[jekyll.environment].cdn_suffix }}" alt="SEO: Cutting Through The Bullshit" style="float: right; max-height: 150px; max-width: 150px; margin-top: -30px;"/></a>
+    Over the weekend, Mark Haylock and I had the pleasure of attending the annual devmob mobile development conference in Auckland.
+    <br/>
+    <small class="caption">Tim Ross &mdash; Dec 7, 2015</small>
+    </p>
+
+  </section>
+
+  <section class="narrow">
+    <hr/>
     {% include subscribe-form.html %}
   </section>
 </div>
