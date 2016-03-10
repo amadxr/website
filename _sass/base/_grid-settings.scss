@@ -4,11 +4,13 @@
 // $column: 90px;
 // $gutter: 30px;
 // $grid-columns: 12;
-// $max-width: 1200px;
+$max-width: 1500px;
 
 $visual-grid: false;
 
 // Neat Breakpoints
+
+$small-desktop: new-breakpoint(max-width 1200px 8);
 
 $tablet: new-breakpoint(max-width 768px 8);
 
