@@ -16,8 +16,13 @@
     margin-bottom: -$image-space;
   }
 
+  header > h1 {
+    text-align: left;
+    margin-bottom: 0em;
+  }
+
   header > p {
-    text-align: center;
+    color: #999;
   }
 }
 
