@@ -20,17 +20,15 @@ layout: default
       <header>
         <h1>{{ page.title }}</h1>
         <p>
-        {% if author %}
-          <a href="https://twitter.com/{{ author.twitter }}" target="_blank">{{ author.name }}</a>
-        {% endif %}
-        {% if page.meta %} &mdash; {{ page.meta }}{% endif %}
-        {% if page.date %} &mdash; {{ page.date | date: "%b %-d, %Y" }}{% endif %}
-        {% if page.read_count %}&mdash; {% include word-count.html %}{% endif %}
+          {% if author %}
+            <a href="https://twitter.com/{{ author.twitter }}" target="_blank">{{ author.name }}</a>
+          {% endif %}
+          {% if page.meta %} &mdash; {{ page.meta }}{% endif %}
+          {% if page.date %} &mdash; {{ page.date | date: "%b %-d, %Y" }}{% endif %}
+          {% if page.read_count %}&mdash; {% include word-count.html %}{% endif %}
 
-        &mdash; Share: 
-        <a href="" class="social-icon small" title="Share on Twitter"><img src="/images/twitter.svg" /></a>
-        <a href="" class="social-icon small" title="Share on Facebook"><img src="/images/facebook.svg" /></a>
-        <a href="" class="social-icon small" title="Share on LinkedIn"><img src="/images/linkedin.svg"/></a>
+          &mdash; Share: 
+          {% include social-icons.html %}
         </p>
       </header>
     
@@ -76,9 +74,7 @@ layout: default
     <h2>Join The Conversation</h2>
     <p>
       Share and start a conversation about this post:
-      <a href="" class="social-icon" title="Share on Twitter"><img src="/images/twitter.svg" /></a>
-      <a href="" class="social-icon" title="Share on Facebook"><img src="/images/facebook.svg" /></a>
-      <a href="" class="social-icon" title="Share on LinkedIn"><img src="/images/linkedin.svg"/></a>
+      {% include social-icons.html %}
     </p>
   </section>
 
