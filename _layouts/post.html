@@ -25,15 +25,19 @@ layout: default
         {% endif %}
         {% if page.meta %} &mdash; {{ page.meta }}{% endif %}
         {% if page.date %} &mdash; {{ page.date | date: "%b %-d, %Y" }}{% endif %}
-        {% if page.read_count %}&mdash; {% include word-count.html %}{% endif %}</p>
+        {% if page.read_count %}&mdash; {% include word-count.html %}{% endif %}
+
+        &mdash; Share: <a href=""><img src="/images/1457681892_Facebook.svg" style="width: 30px; height: 30px;" class="no-border"/></a>
+      <a href=""><img src="/images/1457681900_Twitter.svg" style="width: 30px; height: 30px" class="no-border"/></a>
+      <a href=""><img src="/images/1457681902_LinkedIn.svg" style="width: 30px; height: 30px" class="no-border"/></a>.
+        </p>
       </header>
     
       {{ content }}
 
-      
-
       <footer>
         <p>
+          &mdash;<br/>
           "{{ page.title }}" was
           {% if author %}
             written by <a href="https://twitter.com/{{ author.twitter }}" target="_blank">{{ author.name }}</a>.
@@ -66,8 +70,19 @@ layout: default
     </article>
   </section>
 
-  <section class="top-spacing narrow">
+  <section class=" top-spacing narrow">
     <hr/>
+    <h2>Join The Conversation</h2>
+    <p>
+      Share and start a conversation about this post:
+      <a href=""><img src="/images/1457681892_Facebook.svg" style="width: 30px; height: 30px;" class="no-border"/></a>
+      <a href=""><img src="/images/1457681900_Twitter.svg" style="width: 30px; height: 30px" class="no-border"/></a>
+      <a href=""><img src="/images/1457681902_LinkedIn.svg" style="width: 30px; height: 30px" class="no-border"/></a>. We'd love to hear from you.
+    </p>
+  </section>
+
+  <section class=" narrow">
+    
     <h2 class="editable">More On Our Blog</h2>
 
     <a href="/blog/posts/seo-cutting-through-the-bullshit/" class="editable">
