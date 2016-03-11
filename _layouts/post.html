@@ -88,7 +88,7 @@ layout: default
         <h3>{{ related.title }}</h3>
       </a>
       <p>
-        {% capture image_class %}{% if related.feature_image_borderless %}class="no-border"{% endif %}{% endcapture %}
+        {% capture image_class %}{% if related.feature_image_borderless %}class="no-border"{% else %}class=""{% endif %}{% endcapture %}
 
         {% if related.op_image %}
           <a href="{{ related.url }}" class="editable">
