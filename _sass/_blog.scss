@@ -66,6 +66,11 @@ span.blog-date {
     max-height: 150px;
     max-width: 150px;
     margin-left: $tiny-spacing;
+
+    @include media($mobile) {
+      max-height: 100px;
+      max-width: 100px;
+    }
   }
 }
 
