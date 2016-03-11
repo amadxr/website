@@ -135,3 +135,20 @@ pre code {
 header, footer, small {
   img { border: none; }
 }
+
+.post a.social-icon > img {
+  border: none;
+
+}
+
+.post a.social-icon {
+  display: inline-block;
+  border: $base-border-height solid $action-color;
+  border-radius: 100px;
+  width: 35px;
+  height: 35px;
+}
+
+.post a.social-icon:hover {
+  background: $light-gray;
+}
