@@ -19,11 +19,36 @@
 
   header > h1 {
     text-align: left;
-    margin-bottom: 0em;
+    margin-bottom: 0.2em;
   }
 
   header > p {
     color: #999;
+  }
+
+  a.social-icon {
+    display: inline-block;
+    border: $base-border-height solid $action-color;
+    border-radius: 100px;
+    width: 37px;
+    height: 37px;
+    vertical-align: middle;
+    margin-bottom: 2px;
+
+    &.small {
+      width: 30px;
+      height: 30px;
+
+    }
+
+    & > img {
+      border: none;
+      margin-bottom: 0px;
+    }
+
+    &:hover {
+      background: $light-gray;
+    }
   }
 }
 
@@ -35,3 +60,5 @@ span.blog-date {
     display: none;
   }
 }
+
+
