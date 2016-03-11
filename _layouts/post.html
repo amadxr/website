@@ -82,32 +82,32 @@ layout: default
     
     <h2 class="editable">More On The Blog</h2>
 
-    {% for post in site.related_posts limit:3 %}
-      {% assign author = site.data.people[post.author] %}
-      <a href="{{ post.url }}" class="editable">
-        <h3>{{ post.title }}</h3>
+    {% for related in site.related_posts limit:3 %}
+      {% assign author = site.data.people[related.author] %}
+      <a href="{{ related.url }}" class="editable">
+        <h3>{{ related.title }}</h3>
       </a>
       <p>
-        {% if post.op_image %}
-          <a href="{{ post.url }}" class="editable">
-            <img src="{{ site[jekyll.environment].cdn }}{{ post.op_image }}{{ site[jekyll.environment].cdn_suffix }}" alt="{{ post.title }}" align="right" {% if post.feature_image_borderless %}class="no-border"{% endif %}/>
+        {% if related.op_image %}
+          <a href="{{ related.url }}" class="editable">
+            <img src="{{ site[jekyll.environment].cdn }}{{ related.op_image }}{{ site[jekyll.environment].cdn_suffix }}" alt="{{ related.title }}" align="right" {% if related.feature_image_borderless %}class="no-border"{% endif %}/>
           </a>
         {% else %}
-          {% if post.feature_image %}
-            <a href="{{ post.url }}" class="editable">
-              <img src="{{ site[jekyll.environment].cdn }}{{ post.feature_image }}{{ site[jekyll.environment].cdn_suffix }}" alt="{{ post.title }}" align="right" {% if post.feature_image_borderless %}class="no-border"{% endif %} />
+          {% if related.feature_image %}
+            <a href="{{ related.url }}" class="editable">
+              <img src="{{ site[jekyll.environment].cdn }}{{ related.feature_image }}{{ site[jekyll.environment].cdn_suffix }}" alt="{{ related.title }}" align="right" {% if related.feature_image_borderless %}class="no-border"{% endif %} />
             </a>
           {% endif %}
         {% endif %}
 
-        {% if post.description %}
-          {{ post.description }}<br/>
+        {% if related.description %}
+          {{ related.description }}<br/>
         {% endif %}
         <small class="caption">
           {% if author %}
             <a href="https://twitter.com/{{ author.twitter }}" target="_blank">{{ author.name }}</a> &mdash;
           {% endif %}
-          {{ post.date | date: "%b %-d, %Y" }}
+          {{ related.date | date: "%b %-d, %Y" }}
         </small>
       </p>
     {% endfor %}
