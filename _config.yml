@@ -27,7 +27,7 @@ editors: *default
 permalink: "/blog/posts/:title/"
 
 production:
-  cdn: "https://resolve.imgix.net"
+  cdn: "https://images.resolve.digital"
   url: "https://resolve.digital"
   cdn_suffix: "?auto=format&ch=Width,DPR&q=60&fit=max&w=1400&h=1400"
 
