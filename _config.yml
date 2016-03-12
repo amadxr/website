@@ -6,9 +6,6 @@ description: >
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://resolve.digital"
 
-
-cdn_params: "?auto=format&ch=Width,DPR&q=60"
-
 highlighter: pygments
 
 # Build settings
@@ -32,11 +29,14 @@ permalink: "/blog/posts/:title/"
 production:
   cdn: "https://resolve.imgix.net"
   url: "https://resolve.digital"
+  cdn_suffix: "?auto=format&ch=Width,DPR&q=60&fit=max&w=1400&h=1400"
 
 staging:
   cdn: "https://resolve-staging.imgix.net"
   url: "http://witty-chicken.cloudvent.net"
+  cdn_suffix: "?auto=format&ch=Width,DPR&q=60&fit=max&w=1400&h=1400"
 
 development:
-  cdn: ""
+  cdn: "https://resolve.imgix.net"
   url: "http://localhost:4000"
+  cdn_suffix: "?auto=format&ch=Width,DPR&q=60&fit=max&w=1400&h=1400"
