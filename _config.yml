@@ -7,7 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://resolve.digital"
 
 
-cdn_params: "?auto=format&ch=Width,DPR"
+cdn_params: "?auto=format&ch=Width,DPR&q=60"
 
 highlighter: pygments
 
