@@ -146,9 +146,9 @@ module.exports = function(grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '<%= app.dist %>/<%= app.baseurl %>/images',
+                    cwd: 'images/',
                     src: '**/*.{jpg,jpeg,png,gif}',
-                    dest: '<%= app.dist %>/<%= app.baseurl %>/images'
+                    dest: 'images/'
                 }]
             }
         },
@@ -162,21 +162,6 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        copy: {
-            dist: {
-                files: [{
-                    expand: true,
-                    dot: true,
-                    cwd: '.tmp/<%= app.baseurl %>',
-                    src: [
-                        'css/**/*',
-                        'js/**/*'
-                    ],
-                    dest: '<%= app.dist %>/<%= app.baseurl %>'
-                }]
-            }
-        },
-
         responsive_images: {
             task: {
               options: {
