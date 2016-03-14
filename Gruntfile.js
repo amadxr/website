@@ -156,9 +156,9 @@ module.exports = function(grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '<%= app.dist %>/<%= app.baseurl %>/images',
+                    cwd: 'images/',
                     src: '**/*.svg',
-                    dest: '<%= app.dist %>/<%= app.baseurl %>/images'
+                    dest: 'images/'
                 }]
             }
         },
@@ -182,22 +182,31 @@ module.exports = function(grunt) {
               options: {
                 engine: 'im',
                 sizes: [{
-                  width: 320,
-                  height: 240
+                  name: 'full',
+                  width: 1400,
+                  height: 1400,
+                  quality: 65
                 },{
                   name: 'large',
-                  width: 640
+                  width: 1200,
+                  height: 1200,
+                  quality: 65
                 },{
-                  name: "large",
-                  width: 1024,
-                  suffix: "_x2",
-                  quality: 60
+                  name: 'medium',
+                  width: 768,
+                  height: 768,
+                  quality: 65
+                },{
+                  name: 'small',
+                  width: 480,
+                  height: 480,
+                  quality: 65
                 }]
               },
               files: [{
                 expand: true,
                 src: 'images/originals/*.{jpg,jpeg,png,gif}',
-                dest: '../images/'
+                custom_dest: './images/{%= name %}'
               }]
             }
         }
