@@ -7,73 +7,23 @@ module.exports = function(grunt) {
     require('jit-grunt')(grunt);
 
     grunt.loadNpmTasks('grunt-responsive-images');
+    grunt.loadNpmTasks('grunt-cwebp');
  
     grunt.initConfig({
-        app: {
-            app: '.',
-            dist: 'dist',
-            baseurl: ''
-        },
-        watch: {
-            jekyll: {
-                files: [
-                    '<%= app.app %>/**/*.{html,yml,md,mkd,markdown}'
-                ],
-                tasks: ['jekyll:server']
-            }
-        },
-        connect: {
-            options: {
-                port: 9000,
-                // change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
-            },
-            dist: {
-                options: {
-                    open: {
-                        target: 'http://localhost:9000/<%= app.baseurl %>'
-                    },
-                    base: [
-                        '<%= app.dist %>',
-                        '.tmp'
-                    ]
-                }
-            }
-        },
-        clean: {
-            server: [
-                '.jekyll',
-                '.tmp'
-            ],
-            dist: {
-                files: [{
-                    dot: true,
-                    src: [
-                        '.tmp',
-                        '<%= app.dist %>/*',
-                        '!<%= app.dist %>/.git*'
-                    ]
-                }]
-            }
-        },
-        jekyll: {
 
+
+        cwebp: {
+          dynamic: {
             options: {
-                config: '_config.yml,_config.build.yml',
-                src: '<%= app.app %>'
+              q: 50
             },
-            dist: {
-                options: {
-                    dest: '<%= app.dist %>/<%= app.baseurl %>',
-                }
-            },
-            server : {
-                options : {
-                    serve : true,
-                    port : 9000,
-                    auto : true
-                }
-            }
+            files: [{
+              expand: true,
+              cwd: 'images/', 
+              src: ['**/*.{png,jpg,jpeg}'],
+              dest: 'images/'
+            }]
+          }
         },
 
         imagemin: {
@@ -133,46 +83,12 @@ module.exports = function(grunt) {
             }
         }
     });
- 
-    // Define Tasks
-    grunt.registerTask('serve', function(target) {
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'connect:dist:keepalive']);
-        }
- 
-        grunt.task.run([
-            'clean:server',
-            'jekyll:server',
-            'autoprefixer'
-        ]);
-    });
- 
-    grunt.registerTask('server', function() {
-        grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-        grunt.task.run(['serve']);
-    });
 
     grunt.registerTask('process_images', [
         'responsive_images',
         'svgmin',
+        'cwebp',
         'imagemin'
     ]);
  
-    grunt.registerTask('build', [
-        'clean:dist',
-        'jekyll:dist',
-//        'imagemin',
-        'svgmin',
-        'autoprefixer',
-        'htmlmin'
-    ]);
- 
-    grunt.registerTask('deploy', [
-        'build',
-        'copy'
-    ]);
- 
-    grunt.registerTask('default', [
-        'serve'
-    ]);
 };
