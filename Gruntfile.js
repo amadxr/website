@@ -8,6 +8,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-responsive-images');
     grunt.loadNpmTasks('grunt-cwebp');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
  
     grunt.initConfig({
 
@@ -26,19 +27,15 @@ module.exports = function(grunt) {
           }
         },
 
-        imagemin: {
-            options: {
-                progressive: true
-            },
-            task: {
-                files: [{
-                    expand: true,
-                    cwd: 'images/',
-                    src: '**/*.{jpg,jpeg,png,gif}',
-                    dest: 'images/'
-                }]
+          imagemin: {                          // Task
+            dynamic: {                         // Another target
+              files: [{
+                expand: true,                  // Enable dynamic expansion
+                src: ['images/**/*.{png,jpg,gif}'],   // Actual patterns to match
+              }]
             }
-        },
+          },
+
         svgmin: {
             task: {
                 files: [{
