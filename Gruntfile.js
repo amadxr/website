@@ -75,75 +75,12 @@ module.exports = function(grunt) {
                 }
             }
         },
-//        cdnify: {
-//            options: {
-//              rewriter: function (url) {
-//                if (url.indexOf('data:') === 0) {
-//                  return url;            // leave data URIs untouched 
-//                } else {
-//                  return url + '?12345'; // add query string to all other URLs 
-//                }
-//              }
-//            },
-//            files: [{
-//              expand: true,
-//              cwd: '<%= app.dist %>/<%= app.baseurl %>',
-//              src: '**/*.{svg,png,jpeg,jpg,gif}',
-//              dest: '<%= app.dist %>/<%= app.baseurl %>'
-//            }]
-//        },
-        htmlmin: {
-            dist: {
-                options: {
-                    removeComments: true,
-                    collapseWhitespace: true,
-                    collapseBooleanAttributes: true,
-                    removeAttributeQuotes: true,
-                    removeRedundantAttributes: true,
-                    removeEmptyAttributes: true,
-                    minifyJS: true,
-                    minifyCSS: true
-                },
-                files: [{
-                    expand: true,
-                    cwd: '<%= app.dist %>/<%= app.baseurl %>',
-                    src: '**/*.html',
-                    dest: '<%= app.dist %>/<%= app.baseurl %>'
-                }]
-            }
-        },
-        autoprefixer: {
-            options: {
-                browsers: ['last 3 versions']
-            },
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/<%= app.baseurl %>/css',
-                    src: '**/*.css',
-                    dest: '.tmp/<%= app.baseurl %>/css'
-                }]
-            }
-        },
-//        cssmin: {
-//            dist: {
-//                options: {
-//                    keepSpecialComments: 0,
-//                    check: 'gzip'
-//                },
-//                files: [{
-//                    expand: true,
-//                    cwd: '.tmp/<%= app.baseurl %>/css',
-//                    src: ['*.css'],
-//                    dest: '.tmp/<%= app.baseurl %>/css'
-//                }]
-//            }
-//        },
+
         imagemin: {
             options: {
                 progressive: true
             },
-            dist: {
+            task: {
                 files: [{
                     expand: true,
                     cwd: 'images/',
@@ -153,7 +90,7 @@ module.exports = function(grunt) {
             }
         },
         svgmin: {
-            dist: {
+            task: {
                 files: [{
                     expand: true,
                     cwd: 'images/',
@@ -214,6 +151,12 @@ module.exports = function(grunt) {
         grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
         grunt.task.run(['serve']);
     });
+
+    grunt.registerTask('process_images', [
+        'responsive_images',
+        'svgmin',
+        'imagemin'
+    ]);
  
     grunt.registerTask('build', [
         'clean:dist',
