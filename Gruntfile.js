@@ -5,6 +5,8 @@ module.exports = function(grunt) {
     require('time-grunt')(grunt);
     // Load all Grunt tasks
     require('jit-grunt')(grunt);
+
+    grunt.loadNpmTasks('grunt-responsive-images');
  
     grunt.initConfig({
         app: {
@@ -172,6 +174,31 @@ module.exports = function(grunt) {
                     ],
                     dest: '<%= app.dist %>/<%= app.baseurl %>'
                 }]
+            }
+        },
+
+        responsive_images: {
+            task: {
+              options: {
+                engine: 'im',
+                sizes: [{
+                  width: 320,
+                  height: 240
+                },{
+                  name: 'large',
+                  width: 640
+                },{
+                  name: "large",
+                  width: 1024,
+                  suffix: "_x2",
+                  quality: 60
+                }]
+              },
+              files: [{
+                expand: true,
+                src: ['images/originals/**.{jpg,gif,png}'],
+                custom_dest: 'images/'
+              }]
             }
         }
     });
