@@ -23,11 +23,11 @@ layout: default
           {% if author %}
             <a href="https://twitter.com/{{ author.twitter }}" target="_blank">{{ author.name }}</a>
           {% endif %}
-          {% if page.meta %} &mdash; {{ page.meta }}{% endif %}
-          {% if page.date %} &mdash; {{ page.date | date: "%b %-d, %Y" }}{% endif %}
-          {% if page.read_count %}&mdash; {% include word-count.html %}{% endif %}
+          {% if page.meta %} · {{ page.meta }}{% endif %}
+          {% if page.date %} · {{ page.date | date: "%b %-d, %Y" }}{% endif %}
+          {% if page.read_count %}· {% include word-count.html %}{% endif %}
 
-          &mdash; Share: 
+          · Share: 
           {% include social-icons.html %}
         </p>
       </header>
