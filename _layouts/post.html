@@ -27,8 +27,9 @@ layout: default
           {% if page.date %} · {{ page.date | date: "%b %-d, %Y" }}{% endif %}
           {% if page.read_count %}· {% include word-count.html %}{% endif %}
 
-          <span class="hidden-on-mobile">· Share: 
-          {% include social-icons.html %}</span>
+          <span class="hidden-on-mobile">
+            · Share: {% include social-icons.html %}
+          </span>
         </p>
       </header>
     
@@ -90,7 +91,7 @@ layout: default
       <p>
         {% if related.feature_image %}
           <a href="{{ related.url }}" class="editable">
-            {% include img.html name=related.feature_image.name alt=related.title class=related.feature_image.class align="right" %}
+            {% include img.html name=related.feature_image.name alt=related.title class=related.feature_image.class align="right" default="small" %}
           </a>
         {% endif %}
 

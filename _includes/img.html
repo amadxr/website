@@ -11,7 +11,7 @@
     <source media="(max-width: 1200px)" srcset="/images/large/{{include.name}} 1x">
     <source media="(max-width: 1800px)" srcset="/images/full/{{include.name}} 1x">
 
-    <img src="/images/full/{{include.name}}" alt="{{include.alt}}" class="{{include.class}}" {% if include.height %}height="{{include.height}}"{% endif %} {% if include.width %}width="{{include.width}}"{% endif %} {% if include.align %}align="{{include.align}}"{% endif %} {% if include.style %}style="{{include.style}}"{% endif %}/>
+    <img src="/images/{% if include.default %}{{include.default}}{% else %}full{% endif %}/{{include.name}}" alt="{{include.alt}}" class="{{include.class}}" {% if include.height %}height="{{include.height}}"{% endif %} {% if include.width %}width="{{include.width}}"{% endif %} {% if include.align %}align="{{include.align}}"{% endif %} {% if include.style %}style="{{include.style}}"{% endif %}/>
   </picture>
 {% else %}
   <img src="/images/originals/{{include.name}}" alt="{{include.alt}}" class="{{include.class}}" {% if include.height %}height="{{include.height}}"{% endif %} {% if include.width %}width="{{include.width}}"{% endif %} {% if include.align %}align="{{include.align}}"{% endif %} {% if include.style %}style="{{include.style}}"{% endif %}/>

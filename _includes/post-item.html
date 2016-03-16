@@ -3,7 +3,7 @@
   <span class="dot"></span>
   {% if post.feature_image %}
     <a href="{{ post.url }}">
-      {% include img.html name=post.feature_image.name alt=post.title class=post.feature_image.class %}
+      {% include img.html name=post.feature_image.name alt=post.title class=post.feature_image.class defaul="medium" %}
     </a><br/>
   {% endif %}
   <a href="{{ post.url }}">{{ post.title }}</a><br/>
