@@ -110,3 +110,9 @@ div.two-column {
     padding: $tiny-spacing;
   }
 }
+
+@include media($mobile) {
+  .hidden-on-mobile {
+    display: none
+  }
+}

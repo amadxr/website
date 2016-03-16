@@ -27,8 +27,8 @@ layout: default
           {% if page.date %} · {{ page.date | date: "%b %-d, %Y" }}{% endif %}
           {% if page.read_count %}· {% include word-count.html %}{% endif %}
 
-          · Share: 
-          {% include social-icons.html %}
+          <span class="hidden-on-mobile">· Share: 
+          {% include social-icons.html %}</span>
         </p>
       </header>
     
