@@ -70,6 +70,11 @@ module.exports = function(grunt) {
                   width: 480,
                   height: 480,
                   quality: 65
+                },{
+                  name: 'tiny',
+                  width: 200,
+                  height: 200,
+                  quality: 65
                 }]
               },
               files: [{
