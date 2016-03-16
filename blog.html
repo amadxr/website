@@ -13,10 +13,5 @@ permalink: /blog/
     {% assign posts = site.posts | where:'archived', nil %}
     {% include timeline.html posts=posts %}
   </section>
-  <!--
-  <p class="editable center-aligned">
-    <a href="/blog/archive/">view archived posts</a>
-  </p>
-  <hr/>-->
   {% include subscribe-form.html %}
 </section>
