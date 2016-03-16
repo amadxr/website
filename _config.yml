@@ -27,16 +27,10 @@ editors: *default
 permalink: "/blog/posts/:title/"
 
 production:
-  cdn: "https://images.resolve.digital"
   url: "https://resolve.digital"
-  cdn_suffix: "?auto=format&ch=Width,DPR&q=60&fit=max&w=1400&h=1400"
 
 staging:
-  cdn: "https://resolve-staging.imgix.net"
   url: "http://witty-chicken.cloudvent.net"
-  cdn_suffix: "?auto=format&ch=Width,DPR&q=60&fit=max&w=1400&h=1400"
 
 development:
-  cdn: "https://resolve.imgix.net"
   url: "http://localhost:4000"
-  cdn_suffix: "?auto=format&ch=Width,DPR&q=60&fit=max&w=1400&h=1400"
