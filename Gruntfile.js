@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             dynamic: {                         // Another target
               files: [{
                 expand: true,                  // Enable dynamic expansion
-                src: ['images/**/*.{png,jpg,gif}'],   // Actual patterns to match
+                src: ['images/**/*.{png,jpg,jpeg,gif}'],   // Actual patterns to match
               }]
             }
           },

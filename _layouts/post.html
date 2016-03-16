@@ -88,21 +88,9 @@ layout: default
         <h3>{{ related.title }}</h3>
       </a>
       <p>
-        {% if related.feature_image_borderless %}
-          {% assign class_name = 'no-border' %}
-        {% else %}
-          {% assign class_name = '' %}
-        {% endif %}
-
-
         {% if related.feature_image %}
-
           <a href="{{ related.url }}" class="editable">
-            {% unless related.feature_image contains ".svg" %}
-              <img src="{{ site[jekyll.environment].cdn }}{{ related.feature_image }}{{ site[jekyll.environment].cdn_suffix }}" alt="{{ related.title }}" align="right" class="{{class_name}}" />
-            {% else %}
-              <img src="{{ related.feature_image }}" alt="{{ related.title }}" align="right" class="{{class_name}}" />
-            {% endunless %}
+            {% include img.html name=related.feature_image.name alt=related.title class=related.feature_image.class align="right" %}
           </a>
         {% endif %}
 

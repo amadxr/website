@@ -55,7 +55,6 @@ hr {
 }
 
 img,
-picture,
 video {
   margin: 0 0 $tiny-spacing 0;
   max-width: 100%;
@@ -71,7 +70,7 @@ video {
   padding-top: $base-spacing;
   background: $light-gray;
   background-repeat: no-repeat;
-  background-image: url(/images/browser-chrome-buttons.svg);
+  background-image: url(/images/originals/browser-chrome-buttons.svg);
   background-position: $base-spacing / 3.8 $base-spacing / 3.8;
   border: $base-border-height solid darken($light-gray, 5%);
 }

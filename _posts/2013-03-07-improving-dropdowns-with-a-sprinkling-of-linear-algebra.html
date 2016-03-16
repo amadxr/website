@@ -9,8 +9,12 @@ author: david_jones
 
 <h2>Before</h2>
 <p>Moving the cursor from the '<em>Clothing, Shoes &amp; Jewelry</em>' menu item to '<em>Clothing</em>' in the submenu was previously quite tricky. Get it wrong and you'll find yourself opening a different drop down menu. Frustrating.</p>
-<p><img src="{{ site[jekyll.environment].cdn }}/images/dropdown-before.png{{ site[jekyll.environment].cdn_suffix }}" alt="Dropdown that is tricky to navigate"></p>
+<p>
+{% include img.html name="dropdown-before.png" alt="Dropdown that is tricky to navigate" %}
+</p>
 <h2>After</h2>
 <p>Amazon opens up the area that the cursor can move through by calculating a triangle between your mouse and the top and bottom of the open dropdown menu.</p>
 <p>Now you can quickly and directly move your cursor to '<em>Clothing'</em> without frustration.</p>
-<p><img src="{{ site[jekyll.environment].cdn }}/images/dropdown-after.png{{ site[jekyll.environment].cdn_suffix }}" alt="Dropdown that is easy to navigate with linear algebra"></p>
+<p>
+{% include img.html name="dropdown-after.png" alt="Dropdown that is easy to navigate with linear algebra" %}
+</p>

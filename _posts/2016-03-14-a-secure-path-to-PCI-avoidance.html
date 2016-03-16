@@ -6,19 +6,20 @@ author: david_jones
 dropcap: false
 read_count: true
 highlightSyntax: false
-feature_image: '/images/pci-avoidance.svg'
-op_image: '/images/pci-avoidance.png'
-feature_image_width: 1280
-feature_image_height: 914
-feature_image_borderless: true
 editor: barry_harrison
 additional_help:
   - person: robert_coleman
   - person: isaac_freeman
+feature_image: 
+  name: "pci-avoidance.svg"
+  rasterized: "pci-avoidance.png"
+  width: 1280
+  height: 914
+  class: "no-border"
 ---
 
 <p>
-<img class="no-border" src="/images/pci-avoidance.svg" alt="A secure path to PCI avoidance" width="90%"/>
+{% include img.html name=page.feature_image.name alt=page.title class=page.feature_image.class width="90%" %}
 <br/>
 <small class="caption">Illustration by <a target="_blank" href="https://twitter.com/emilyacarlton">Emily Carlton</a></small>
 </p>
@@ -53,7 +54,9 @@ The good news is an informed selection can mitigate many if not all of these con
 
 <h3 class="editable">Solution 1: The Simplest Thing Possible</h3>
 
-<p class="wide-image editable"><img src="/images/pci-compliance-solution-1.svg" width="100%" /></p>
+<p class="wide-image editable">
+{% include img.html name="pci-compliance-solution-1.svg" alt="Insecure Payment Implementation" width="100%" %}
+</p>
 
 <p class="editable">In the early days of eCommerce you would often see solutions like this. From the developer standpoint it’s the easiest solution you could implement with traditional payment providers.</p>
 
@@ -65,7 +68,9 @@ The good news is an informed selection can mitigate many if not all of these con
 
 <h3 class="editable">Solution 2: Payment Provider Hosted Payment Page</h3>
 
-<p class="wide-image editable"><img src="/images/pci-compliance-solution-2.svg" width="100%" /></p>
+<p class="wide-image editable">
+{% include img.html name="pci-compliance-solution-2.svg" alt="Payment Provider Hosted Payment Page" width="100%" %}
+</p>
 
 <p>In this solution, you send your customer to a payment provider's hosted payment page. The customer enters their information, it’s sent encrypted to the payment provider for processing.</p>
 
@@ -77,7 +82,7 @@ The good news is an informed selection can mitigate many if not all of these con
 
 <h3 class="editable">Solution 3: PCI Compliance</h3>
 
-<p class="wide-image editable"><img src="/images/pci-compliance-solution-3.svg" width="100%" /></p>
+<p class="wide-image editable">{% include img.html name="pci-compliance-solution-3.svg" alt="PCI Compliance" width="100%" %}</p>
 
 <p class="editable">With this solution credit card data is encrypted during every step of transmission and storage.</p>
 
@@ -85,7 +90,7 @@ The good news is an informed selection can mitigate many if not all of these con
 
 <h3 class="editable">Solution 4: PCI Avoidance (recommended)</h3>
 
-<p class="wide-image editable"><img src="/images/pci-compliance-solution-4.svg" alt="Payment processing flow without the need for PCI complaince" width="100%" /></p>
+<p class="wide-image editable">{% include img.html name="pci-compliance-solution-4.svg" alt="Payment Processing without PCI Compliance" width="100%" %}</p>
 
 <p class="editable">PCI avoidance is achieved by sending customer’s credit card data directly to the payment provider. A token, (not the actual credit card data) is then stored in your database and a payment accepted message is sent back to the customer.</p>
 

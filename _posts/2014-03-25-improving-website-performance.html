@@ -10,5 +10,9 @@ dropcap: true
 <p>Paying attention to your database design and including the appropriate indexes can make a big difference in your app’s ability to grow and handle more users. In this particular case, some queries went from averaging up to 1 second execution time to consistently averaging less than 10 ms (ten thousandths of a second).</p>
 <p>Here's what our client reported:</p>
 <blockquote>"New Relic shows significant improvement with database queries, perhaps 60-80% less time overall (see attached). I can feel it as an end-user. Much better performance, thank you!"</blockquote>
-<p><img src="{{ site[jekyll.environment].cdn }}/images/before.gif{{ site[jekyll.environment].cdn_suffix }}" alt="New Relic Before" class="no-border"/></p>
-<p><img src="{{ site[jekyll.environment].cdn }}/images/after.gif{{ site[jekyll.environment].cdn_suffix }}" alt="New Relic After" class="no-border"/></p>
+<p>
+{% include img.html name="before-performance-improvement.gif" alt="New Relic Before" class="no-border" %}
+</p>
+<p>
+{% include img.html name="after-performance-improvement.gif" alt="New Relic After" class="no-border" %}
+</p>

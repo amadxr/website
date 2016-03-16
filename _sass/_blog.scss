@@ -10,7 +10,7 @@
     margin-bottom: 0.2em;
   }
 
-  img, picture {
+  img {
     // negative bottom margin helps bring captions
     // closer to the image
     margin-bottom: -$image-space;
@@ -35,7 +35,7 @@
     vertical-align: middle;
     margin-bottom: 2px;
 
-    & > img {
+    img {
       border: none;
       margin-bottom: 0px;
     }

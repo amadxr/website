@@ -12,10 +12,10 @@
     {% if page.feature_image %}
       "image": {
         "@type": "ImageObject",
-        {% if page.op_image %}
-          "url": "{{ site[jekyll.environment].cdn }}{{ page.op_image }}{{ site[jekyll.environment].cdn_suffix }}",
+        {% if page.feature_image.rasterized %}
+          "url": "/images/full/{{ page.feature_image.rasterized }}",
         {% else %}
-          "url": "{{ site[jekyll.environment].cdn }}{{ page.feature_image }}{{ site[jekyll.environment].cdn_suffix }}",
+          "url": "/images/full/{{ page.feature_image.name }}",
         {% endif %}
         {% if page.feature_image_height %}
         "height": {{ page.feature_image_height }},
@@ -36,7 +36,7 @@
       "name": "Resolve Digital",
       "logo": {
         "@type": "ImageObject",
-        "url": "{{ site[jekyll.environment].url }}/images/resolve-digital-logo-only-60x60.png",
+        "url": "/images/originals/resolve-digital-logo-only-60x60.png",
         "height": 60,
         "width": 60
       }

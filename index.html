@@ -2,7 +2,8 @@
 layout: default
 title: "Rethinking eCommerce"
 description: "We build, optimize and maintain stores for innovative eCommerce retailers. Specializing in Solidus, Spree, Ruby on Rails, iOS and Machine Learning"
-feature_image: "/images/resolve-digital-logo-only.png"
+feature_image:
+  name: "resolve-digital-logo-only.png"
 permalink: /
 ---
 
@@ -30,7 +31,7 @@ permalink: /
 <section class="full-width top-spacing">
   <h2 class="editable">Featured Client</h2>
   <p class="caption center-aligned">
-    <a href="/work/pinrose/"><img src="{{ site[jekyll.environment].cdn }}/images/pinrose-screenshot.png{{ site[jekyll.environment].cdn_suffix }}" class="screenshot" alt="Pinrose.com Screenshot" /></a>
+    <a href="/work/pinrose/">{% include img.html name="pinrose-screenshot.png" alt="Pinrose Campfire Rebel Product Detail Page" class="screenshot" %}</a>
     <small>Pinrose.com product detail page for Campfire Rebel.</small>
   </p>
 </section>
@@ -57,7 +58,7 @@ permalink: /
   <h2 class="editable">What Our Clients Say</h2>
   <blockquote>"Resolve Digital did an excellent job, were professional at all times and adapted quickly to our processes. Above all they were great guys to work with."</blockquote>
   <p class="caption editable">
-    &mdash; Remy Burger, Product Manager at <img src="/images/google-logo.svg" alt="Google Logo" height="22" class="inline-logo" />
+    &mdash; Remy Burger, Product Manager at {% include img.html name="google-logo.svg" alt="Google Logo" class="inline-logo" height="22" %}
   </p>
 </section>
 

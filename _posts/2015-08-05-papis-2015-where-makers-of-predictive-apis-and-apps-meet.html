@@ -4,11 +4,12 @@ title: 'PAPIs 2015: Where Makers of Predictive APIs and Apps Meet'
 description: "I spoke at PAPIs 2015 Sydney, Australia and talked about machine learning and ecommerce."
 dropcap: false
 author: david_jones
-feature_image: /images/david-jones-papis-2015.jpg
+feature_image:
+  name: david-jones-papis-2015.jpg
 ---
 
 <p class="wide-image">
-<img src="{{ site[jekyll.environment].cdn }}{{page.feature_image}}{{ site[jekyll.environment].cdn_suffix }}" alt="David Jones at PAPIs 2015"/>
+{% include img.html name=page.feature_image.name alt=page.title %}
 <br/><small class="caption">David Jones speaking at PAPIs 2015.</small>
 </p>
 <p>Today I had the pleasure of speaking at PAPIs 2015 which was held in Sydney, Australia.</p>

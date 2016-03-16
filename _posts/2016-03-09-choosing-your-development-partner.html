@@ -3,19 +3,20 @@ layout: post
 title: Choosing Your Development Partner and Getting What You Pay For
 description: "Over the past 14 years we’ve seen many potential clients choose developers based on their hourly rate over their skills and expertise. Rarely does it end well."
 author: barry_harrison
+editor: david_jones
 dropcap: true
 read_count: true
 highlightSyntax: false
-feature_image: '/images/you-get-what-you-pay-for.svg'
-op_image: '/images/you-get-what-you-pay-for.png'
-feature_image_width: 1220
-feature_image_height: 664
-feature_image_borderless: true
-editor: david_jones
+feature_image:
+  name: "you-get-what-you-pay-for.svg"
+  rasterized: "you-get-what-you-pay-for.png"
+  width: "1220"
+  height: "664"
+  class: "no-border"
 ---
 
 <p class="wide-image">
-<img class="no-border" src="/images/you-get-what-you-pay-for.svg" alt="you get what you pay for" width="90%"/>
+{% include img.html name=page.feature_image.name alt=page.title class=page.feature_image.class width="90%" class=page.feature_image.class %}
 <br/>
 <small class="caption">Illustration by <a target="_blank" href="https://twitter.com/emilyacarlton">Emily Carlton</a></small>
 </p>

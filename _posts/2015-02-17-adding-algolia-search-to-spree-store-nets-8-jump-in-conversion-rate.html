@@ -20,7 +20,8 @@ When I first picked up Algolia, I got excited. It offers many advanced search fe
 </p>
 <h3>Response Time</h3>
 <p>Now that the connection has been made, we have to wait for the search result response. The search engine itself is <a href="http://stackshare.io/posts/how-algolia-built-their-realtime-search-as-a-service-product" target="_blank">implemented as an nginx module</a> which makes their stack unbelievably shallow. This is a brave, creative and frankly a brilliant solution that works like a charm in practice. With over 12,000 records to search, 99% of our response times are below 7ms. Your results will differ based on how many records you have indexed and how you've configured Algolia.</p>
-<p><img src="{{ site[jekyll.environment].cdn }}/images/algolia-search-response-time.png{{ site[jekyll.environment].cdn_suffix }}" alt="Algolia Search Response Time" /><small class="caption">Algolia's response time from 99% of queries made</small></p>
+<p>
+{% include img.html name="algolia-search-response-time.png" alt="Algolia Search Response Time" %}<small class="caption">Algolia's response time from 99% of queries made</small></p>
 <blockquote>Algolia is so fast they should really measure their response times in microseconds not milliseconds.</blockquote>
 <p>To give you some context, a typical request to a website might take 150ms to respond. Search taking ~7ms to respond is so small it doesn’t matter. In fact it may actually be faster than the built in search we're replacing.</p>
 <h3>Putting it to the test</h3>
@@ -43,16 +44,19 @@ When I first picked up Algolia, I got excited. It offers many advanced search fe
 <p>With these thoughts in mind, I went about changing the Algolia search interface to more closely match the original. Not only that, I could confidently go further in this direction now I had a better understanding of what the customer is trying to achieve.</p>
 <p>I added the ability to buy products from the search results page. I also listed out variations of a product in search results, though it did make the results really tall. Finally, I decided to make every product buyable from search results.</p>
 <p>I was now using advanced Algolia techniques to store custom fields about stock levels and variant information. I also added some neat features like being able to drill down your results by category and highlighting words on the page that exactly match what you’re searching for. This makes the results page very scannable.</p>
-<p><img src="{{ site[jekyll.environment].cdn }}/images/75091af7-smush-si5pO7Hfrr.gif{{ site[jekyll.environment].cdn_suffix }}" alt="Algolia search with spree" />
+<p>
+{% include img.html name="algolia-search-with-spree.gif" alt="Algolia search with spree" %}
 </p>
 <hr/>
 <h2>The final A/B test: Improved UI combined with Algolia</h2>
 <p>We observed a 8.4% improvement on conversion rate with this new test.</p>
 <p><strong>Conversion Rate by A/B Segment:</strong></p>
-<p><img src="{{ site[jekyll.environment].cdn }}/images/Ecommerce-Conversion-Rate-by-Segment.png{{ site[jekyll.environment].cdn_suffix }}" alt="Ecommerce Conversion Rate By Segment" /></p>
+<p>
+{% include img.html name="Ecommerce-Conversion-Rate-by-Segment.png" alt="Ecommerce Conversion Rate By Segment" %}</p>
 <p>To further understand this I segmented this result by new vs returning visitors.</p>
 <p><strong>Returning Visitors: Conversion Rate by A/B Segment:</strong></p>
-<p><img src="{{ site[jekyll.environment].cdn }}/images/Ecommerce-Conversion-Rate-by-Segment-Returning-Visitors.png{{ site[jekyll.environment].cdn_suffix }}" alt="Ecommerce Conversion Rate By Segment Returning Visitors" /></p>
+<p>
+{% include img.html name="Ecommerce-Conversion-Rate-by-Segment-Returning-Visitors.png" alt="Ecommerce Conversion Rate By Segment Returning Visitors" %}</p>
 
 <p>I found an 11.2% improvement on the conversion rate for returning visitors and a 6.2% improvement for new visitors. This makes sense to me because the layout of the search has been designed to be more useful for existing customers than new ones.</p>
 <h2>Conclusion</h2>

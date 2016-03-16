@@ -5,18 +5,19 @@
 <meta property="og:url" content="{{ site[jekyll.environment].url }}{{ page.url }}" />
 <meta property="og:locale" content="en_US" />
 
-{% if page.op_image %}
-  <meta property="og:image" content="{{ page.op_image }}" />
-{% else %}
-  {% if page.feature_image %}
-    <meta property="og:image" content="{{ page.feature_image }}" />
+{% if page.feature_image %}
+  {% if page.feature_image.rasterized %}
+    <meta property="og:image" content="{{ page.feature_image.rasterized }}" />
+  {% else %}
+    <meta property="og:image" content="/images/{{ page.feature_image.name }}" />
   {% endif %}
 {% endif %}
-{% if page.feature_image_height %}
-  <meta property="og:image:height" content="{{ page.feature_image_height }}" />
+
+{% if page.feature_image.height %}
+  <meta property="og:image:height" content="{{ page.feature_image.height }}" />
 {% endif %}
-{% if page.feature_image_width %}
-  <meta property="og:image:width" content="{{ page.feature_image_width }}" />
+{% if page.feature_image.width %}
+  <meta property="og:image:width" content="{{ page.feature_image.width }}" />
 {% endif %}
 
 {% if page.description %}

@@ -1,0 +1,17 @@
+<picture>
+{% unless include.name contains ".svg" %}
+
+  {% assign filename = include.name | replace:'.gif','' | replace:'.png','' | replace:'.jpg','' %}
+  <source media="(max-width: 480px)" srcset="/images/small/{{filename}}.webp 1x" type="image/webp">
+  <source media="(max-width: 768px)" srcset="/images/medium/{{filename}}.webp 1x" type="image/webp">
+  <source media="(max-width: 1200px)" srcset="/images/large/{{filename}}.webp 1x" type="image/webp">
+  <source media="(max-width: 1800px)" srcset="/images/full/{{filename}}.webp 1x" type="image/webp">
+
+  <source media="(max-width: 480px)" srcset="/images/small/{{include.name}} 1x">
+  <source media="(max-width: 768px)" srcset="/images/medium/{{include.name}} 1x">
+  <source media="(max-width: 1200px)" srcset="/images/large/{{include.name}} 1x">
+  <source media="(max-width: 1800px)" srcset="/images/full/{{include.name}} 1x">
+{% endunless %}
+
+  <img src="/images/originals/{{include.name}}" alt="{{include.alt}}" class="{{include.class}}" {% if include.height %}height="{{include.height}}"{% endif %} {% if include.width %}width="{{include.width}}"{% endif %} {% if include.align %}align="{{include.align}}"{% endif %} {% if include.style %}style="{{include.style}}"{% endif %}/>
+</picture>
