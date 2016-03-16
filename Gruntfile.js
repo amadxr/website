@@ -21,7 +21,7 @@ module.exports = function(grunt) {
             files: [{
               expand: true,
               cwd: 'images/', 
-              src: ['**/*.{png,jpg,jpeg}'],
+              src: ['**/*.{png,jpg}'],
               dest: 'images/'
             }]
           }
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             dynamic: {                         // Another target
               files: [{
                 expand: true,                  // Enable dynamic expansion
-                src: ['images/**/*.{png,jpg,jpeg,gif}'],   // Actual patterns to match
+                src: ['images/**/*.{png,jpg,gif}'],   // Actual patterns to match
               }]
             }
           },
@@ -74,7 +74,7 @@ module.exports = function(grunt) {
               },
               files: [{
                 expand: true,
-                src: 'images/originals/*.{jpg,jpeg,png,gif}',
+                src: 'images/originals/*.{jpg,png,gif}',
                 custom_dest: './images/{%= name %}'
               }]
             }
@@ -84,8 +84,7 @@ module.exports = function(grunt) {
     grunt.registerTask('process_images', [
         'responsive_images',
         'svgmin',
-        'cwebp',
-        'imagemin'
+        'cwebp'
     ]);
  
 };
