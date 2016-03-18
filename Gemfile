@@ -5,7 +5,8 @@ gem "bourbon"
 gem "neat"
 gem "bitters"
 gem "pygments.rb"
-gem "jekyll", "2.4.0"
+gem "jekyll", "3.0.3"
+
 #gem 'github-pages'
 # Test the build
 group :test do

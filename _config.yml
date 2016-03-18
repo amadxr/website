@@ -8,6 +8,8 @@ url: "https://resolve.digital"
 
 highlighter: pygments
 
+version: 3.0.3
+
 # Build settings
 markdown: kramdown
 

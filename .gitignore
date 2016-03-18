@@ -21,3 +21,5 @@ node_modules
 dist/node_modules/
 dist
 tmp/
+
+.jekyll-metadata
