@@ -51,7 +51,7 @@
     }
   }
 
-  h2, h2 a, p {
+  h2, h2 a, p, a {
     color: lighten($blue, 70%);
   }
 
@@ -63,9 +63,8 @@
     font-size: 1.8em;
     line-height: 1.3em;
     font-weight: lighter;
-
-
   }
+
 
   @include media($tablet) {
     h1 {
