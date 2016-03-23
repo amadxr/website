@@ -15,6 +15,14 @@
     // closer to the image
     margin-bottom: -$image-space;
     width: 100%;
+
+    &.two-thirds-width {
+      width: 67%;
+
+      @include media($tablet) {
+        width: 100%;
+      }
+    }
   }
 
   header > h1 {
@@ -51,6 +59,7 @@
       height: 26px;
     }
   }
+
 }
 
 span.blog-date {
