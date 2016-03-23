@@ -51,7 +51,7 @@
     }
   }
 
-  h2, h2 a, p, a {
+  h2, h2 a, p, a, a:visited, a:hover {
     color: lighten($blue, 70%);
   }
 
