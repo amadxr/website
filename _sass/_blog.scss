@@ -15,13 +15,13 @@
     // closer to the image
     margin-bottom: -$image-space;
     width: 100%;
+  }
 
-    &.two-thirds-width {
-      width: 67%;
+  img.two-thirds-width {
+    width: 67%;
 
-      @include media($tablet) {
-        width: 100%;
-      }
+    @include media($tablet) {
+      width: 100%;
     }
   }
 
