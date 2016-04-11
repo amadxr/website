@@ -23,35 +23,30 @@ Since not every recommendation tool was applied on all sites, we measured the �
    <br>&nbsp;
 2. **"Visitors who viewed this product ultimately bought"**
    <br>*(effectiveness rating 3.42)*
-   <br>While this option generated the second biggest boost in revenue (25%) it was used by only 7.3% of the sites, suggesting that it may be most effective at turning visitors into customers and demonstrating the value of [social proof](https://en.wikipedia.org/wiki/Social_proof ).
+   <br>While this option generated the second biggest boost in revenue (25%) it was used by only 7.3% of the sites, suggesting that it may be most effective at turning visitors into customers and demonstrating the value of [social proof](https://en.wikipedia.org/wiki/Social_proof).
+   <br>&nbsp;
+3. **“You might also like”**
+   <br>*(effectiveness rating 0.38)*
+   <br>Generating over 16% of the revenue, it was used by over 42% of the sites. The second most commonly used option but among the least effective.
+   <br>&nbsp;
+4. **“Recently viewed”**
+   <br>*(effectiveness rating 0.57)*
+   <br>About 12% of revenue, used by 21.5% of the stores. “Recently viewed” recommendations appear site-wide.
+   <br>&nbsp;
+5. **“Trending in category”**
+   <br>*(effectiveness rating 0.84)*
+   <br>10% of revenue gain is attributed to this option. 12% of sites use it. It appears only on category pages and is another example of the power of social proof.
+   <br>&nbsp;
+6. **“Top Sellers”**
+   <br>*(effectiveness rating 0.34)*
+   <br>Top Sellers generated 8.5% but, as it was used by 25.3% of the stores, it’s one of the least effective types of recommendation options.
+   <br>&nbsp;
+7. **“Customers who bought this product also bought”**
+   <br>*(effectiveness rating 0.67)*
+   <br>While less than 12% of stores used this option, it generated almost 8% of the revenue. There’s a fairly subtle difference between this and "Visitors who viewed this product ultimately bought" but the benefits are far less.
 
 
-“You might also like”
-<br>(effectiveness rating 0.38)
-<br>Generating over 16% of the revenue, it was used by over 42% of the sites. The second most commonly used option but among the least effective.
-<br>&nbsp;
-
-“Recently viewed”
-<br>(effectiveness rating 0.57)
-<br>About 12% of revenue, used by 21.5% of the stores. “Recently viewed” recommendations appear site-wide.
-<br>&nbsp;
-
-“Trending in category”
-<br>(effectiveness rating 0.84)
-<br>10% of revenue gain is attributed to this option. 12% of sites use it. It appears only on category pages and is another example of the power of social proof.
-<br>&nbsp;
-
-“Top Sellers”
-<br>(effectiveness rating 0.34)
-<br>Top Sellers generated 8.5% but, as it was used by 25.3% of the stores, it’s one of the least effective types of recommendation options.
-<br>&nbsp;
-
-“Customers who bought this product also bought”
-<br>(effectiveness rating 0.67)
-<br>While less than 12% of stores used this option, it generated almost 8% of the revenue. There’s a fairly subtle difference between this and "Visitors who viewed this product ultimately bought" but the benefits are far less.
-<br>&nbsp;
-
-Key Takeaways
+#### Key Takeaways
 
 "Visitors who viewed this product ultimately bought" recommendations generated 25% of all revenue even though it was used by only 7% of sites, so it received the highest effectiveness rating. If you offer visitors only one type of product recommendations this may be the way to go.
 
