@@ -2,4 +2,5 @@ name,link,featured
 Blog,/blog/,false
 Work,/work/,false
 Services,/services/,false
+About,/about/,false
 Hire Us,/hire-us/,true
