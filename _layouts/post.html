@@ -100,7 +100,7 @@ layout: default
         {% endif %}
         <small class="caption">
           {% if author %}
-            <a href="https://twitter.com/{{ author.twitter }}" target="_blank">{{ author.name }}</a> &mdash;
+            <a href="{{ author.link }}" target="_blank">{{ author.name }}</a> &mdash;
           {% endif %}
           {{ related.date | date: "%b %-d, %Y" }}
         </small>
