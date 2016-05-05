@@ -1,11 +1,11 @@
 {% unless include.name contains ".svg" %}
   <picture>
     {% assign filename = include.name | replace:'.gif','' | replace:'.png','' | replace:'.jpg','' %}
-    <source media="(max-width: 480px)" srcset="/images/small/{{filename}}.webp 1x" type="image/webp">
+<!--     <source media="(max-width: 480px)" srcset="/images/small/{{filename}}.webp 1x" type="image/webp">
     <source media="(max-width: 768px)" srcset="/images/medium/{{filename}}.webp 1x" type="image/webp">
     <source media="(max-width: 1200px)" srcset="/images/large/{{filename}}.webp 1x" type="image/webp">
     <source media="(max-width: 1800px)" srcset="/images/full/{{filename}}.webp 1x" type="image/webp">
-
+ -->
     <source media="(max-width: 480px)" srcset="/images/small/{{include.name}} 1x">
     <source media="(max-width: 768px)" srcset="/images/medium/{{include.name}} 1x">
     <source media="(max-width: 1200px)" srcset="/images/large/{{include.name}} 1x">
