@@ -21,7 +21,7 @@ layout: default
         <h1>{{ page.title }}</h1>
         <p>
           {% if author %}
-            <a href="https://twitter.com/{{ author.twitter }}" target="_blank">{{ author.name }}</a>
+            <a href="{{ author.link }}" target="_blank">{{ author.name }}</a>
           {% endif %}
           {% if page.meta %} · {{ page.meta }}{% endif %}
           {% if page.date %} · {{ page.date | date: "%b %-d, %Y" }}{% endif %}
@@ -40,10 +40,10 @@ layout: default
           &mdash;<br/>
           "{{ page.title }}" was
           {% if author %}
-            written by <a href="https://twitter.com/{{ author.twitter }}" target="_blank">{{ author.name }}</a>.
+            written by <a href="{{ author.link }}" target="_blank">{{ author.name }}</a>.
           {% endif %}
           {% if editor %}
-            Editing by <a href="https://twitter.com/{{ editor.twitter }}" target="_blank">{{ editor.name }}</a>.
+            Editing by <a href="{{ editor.link }}" target="_blank">{{ editor.name }}</a>.
           {% endif %}
 
           {% if additional_help %}
@@ -52,12 +52,12 @@ layout: default
               {% assign person = site.data.people[helper.person] %}
               
               {% if additional_help.size == 1 %}
-                <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
+                <a href="{{ person.link }}" target="_blank">{{ person.name }}</a>.
               {% else %}
                 {% unless forloop.last %}
-                  <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>{% if additional_help.size > 2 %},{% endif %}
+                  <a href="{{ person.link }}" target="_blank">{{ person.name }}</a>{% if additional_help.size > 2 %},{% endif %}
                 {% else %}
-                  and <a href="https://twitter.com/{{ person.twitter }}" target="_blank">{{ person.name }}</a>.
+                  and <a href="{{ person.link }}" target="_blank">{{ person.name }}</a>.
                 {% endunless %}
               {% endif %}
             {% endfor %}
