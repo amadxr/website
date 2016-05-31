@@ -34,6 +34,10 @@
     color: #999;
   }
 
+  li {
+    margin-bottom: $small-spacing;
+  }
+
   a.social-icon {
     display: inline-block;
     border: $base-border-height solid $action-color;
