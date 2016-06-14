@@ -56,7 +56,7 @@ dropcap: true
 </p>
 <p >Spree doesn’t dictate any particular format for SKUs – many merchants have existing systems when they start their eCommerce sites, and it’s best to stick with the identifiers already in use, especially if they’re defined by suppliers. 
 </p>
-<p >Spree even allows you to create a variant with no SKU at all, but we strongly recommend that every product have one.
+<p>Spree even allows you to create a variant with no SKU at all, but we strongly recommend that every product have one.
 </p>
 <h3>Understanding Products</h3>
 <p><strong>Products in Spree have two jobs.</strong> First, to group variants that belong together. Second, to store the information those variants have in common.</p>
@@ -72,3 +72,22 @@ dropcap: true
 <p><strong>Products can also have properties.</strong> Not all sites use these, but they’re handy if you want to provide a table of features.</p>
 <p>Finally, <strong>products can have options</strong> (also known as option types). If you’ve felt like something is missing in the relationship between products and variants, options are the missing link.</p>
 <p><strong>In Part 2</strong> of this post we'll explain Spree variants, options and prototypes. Don't miss it!</p>
+<p>It's really not enough to segment groups. I feel there's been a bit of a shift to try and segment lists, but really you need to be doing it on an individual basis.</p>
+
+<p>Fraud detection — we had a client that had a massive fraud problem.  To give you an idea of the mindset of someone who’s committing fraud, if you have say 100 stolen credit cards, what you want to do is translate them into cash. So you look for items that are small and easily shippable, have high value and high resale value.</p>
+<p>So I can go to a store that doesn't have very good fraud protection, buy a GoPro that's worth $300-$400. Maybe I buy 10 of them at once. Then I can put them into the secondhand market because I know I can get 80% of the value and the shipping is pretty cheap.</p>
+<p>That's how to commit fraud — <em>so don't do that!</em> The way we detect fraud with machine learning is we take into consideration a lot of different data points about an order: Address verification (does the billing address match the credit card?). If you have a hundred stolen credit cards it’s going to be difficult to know the addresses unless you stole that information too.</p>
+<p>Then there’s shipping. Maybe I’ve ordered in the US but I'm strangely shipping to Canada. That just might be an odd thing for some businesses. There are certain hints like that.</p>
+<p>Another one I've seen is figuring out how old an email address is. If you're a fraudster you're trying to generate a lot of new email addresses that have no trace on the Internet before and try and make each order different.</p>
+<p>Machine learning centers around wrapping up these different points, trying to figure out how dodgy an order is, and making a decision.</p>
+<p>Pricing — that was interesting earlier about the pricing class and figuring out where you can decide on pricing. If any of you have used Uber (which I imagine most of you have) then you would have been subject to dynamic pricing. Uber is making a prediction on demand. If they predict the demand is going up in short space of time they slap a surcharge on you. It’s really annoying, but keeps the supply and demand level and optimizes their revenue.</p>
+<p>Finally let's talk about abandoned cart emails. I'm pretty sure everyone knows what an abandoned car email is, but what's important is the timing. How long do you wait in terms of when you’re going to actually send that email? Quite often people put a personalized discount with their email and you know, some people need a little bit of motivation and sometimes need a lot of motivation.</p>
+<p>You can treat that as a prediction task to figure out how much discount to give. Obviously you want to minimize the discount and maximize the number of conversions you get from those emails.</p>
+<p>OK so this is obviously Amazon.com which is one of the largest online retailers. Here is their home page and I think one thing we can all agree on is this particular page has probably been iterated on and tested hundreds if not thousands of times to get to what we see today. There's a lot to learn about this particular page.</p>
+<p>Aside from learning that I’m interested in running and coffee, what do you notice about this page? This is how I see it. I would guess that 50% or more of this page has come through some sort of machine learning algorithm. I'm talking about the sets of lists they’ve chosen to put here, the order of those lists, the items inside those lists, and the order of those items. Even the ads have probably been chosen because they think they’re going to be most relevant to me.</p>
+<p>This is a really large company that has refined this page a lot and is probably making a lot of extra money by going through this process. But the thing is that machine learning is not just for the big guys anymore.</p>
+<p>It wasn't too long ago that you actually needed a team of data scientists to run all this in production. It's unlike our day-to-day programming and can be quite complicated. Only big companies used to be able to access this.</p>
+
+<p>This is a little comic I drew up to explain the barriers to entry. Here we have a very tall wall that most of us can't get over and when we have a look over the wall we see unicorns and amazing things on the other side. These big companies have private access and the resources to just be able to pick up this stuff. They've been getting the gains from this for quite a long time.</p>
+
+<p>One solution we can all pick up and utilize today is predictive APIs. It's like a ladder in this situation. We’re able to encapsulate a lot of the complexities of machine learning and treat it as an API problem that you can integrate with. The complexities are handled for you through the API.</p>
