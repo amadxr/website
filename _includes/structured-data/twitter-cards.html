@@ -10,9 +10,9 @@
 
 {% if page.feature_image %}
   {% if page.feature_image.rasterized %}
-    <meta name="twitter:image:src" content="{{ site[jekyll.environment].url }}images/full/{{ page.feature_image.rasterized }}" />
+    <meta name="twitter:image:src" content="{{ site[jekyll.environment].url }}/images/full/{{ page.feature_image.rasterized }}" />
   {% else %}
-    <meta name="twitter:image:src" content="{{ site[jekyll.environment].url }}images/full/{{ page.feature_image.name }}" />
+    <meta name="twitter:image:src" content="{{ site[jekyll.environment].url }}/images/full/{{ page.feature_image.name }}" />
   {% endif %}
 {% endif %}
 
