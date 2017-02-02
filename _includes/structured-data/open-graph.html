@@ -7,9 +7,9 @@
 
 {% if page.feature_image %}
   {% if page.feature_image.rasterized %}
-    <meta property="og:image" content="{{ page.feature_image.rasterized }}" />
+    <meta property="og:image" content="{{ site[jekyll.environment].url }}{{ page.feature_image.rasterized }}" />
   {% else %}
-    <meta property="og:image" content="/images/{{ page.feature_image.name }}" />
+    <meta property="og:image" content="{{ site[jekyll.environment].url }}/images/{{ page.feature_image.name }}" />
   {% endif %}
 {% endif %}
 
