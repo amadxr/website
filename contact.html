@@ -1,11 +1,13 @@
 ---
 layout: default
 title: Hire Us
-description: "Tell us about your project &amp; we'll get back to you."
+description: >-
+  Tell us about your project &amp; we'll get back to you. Let's build something
+  together.
 permalink: /hire-us/
 javascripts:
   - name: jquery.validate.min.js
-    afterLoad: "validateContactForm"
+    afterLoad: validateContactForm
 ---
 
 <script type="text/javascript">
@@ -15,13 +17,15 @@ javascripts:
 </script>
 
 <section class="top-spacing narrow center-aligned">
-  <h1 class="editable">Let's Work Together</h1>
+  <h1 class="editable">
+      Let's work together
+  </h1>
   <p class="subheader">Tell us about your project and we'll get back to you shortly.</p>
-  <hr/>
+  <hr />
   <fieldset>
     {% include contact-form.html %}
   </fieldset>
-  <hr/>
+  <hr />
   <p>
     If you'd prefer to call us, we can be reached on <a href="tel:+15105688840">510 568 8840</a> (USA) or <a href="tel:+6436690037">03 669 0037</a> (NZ).
   </p> 
