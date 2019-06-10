@@ -114,6 +114,10 @@ blockquote {
   font-size: golden-ratio($base-font-size, 0);
 }
 
+standout {
+  color: $green;
+}
+
 a.call-to-action {
   font-weight: bold;
   color: white;
