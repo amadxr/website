@@ -1,14 +1,18 @@
 ---
 layout: default
 title: Blog
-description: "We blog about building, optimizing &amp; maintaining eCommerce stores."
+description: >-
+  We blog about building, optimizing &amp; maintaining eCommerce stores and
+  excellent websites.
 permalink: /blog/
 ---
 
 <section class="top-spacing narrow">
-  <h1 class="editable">Blog</h1>
+  <h1 class="editable">
+      Blog
+  </h1>
   <p class="subheader center-aligned">We write about building, optimizing &amp; maintaining eCommerce stores.</p>
-  <hr/>
+  <hr />
   <section class="left-aligned timeline-series">
     {% assign posts = site.posts | where:'archived', nil %}
     {% include timeline.html posts=posts %}
